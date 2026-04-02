@@ -13,9 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/api/posture", async (req, res) => {
-  if (!req.body.deviceId || !req.body.angle) {
-    return res.status(400).json({ error: "Invalid data" });
-  }
+  console.log("Received Data:", req.body);
   try {
     await Posture.create(req.body);
     console.log("💾 Saved to MongoDB");

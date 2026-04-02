@@ -1,7 +1,3 @@
-# Posture Monitoring System
-
-=======
-
 # 🚀 Aligna — Posture & Fatigue Monitoring System
 
 ## 📌 Overview
@@ -164,6 +160,14 @@ pip install -r requirements.txt
 
 ```bash
 python simulator.py
+```
+
+### 💡 Alternative (if dependencies already installed)
+
+If you already have required Python packages installed globally, you can run:
+
+```bash
+python3 simulator.py
 ```
 
 ✔ Sends posture data every second

@@ -3,7 +3,7 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
   CartesianGrid, ReferenceLine, ReferenceArea, Legend,
 } from "recharts";
-import { PieChart, Pie, BarChart, Bar } from "recharts";
+import { PieChart, Pie, Cell, BarChart, Bar } from "recharts";
 import axios from "axios";
 import SkeletonTwin from "./components/Twin";
 

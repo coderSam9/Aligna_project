@@ -105,8 +105,7 @@ def run_simulator():
             try:
                 requests.post(
                     BACKEND_URL,
-                    json=data,
-                    timeout=3
+                    json=data
                 )
                 print("Sent:", data)
             except Exception as e:

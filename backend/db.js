@@ -9,7 +9,7 @@ const postureSchema = new mongoose.Schema({
   angle: Number,
   fatigueLevel: Number,
   postureStatus: String,
-  timestamp: { type: Date, default: Date.now }
+  timestamp: String
 });
 
 module.exports = mongoose.model("Posture", postureSchema);
