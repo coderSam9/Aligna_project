@@ -1,1 +1,1 @@
-# Posture Monitoring System
+# 🚀 Aligna — Posture & Fatigue Monitoring System

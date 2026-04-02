@@ -15,6 +15,7 @@ socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
 DEVICE_ID = "POSTURE_01"
 BAD_POSTURE_THRESHOLD = 30
 BAD_POSTURE_TIME = 5
+BACKEND_URL = "http://127.0.0.1:5050/api/posture"
 
 # Simulation parameters
 fatigue = 0
@@ -93,7 +94,7 @@ def run_simulator():
             data = {
                 "deviceId": DEVICE_ID,
                 "angle": round(angle, 2),
-                "fatigue": round(fatigue, 2),
+                "fatigueLevel": round(fatigue, 2),
                 "postureStatus": posture_status,
                 "poseData": poseData,
                 "timestamp": datetime.now().isoformat()
@@ -103,12 +104,13 @@ def run_simulator():
 
             try:
                 requests.post(
-                    "http://127.0.0.1:5050/api/posture",
-                    json=data
+                    BACKEND_URL,
+                    json=data,
+                    timeout=3
                 )
                 print("Sent:", data)
-            except:
-                print("Server not running...")
+            except Exception as e:
+                print("Error sending data:", e)
 
             time.sleep(1)
 

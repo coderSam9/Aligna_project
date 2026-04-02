@@ -4,7 +4,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5051", {
+const socket = io(import.meta.env.VITE_SOCKET_URL || "http://localhost:5051", {
   transports: ["websocket"],
   reconnection: true,
   reconnectionAttempts: Infinity,

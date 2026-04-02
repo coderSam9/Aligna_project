@@ -12,12 +12,10 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Server alive");
-});
-
 app.post("/api/posture", async (req, res) => {
-  console.log("Received Data:", req.body);
+  if (!req.body.deviceId || !req.body.angle) {
+    return res.status(400).json({ error: "Invalid data" });
+  }
   try {
     await Posture.create(req.body);
     console.log("💾 Saved to MongoDB");
@@ -50,7 +48,7 @@ app.get("/api/posture", async (req, res) => {
     }
   });
 
-const PORT = 5050;
+const PORT = process.env.PORT || 5050;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

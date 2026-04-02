@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster-an.vpkvqaa.mongodb.net/?appName=Cluster-an`;
 
-mongoose.connect(uri)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.log("❌ MongoDB error:", err));
 
@@ -10,7 +9,7 @@ const postureSchema = new mongoose.Schema({
   angle: Number,
   fatigueLevel: Number,
   postureStatus: String,
-  timestamp: String
+  timestamp: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model("Posture", postureSchema);

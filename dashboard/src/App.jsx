@@ -3,7 +3,7 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
   CartesianGrid, ReferenceLine, ReferenceArea, Legend,
 } from "recharts";
-import { PieChart, Pie, Cell, BarChart, Bar } from "recharts";
+import { PieChart, Pie, BarChart, Bar } from "recharts";
 import axios from "axios";
 import SkeletonTwin from "./components/Twin";
 
@@ -26,7 +26,6 @@ function TwinPage({ onBack }) {
         <AlignaLogo />
         <button style={styles.backBtn} onClick={onBack}>← Back</button>
       </div>
-      {/* SkeletonTwin gets ALL remaining height & width */}
       <div style={styles.twinBody}>
         <SkeletonTwin />
       </div>
@@ -47,7 +46,7 @@ export default function App() {
     if (!isRunning) return;
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:5050/api/posture");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/posture`);
         setIsLive(true);
         const postureFormatted = res.data.map((item) => ({
           time: new Date(item.timestamp).toLocaleTimeString().slice(3, 8),
@@ -55,7 +54,7 @@ export default function App() {
         }));
         const fatigueFormatted = res.data.map((item) => ({
           time: new Date(item.timestamp).toLocaleTimeString().slice(3, 8),
-          fatigue: Math.min(100, Math.round(item.angle * 2)),
+          fatigue: Math.min(100, Math.round(item.fatigueLevel || 0))
         }));
         setPostureData(postureFormatted);
         setFatigueData(fatigueFormatted);
@@ -75,7 +74,10 @@ export default function App() {
         for (let i = 1; i < angles.length; i++) if (angles[i - 1] > 30 && angles[i] <= 30) breaks++;
         setMetrics({ duration, goodPercent, slouchTime, breaks, avgAngle: avg.toFixed(1) });
         if (avg > 35 || goodPercent < 60) { setShowAlert(true); setTimeout(() => setShowAlert(false), 4000); }
-      } catch { setIsLive(false); }
+      } catch (err) {
+        console.log("Fetch error:", err);
+        setIsLive(false);
+      }
     };
     fetchData();
     const interval = setInterval(fetchData, 4000);
