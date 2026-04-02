@@ -1,1 +1,1 @@
-# Posture-monitor
+# Posture Monitoring System
