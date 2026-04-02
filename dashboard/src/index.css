@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at 20% 0%, #0b1220, #020617 70%);
+  color: white;
+  font-family: system-ui, sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
