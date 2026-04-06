@@ -11,20 +11,20 @@ socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 # Configuration
 DEVICE_ID = "POSTURE_01"
-BAD_POSTURE_THRESHOLD = 30
-BAD_POSTURE_TIME = 5
+BAD_POSTURE_THRESHOLD = 20
+BAD_POSTURE_TIME = 3
 BACKEND_URL = "http://127.0.0.1:5050/api/posture"
 
 # Simulation parameters
-fatigue = 0
+fatigue = 50
 time_counter = 0
-break_interval = 60
+break_interval = 300
 noise_range = (-2, 2)
 
-USER_TYPE = "normal"
+USER_TYPE = "lazy"
 
 bad_posture_counter = 0
-current_angle = 15
+current_angle = 18
 
 
 def fatigue_growth():
@@ -77,14 +77,26 @@ def run_simulator():
             else:
                 bad_posture_counter = 0
 
-            posture_status = "bad" if bad_posture_counter >= BAD_POSTURE_TIME else "good"
+            if angle > BAD_POSTURE_THRESHOLD:
+                posture_status = "bad"
+            elif angle > 15 or fatigue > 70:
+                posture_status = "warning"
+            else:
+                posture_status = "good"
 
             # 🔥 Convert angle → poseData
             tilt = angle / 60
-
+            
+            # Generate highly organic human fidgeting, swaying, and asymmetrical leaning
+            import time
+            import math
+            now = time.time()
+            sway = math.sin(now * 0.4) * 0.3 # Swaying left to right
+            dip = math.cos(now * 0.6) * 0.4  # Slumping one shoulder lower than the other
+            
             poseData = {
-                "l_shoulder": [-0.2, 1, tilt],
-                "r_shoulder": [0.2, 1, tilt],
+                "l_shoulder": [-0.2 + sway, 1 + dip, tilt],
+                "r_shoulder": [0.2 + sway, 1 - dip, tilt],
                 "l_hip": [-0.2, 0, 0],
                 "r_hip": [0.2, 0, 0],
             }

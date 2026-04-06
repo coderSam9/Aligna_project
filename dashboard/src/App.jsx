@@ -1,19 +1,85 @@
 import React, { useState, useEffect } from "react";
 import {
-  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  CartesianGrid, ReferenceLine, ReferenceArea, Legend,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  CartesianGrid,
+  ReferenceLine,
+  ReferenceArea,
+  Legend,
 } from "recharts";
 import { PieChart, Pie, Cell, BarChart, Bar } from "recharts";
 import axios from "axios";
 import SkeletonTwin from "./components/Twin";
 
+/* ─── brand gradient background ───────────────────────────────────── */
+const brandGradient = {
+  background: `
+    radial-gradient(1200px 600px at 10% 5%,  rgba(88,28,135,0.18),   transparent 60%),
+    radial-gradient(800px  400px at 90% 0%,   rgba(34,197,94,0.15),   transparent 50%),
+    radial-gradient(700px  400px at 60% 100%, rgba(79,70,229,0.14),   transparent 60%),
+    linear-gradient(180deg, #0B1220 0%, #0F172A 100%)
+  `,
+  minHeight: "100vh",
+};
+
+/* ─── Glow keyframe injected once ─────────────────────────────────── */
+const glowStyle = `
+  @keyframes pulseGlow {
+    0%   { box-shadow: 0 0 0 0    rgba(34,197,94,0.4); }
+    50%  { box-shadow: 0 0 30px 8px rgba(34,197,94,0.15); }
+    100% { box-shadow: 0 0 0 0    rgba(34,197,94,0.4); }
+  }
+  .aligna-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+  .aligna-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(148,163,184,0), rgba(148,163,184,0.25), rgba(148,163,184,0));
+    margin: 16px 0;
+  }
+`;
+
 function AlignaLogo() {
   return (
-    <div style={styles.logoBox}>
-      <div style={styles.logoIcon}>+</div>
+    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+      <div
+        className="aligna-glow"
+        style={{
+          width: 40,
+          height: 40,
+          borderRadius: 12,
+          background: "linear-gradient(135deg,#10b981,#8b5cf6)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+        }}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 12h16M12 4v16"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
       <div>
-        <h2 style={{ marginBottom: 2, lineHeight: 1.2 }}>Aligna</h2>
-        <p style={styles.subtitle}>Posture • Fatigue • Wellness</p>
+        <div
+          style={{
+            fontSize: 18,
+            fontWeight: 800,
+            letterSpacing: "-0.02em",
+            lineHeight: 1.2,
+          }}
+        >
+          Aligna
+        </div>
+        <div style={{ fontSize: 11, color: "#94a3b8" }}>
+          Posture • Fatigue • Wellness
+        </div>
       </div>
     </div>
   );
@@ -21,10 +87,12 @@ function AlignaLogo() {
 
 function TwinPage({ onBack }) {
   return (
-    <div style={styles.twinPage}>
+    <div style={{ ...styles.twinPage, ...brandGradient }}>
       <div style={styles.twinTopBar}>
         <AlignaLogo />
-        <button style={styles.backBtn} onClick={onBack}>← Back</button>
+        <button style={styles.backBtn} onClick={onBack}>
+          ← Back
+        </button>
       </div>
       <div style={styles.twinBody}>
         <SkeletonTwin />
@@ -33,28 +101,141 @@ function TwinPage({ onBack }) {
   );
 }
 
+/* ─── Recommendation card (dynamic tone) ──────────────────────────── */
+function RecCard({ title, desc, tone }) {
+  const colors = {
+    bad: {
+      border: "rgba(239,68,68,0.3)",
+      bg: "rgba(239,68,68,0.05)",
+      dot: "#f87171",
+    },
+    warn: {
+      border: "rgba(245,158,11,0.3)",
+      bg: "rgba(245,158,11,0.05)",
+      dot: "#fbbf24",
+    },
+    good: {
+      border: "rgba(34,197,94,0.3)",
+      bg: "rgba(34,197,94,0.05)",
+      dot: "#4ade80",
+    },
+  };
+  const c = colors[tone] ?? colors.good;
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: 12,
+        padding: "16px 18px",
+        borderRadius: 14,
+        border: `1px solid ${c.border}`,
+        background: c.bg,
+      }}
+    >
+      <div
+        style={{
+          width: 8,
+          height: 8,
+          borderRadius: "50%",
+          background: c.dot,
+          marginTop: 6,
+          flexShrink: 0,
+        }}
+      />
+      <div>
+        <div style={{ fontWeight: 600, fontSize: 14 }}>{title}</div>
+        <div style={{ color: "#94a3b8", fontSize: 13, marginTop: 5 }}>
+          {desc}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Status pill helper ───────────────────────────────────────────── */
+function statusPillStyle(goodPercent, slouchStreak) {
+  if (goodPercent < 60)
+    return {
+      background: "rgba(239,68,68,0.18)",
+      color: "#fca5a5",
+      border: "1px solid rgba(239,68,68,0.35)",
+    };
+  if (slouchStreak > 10)
+    return {
+      background: "rgba(245,158,11,0.18)",
+      color: "#fde68a",
+      border: "1px solid rgba(245,158,11,0.35)",
+    };
+  return {
+    background: "rgba(34,197,94,0.18)",
+    color: "#bbf7d0",
+    border: "1px solid rgba(34,197,94,0.35)",
+  };
+}
+
+function formatHMS(ms) {
+  const s = Math.floor(ms / 1000);
+  const h = String(Math.floor(s / 3600)).padStart(2, "0");
+  const m = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+  const ss = String(s % 60).padStart(2, "0");
+  return `${h}:${m}:${ss}`;
+}
+
+/* ─── Bar colors ───────────────────────────────────────────────────── */
+const barColors = [
+  "rgba(34,197,94,0.75)",
+  "rgba(139,92,246,0.75)",
+  "rgba(99,102,241,0.75)",
+  "rgba(245,158,11,0.75)",
+];
+
 export default function App() {
   const [page, setPage] = useState("dashboard");
   const [postureData, setPostureData] = useState([]);
   const [fatigueData, setFatigueData] = useState([]);
-  const [metrics, setMetrics] = useState({ duration: "0m", goodPercent: 0, slouchTime: "0s", breaks: 0, avgAngle: 0 });
+  const [metrics, setMetrics] = useState({
+    duration: "0m",
+    goodPercent: 0,
+    slouchTime: "0s",
+    breaks: 0,
+    avgAngle: 0,
+  });
   const [isLive, setIsLive] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [isRunning, setIsRunning] = useState(true);
+  const [clockDisplay, setClockDisplay] = useState("00:00:00");
+  const sessionStart = React.useRef(Date.now());
 
+  /* ── NEW: hovered bar index for Body Strain ── */
+  const [hoveredBar, setHoveredBar] = useState(null);
+
+  /* ── live HH:MM:SS clock — purely display, resets with Reset button ── */
+  useEffect(() => {
+    if (!isRunning) return;
+    const id = setInterval(
+      () => setClockDisplay(formatHMS(Date.now() - sessionStart.current)),
+      1000
+    );
+    return () => clearInterval(id);
+  }, [isRunning]);
+
+  /* ── original data-fetching logic — untouched ── */
   useEffect(() => {
     if (!isRunning) return;
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/posture`);
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/posture`
+        );
         setIsLive(true);
         const postureFormatted = res.data.map((item) => ({
           time: new Date(item.timestamp).toLocaleTimeString().slice(3, 8),
-          neck: item.angle, back: Math.round(item.angle * 0.8),
+          neck: item.angle,
+          back: Math.round(item.angle * 0.8),
         }));
         const fatigueFormatted = res.data.map((item) => ({
           time: new Date(item.timestamp).toLocaleTimeString().slice(3, 8),
-          fatigue: Math.min(100, Math.round(item.fatigueLevel || 0))
+          fatigue: Math.min(100, Math.round(item.fatigueLevel || 0)),
         }));
         setPostureData(postureFormatted);
         setFatigueData(fatigueFormatted);
@@ -69,11 +250,23 @@ export default function App() {
         const first = new Date(res.data[0].timestamp);
         const last = new Date(res.data[total - 1].timestamp);
         const durationSec = Math.floor((last - first) / 1000);
-        const duration = `${Math.floor(durationSec / 60)}m ${durationSec % 60}s`;
+        const duration = `${Math.floor(durationSec / 60)}m ${
+          durationSec % 60
+        }s`;
         let breaks = 0;
-        for (let i = 1; i < angles.length; i++) if (angles[i - 1] > 30 && angles[i] <= 30) breaks++;
-        setMetrics({ duration, goodPercent, slouchTime, breaks, avgAngle: avg.toFixed(1) });
-        if (avg > 35 || goodPercent < 60) { setShowAlert(true); setTimeout(() => setShowAlert(false), 4000); }
+        for (let i = 1; i < angles.length; i++)
+          if (angles[i - 1] > 30 && angles[i] <= 30) breaks++;
+        setMetrics({
+          duration,
+          goodPercent,
+          slouchTime,
+          breaks,
+          avgAngle: avg.toFixed(1),
+        });
+        if (avg > 35 || goodPercent < 60) {
+          setShowAlert(true);
+          setTimeout(() => setShowAlert(false), 4000);
+        }
       } catch (err) {
         console.log("Fetch error:", err);
         setIsLive(false);
@@ -84,200 +277,676 @@ export default function App() {
     return () => clearInterval(interval);
   }, [isRunning]);
 
+  /* ── original derived data — untouched ── */
   const distributionData = [
-    { name: "Good",    value: postureData.filter((p) => p.neck < 20).length },
-    { name: "Neutral", value: postureData.filter((p) => p.neck >= 20 && p.neck < 35).length },
-    { name: "Slouch",  value: postureData.filter((p) => p.neck >= 35).length },
+    { name: "Good", value: postureData.filter((p) => p.neck < 20).length },
+    {
+      name: "Neutral",
+      value: postureData.filter((p) => p.neck >= 20 && p.neck < 35).length,
+    },
+    { name: "Slouch", value: postureData.filter((p) => p.neck >= 35).length },
   ];
-  const avgNeck = postureData.length ? postureData.reduce((a, b) => a + b.neck, 0) / postureData.length : 0;
+  const avgNeck = postureData.length
+    ? postureData.reduce((a, b) => a + b.neck, 0) / postureData.length
+    : 0;
   const strainData = [
-    { name: "Neck",      value: Math.min(100, avgNeck * 1.8) },
+    { name: "Neck", value: Math.min(100, avgNeck * 1.8) },
     { name: "Shoulders", value: Math.min(100, avgNeck * 1.2) },
-    { name: "Back",      value: Math.min(100, avgNeck * 0.8) },
-    { name: "Wrists",    value: Math.min(100, avgNeck * 1.1) },
+    { name: "Back", value: Math.min(100, avgNeck * 0.8) },
+    { name: "Wrists", value: Math.min(100, avgNeck * 1.1) },
   ];
+
+  /* ── dynamic recommendation content ── */
+  const latestFatigue = fatigueData.length
+    ? fatigueData[fatigueData.length - 1].fatigue
+    : 0;
+  const latestNeck = postureData.length
+    ? postureData[postureData.length - 1].neck
+    : 0;
+
+  const rec1 =
+    latestFatigue >= 70
+      ? {
+          title: "Take a 3–5 minute micro-break",
+          desc: "Stand, walk, or do light stretches to lower fatigue.",
+          tone: "bad",
+        }
+      : latestFatigue >= 50
+      ? {
+          title: "Short desk stretch",
+          desc: "Neck rotations and shoulder rolls recommended now.",
+          tone: "warn",
+        }
+      : {
+          title: "You're doing great",
+          desc: "Keep alternating positions; maintain neutral spine.",
+          tone: "good",
+        };
+
+  const rec2 =
+    Math.abs(latestNeck) > 25
+      ? {
+          title: "Realign posture",
+          desc: "Bring screen to eye level; engage core; feet flat.",
+          tone: "bad",
+        }
+      : Math.abs(latestNeck) > 10
+      ? {
+          title: "Slight posture tweak",
+          desc: "Small chair or keyboard height adjustment could help.",
+          tone: "warn",
+        }
+      : {
+          title: "Neutral posture maintained",
+          desc: "Neck angle is within desired range.",
+          tone: "good",
+        };
+
+  const rec3 =
+    metrics.goodPercent < 50
+      ? {
+          title: "Ergonomics check",
+          desc: "Monitor height, chair lumbar support, desk distance.",
+          tone: "warn",
+        }
+      : {
+          title: "Maintain cadence",
+          desc: "Follow 20-20-20 rule for eyes and posture resets.",
+          tone: "good",
+        };
+
+  const statusText =
+    latestFatigue > 70
+      ? "High fatigue"
+      : metrics.goodPercent < 60
+      ? "Slouching"
+      : "Stable";
 
   if (page === "twin") return <TwinPage onBack={() => setPage("dashboard")} />;
 
   return (
-    <div style={styles.page}>
-      <div style={styles.header}>
-        <AlignaLogo />
-        <div style={styles.buttons}>
-          <button style={styles.liveBtn}  onClick={() => setIsRunning(true)}>Live Simulation</button>
-          <button style={styles.pauseBtn} onClick={() => setIsRunning(false)}>Pause</button>
-          <button style={styles.resetBtn} onClick={() => { setPostureData([]); setFatigueData([]);
-            setMetrics({ duration: "0m", goodPercent: 0, slouchTime: "0s", breaks: 0, avgAngle: 0 }); }}>Reset</button>
-          <button style={styles.twinBtn} onClick={() => setPage("twin")}>Digital Twin ↗</button>
-          <div style={styles.liveIndicator}>
-            <span style={{ ...styles.liveDot, background: isLive ? "#22c55e" : "#ef4444",
-              boxShadow: isLive ? "0 0 10px #22c55e" : "0 0 10px #ef4444" }} />
-            <span style={{ fontSize: 13 }}>{isLive ? "Live data streaming" : "Disconnected"}</span>
+    <>
+      <style>{glowStyle}</style>
+
+      <div
+        style={{
+          ...brandGradient,
+          color: "#f1f5f9",
+          fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
+        }}
+      >
+        {/* ── Header ── */}
+        <header style={styles.header}>
+          <div style={styles.headerInner}>
+            <AlignaLogo />
+            <div style={styles.headerRight}>
+              <span
+                style={{
+                  ...styles.pill,
+                  background: "rgba(30,41,59,0.8)",
+                  border: "1px solid rgba(148,163,184,0.25)",
+                  color: "#cbd5e1",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                }}
+              >
+                <span
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: "50%",
+                    background: isLive ? "#22c55e" : "#ef4444",
+                    boxShadow: isLive ? "0 0 8px #22c55e" : "0 0 8px #ef4444",
+                    flexShrink: 0,
+                  }}
+                />
+                {isLive ? "Live data streaming" : "Disconnected"}
+              </span>
+
+              <button
+                style={{ ...styles.pill, ...styles.btnOutline }}
+                onClick={() => setIsRunning(true)}
+              >
+                Live Simulation
+              </button>
+              <button
+                style={{ ...styles.pill, ...styles.btnSlate }}
+                onClick={() => setIsRunning(false)}
+              >
+                Pause
+              </button>
+              <button
+                style={{ ...styles.pill, ...styles.btnSlate }}
+                onClick={() => {
+                  setPostureData([]);
+                  setFatigueData([]);
+                  setMetrics({
+                    duration: "0m",
+                    goodPercent: 0,
+                    slouchTime: "0s",
+                    breaks: 0,
+                    avgAngle: 0,
+                  });
+                  sessionStart.current = Date.now();
+                  setClockDisplay("00:00:00");
+                }}
+              >
+                Reset
+              </button>
+              <button
+                style={{
+                  ...styles.pill,
+                  ...styles.btnGradient,
+                  ...styles.twinBtn,
+                }}
+                onClick={() => setPage("twin")}
+              >
+                Digital Twin ↗
+              </button>
+            </div>
           </div>
-        </div>
+        </header>
+
+        <main style={styles.main}>
+          {/* ── KPI Cards ── */}
+          <div style={styles.kpiGrid}>
+            <KpiCard
+              label="Session Duration"
+              value={clockDisplay}
+              sub="Tracking live"
+              subColor="#4ade80"
+            />
+            <KpiCard
+              label="Good Posture"
+              value={metrics.goodPercent + "%"}
+              sub={
+                metrics.goodPercent > 70
+                  ? "Excellent"
+                  : metrics.goodPercent > 50
+                  ? "Fair"
+                  : "Needs focus"
+              }
+              subColor={
+                metrics.goodPercent > 70
+                  ? "#4ade80"
+                  : metrics.goodPercent > 50
+                  ? "#fbbf24"
+                  : "#f87171"
+              }
+            />
+            <KpiCard
+              label="Slouch Time"
+              value={metrics.slouchTime}
+              sub="No streak"
+              subColor="#f87171"
+            />
+            <KpiCard
+              label="Micro-Breaks"
+              value={metrics.breaks}
+              sub="Recommended every 30–40 min"
+              subColor="#a78bfa"
+            />
+            <KpiCard
+              label="Avg Neck Angle"
+              value={metrics.avgAngle + "°"}
+              sub="Target: −10° to +10°"
+              subColor="#94a3b8"
+            />
+          </div>
+
+          {/* ── Row 1: Posture Trend (wide) + Fatigue (narrow) ── */}
+          <div style={styles.twoColWide}>
+            <div style={{ ...styles.panel, flex: "0 0 calc(66% - 12px)" }}>
+              <div style={styles.panelHeader}>
+                <div>
+                  <div style={styles.panelTitle}>Posture Trend</div>
+                  <div style={styles.panelSub}>
+                    Neck vs Back angles over time
+                  </div>
+                </div>
+                <span style={styles.badge}>Thresholds enabled</span>
+              </div>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={postureData}>
+                  <CartesianGrid stroke="rgba(255,255,255,0.05)" />
+                  <ReferenceArea
+                    y1={-10}
+                    y2={10}
+                    fill="#0f766e"
+                    fillOpacity={0.15}
+                  />
+                  <ReferenceArea
+                    y1={10}
+                    y2={25}
+                    fill="#facc15"
+                    fillOpacity={0.12}
+                  />
+                  <ReferenceArea
+                    y1={-25}
+                    y2={-10}
+                    fill="#facc15"
+                    fillOpacity={0.12}
+                  />
+                  <ReferenceArea
+                    y1={25}
+                    y2={60}
+                    fill="#dc2626"
+                    fillOpacity={0.12}
+                  />
+                  <ReferenceArea
+                    y1={-60}
+                    y2={-25}
+                    fill="#dc2626"
+                    fillOpacity={0.12}
+                  />
+                  <XAxis
+                    dataKey="time"
+                    stroke="#94a3b8"
+                    tick={{ fontSize: 12 }}
+                  />
+                  <YAxis stroke="#94a3b8" tick={{ fontSize: 12 }} />
+                  <Tooltip
+                    contentStyle={{
+                      background: "#020617",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      borderRadius: 8,
+                    }}
+                  />
+                  <ReferenceLine
+                    y={10}
+                    stroke="#facc15"
+                    strokeDasharray="4 4"
+                  />
+                  <ReferenceLine
+                    y={25}
+                    stroke="#dc2626"
+                    strokeDasharray="4 4"
+                  />
+                  <ReferenceLine
+                    y={-10}
+                    stroke="#facc15"
+                    strokeDasharray="4 4"
+                  />
+                  <ReferenceLine
+                    y={-25}
+                    stroke="#dc2626"
+                    strokeDasharray="4 4"
+                  />
+                  <Legend wrapperStyle={{ color: "#cbd5e1", fontSize: 12 }} />
+                  <Line
+                    type="monotone"
+                    dataKey="neck"
+                    name="Neck Angle (°)"
+                    stroke="#4ade80"
+                    strokeWidth={2.5}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="back"
+                    name="Back Bend (°)"
+                    stroke="#a78bfa"
+                    strokeWidth={2.5}
+                    dot={false}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div style={{ ...styles.panel, flex: "0 0 calc(34% - 12px)" }}>
+              <div style={styles.panelHeader}>
+                <div>
+                  <div style={styles.panelTitle}>Fatigue Index</div>
+                  <div style={styles.panelSub}>0 (fresh) → 100 (fatigued)</div>
+                </div>
+                <span style={styles.badge}>Modeled</span>
+              </div>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={fatigueData}>
+                  <CartesianGrid stroke="rgba(255,255,255,0.05)" />
+                  <ReferenceArea
+                    y1={0}
+                    y2={60}
+                    fill="#0f766e"
+                    fillOpacity={0.12}
+                  />
+                  <ReferenceArea
+                    y1={60}
+                    y2={80}
+                    fill="#facc15"
+                    fillOpacity={0.12}
+                  />
+                  <ReferenceArea
+                    y1={80}
+                    y2={100}
+                    fill="#dc2626"
+                    fillOpacity={0.12}
+                  />
+                  <XAxis
+                    dataKey="time"
+                    stroke="#94a3b8"
+                    tick={{ fontSize: 12 }}
+                  />
+                  <YAxis stroke="#94a3b8" tick={{ fontSize: 12 }} />
+                  <Tooltip
+                    contentStyle={{
+                      background: "#020617",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      borderRadius: 8,
+                    }}
+                  />
+                  <ReferenceLine
+                    y={60}
+                    stroke="#facc15"
+                    strokeDasharray="4 4"
+                  />
+                  <ReferenceLine
+                    y={80}
+                    stroke="#dc2626"
+                    strokeDasharray="4 4"
+                  />
+                  <Legend wrapperStyle={{ color: "#cbd5e1", fontSize: 12 }} />
+                  <Line
+                    type="monotone"
+                    dataKey="fatigue"
+                    name="Fatigue"
+                    stroke="#a78bfa"
+                    strokeWidth={2.5}
+                    dot={false}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          {/* ── Row 2: Score Gauge + Distribution + Strain ── */}
+          <div style={styles.threeCol}>
+            {/* Posture Score gauge */}
+            <div style={styles.panel}>
+              <div style={styles.panelHeader}>
+                <div>
+                  <div style={styles.panelTitle}>Posture Score</div>
+                  <div style={styles.panelSub}>Composite, higher is better</div>
+                </div>
+                <span
+                  style={{
+                    ...styles.badge,
+                    background:
+                      metrics.goodPercent >= 70
+                        ? "rgba(34,197,94,0.2)"
+                        : metrics.goodPercent >= 50
+                        ? "rgba(245,158,11,0.2)"
+                        : "rgba(239,68,68,0.2)",
+                    borderColor:
+                      metrics.goodPercent >= 70
+                        ? "rgba(34,197,94,0.4)"
+                        : metrics.goodPercent >= 50
+                        ? "rgba(245,158,11,0.4)"
+                        : "rgba(239,68,68,0.4)",
+                    color:
+                      metrics.goodPercent >= 70
+                        ? "#bbf7d0"
+                        : metrics.goodPercent >= 50
+                        ? "#fde68a"
+                        : "#fecaca",
+                  }}
+                >
+                  Score: {metrics.goodPercent}
+                </span>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: 240,
+                }}
+              >
+                <HalfGauge value={metrics.goodPercent} />
+              </div>
+            </div>
+
+            {/* Distribution donut */}
+            <div style={styles.panel}>
+              <div style={styles.panelHeader}>
+                <div>
+                  <div style={styles.panelTitle}>Posture Distribution</div>
+                  <div style={styles.panelSub}>Good / Neutral / Slouch</div>
+                </div>
+                <span style={styles.badge}>Rolling 10 min</span>
+              </div>
+              <ResponsiveContainer width="100%" height={240}>
+                <PieChart>
+                  <Pie
+                    data={distributionData}
+                    innerRadius={55}
+                    outerRadius={85}
+                    paddingAngle={4}
+                    dataKey="value"
+                  >
+                    <Cell fill="#22c55e" />
+                    <Cell fill="#facc15" />
+                    <Cell fill="#ef4444" />
+                  </Pie>
+                  <Legend wrapperStyle={{ color: "#cbd5e1", fontSize: 12 }} />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Body Strain bar*/}
+            <div style={styles.panel}>
+              <div style={styles.panelHeader}>
+                <div>
+                  <div style={styles.panelTitle}>Body Strain</div>
+                  <div style={styles.panelSub}>Relative load per region</div>
+                </div>
+                <span style={styles.badge}>Model-based</span>
+              </div>
+              <ResponsiveContainer width="100%" height={240}>
+                <BarChart data={strainData}>
+                  <CartesianGrid stroke="rgba(255,255,255,0.05)" />
+                  <XAxis
+                    dataKey="name"
+                    stroke="#94a3b8"
+                    tick={{ fontSize: 12 }}
+                  />
+                  <YAxis
+                    stroke="#94a3b8"
+                    tick={{ fontSize: 12 }}
+                    domain={[0, 100]}
+                  />
+                  {/* kill default tooltip & cursor rectangle */}
+                  <Tooltip content={() => null} cursor={false} />
+                  <Bar dataKey="value" radius={[6, 6, 0, 0]} cursor="default">
+                    {strainData.map((entry, index) => (
+                      <Cell
+                        key={index}
+                        fill={barColors[index]}
+                        opacity={
+                          hoveredBar === index
+                            ? 1
+                            : hoveredBar === null
+                            ? 0.8
+                            : 0.2
+                        }
+                        onMouseEnter={() => setHoveredBar(index)}
+                        onMouseLeave={() => setHoveredBar(null)}
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+              {/* custom hover label shown below chart */}
+              <div style={{ height: 24, textAlign: "center", marginTop: 6 }}>
+                {hoveredBar !== null && (
+                  <span style={{ fontSize: 15, color: "#a5f3fc" }}>
+                    {strainData[hoveredBar].name} — Strain:{" "}
+                    <strong style={{ color: "#f1f5f9" }}>
+                      {strainData[hoveredBar].value.toFixed(3)}
+                    </strong>
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Recommendations ── */}
+          <div style={{ ...styles.panel, marginTop: 0 }}>
+            <div style={styles.panelHeader}>
+              <div>
+                <div style={styles.panelTitle}>Recommendations</div>
+                <div style={styles.panelSub}>
+                  Proactive tips based on current signals
+                </div>
+              </div>
+              <span
+                style={{
+                  ...styles.badge,
+                  ...statusPillStyle(metrics.goodPercent, 0),
+                }}
+              >
+                Status: {statusText}
+              </span>
+            </div>
+            <div className="aligna-divider" />
+            <div style={styles.threeCol}>
+              <RecCard {...rec1} />
+              <RecCard {...rec2} />
+              <RecCard {...rec3} />
+            </div>
+          </div>
+        </main>
+
+        <footer style={{ ...styles.footer, textAlign: "center" }}>
+          Aligna • Simulated data for demo. Replace with your sensor/ML
+          pipeline.
+        </footer>
+
+        {showAlert && (
+          <div style={styles.alertBox}>
+            <div style={{ fontSize: 22, color: "#ef4444" }}>⚠</div>
+            <div>
+              <div style={{ fontWeight: 600, margin: 0 }}>Posture Warning</div>
+              <div style={{ margin: 0, fontSize: 14, color: "#94a3b8" }}>
+                Poor posture detected. Please realign your neck and shoulders.
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-
-      <div style={styles.cards}>
-        <Card title="Session Duration" value={metrics.duration} />
-        <Card title="Good Posture %"   value={metrics.goodPercent + "%"} />
-        <Card title="Slouch Time"      value={metrics.slouchTime} />
-        <Card title="Micro Breaks"     value={metrics.breaks} />
-        <Card title="Avg Neck Angle"   value={metrics.avgAngle + "°"} />
-      </div>
-
-      <div style={styles.panels}>
-        <div style={styles.panel}>
-          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
-            <div><h3>Posture Trend</h3><p style={{ color: "#94a3b8", fontSize: 13 }}>Neck vs Back angles over time</p></div>
-            <div style={styles.badge}>Thresholds enabled</div>
-          </div>
-          <ResponsiveContainer width="100%" height={240}>
-            <LineChart data={postureData}>
-              <CartesianGrid stroke="rgba(255,255,255,0.05)" />
-              <ReferenceArea y1={-10} y2={10}  fill="#0f766e" fillOpacity={0.15} />
-              <ReferenceArea y1={10}  y2={25}  fill="#facc15" fillOpacity={0.12} />
-              <ReferenceArea y1={-25} y2={-10} fill="#facc15" fillOpacity={0.12} />
-              <ReferenceArea y1={25}  y2={60}  fill="#dc2626" fillOpacity={0.12} />
-              <ReferenceArea y1={-60} y2={-25} fill="#dc2626" fillOpacity={0.12} />
-              <XAxis dataKey="time" stroke="#94a3b8" /><YAxis stroke="#94a3b8" />
-              <Tooltip contentStyle={{ background: "#020617", border: "1px solid rgba(255,255,255,0.1)" }} />
-              <ReferenceLine y={10}  stroke="#facc15" strokeDasharray="4 4" />
-              <ReferenceLine y={25}  stroke="#dc2626" strokeDasharray="4 4" />
-              <ReferenceLine y={-10} stroke="#facc15" strokeDasharray="4 4" />
-              <ReferenceLine y={-25} stroke="#dc2626" strokeDasharray="4 4" />
-              <Legend />
-              <Line type="monotone" dataKey="neck" name="Neck Angle (°)" stroke="#4ade80" strokeWidth={3} dot={false} />
-              <Line type="monotone" dataKey="back" name="Back Bend (°)"  stroke="#a78bfa" strokeWidth={3} dot={false} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div style={styles.panel}>
-          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
-            <div><h3>Fatigue Index</h3><p style={{ color: "#94a3b8", fontSize: 13 }}>0 (fresh) → 100 (fatigued)</p></div>
-            <div style={styles.badge}>Modeled</div>
-          </div>
-          <ResponsiveContainer width="100%" height={240}>
-            <LineChart data={fatigueData}>
-              <CartesianGrid stroke="rgba(255,255,255,0.05)" />
-              <ReferenceArea y1={0}  y2={60}  fill="#0f766e" fillOpacity={0.12} />
-              <ReferenceArea y1={60} y2={80}  fill="#facc15" fillOpacity={0.12} />
-              <ReferenceArea y1={80} y2={100} fill="#dc2626" fillOpacity={0.12} />
-              <XAxis dataKey="time" stroke="#94a3b8" /><YAxis stroke="#94a3b8" />
-              <Tooltip contentStyle={{ background: "#020617", border: "1px solid rgba(255,255,255,0.1)" }} />
-              <ReferenceLine y={60} stroke="#facc15" strokeDasharray="4 4" />
-              <ReferenceLine y={80} stroke="#dc2626" strokeDasharray="4 4" />
-              <Legend />
-              <Line type="monotone" dataKey="fatigue" name="Fatigue" stroke="#a78bfa" strokeWidth={3} dot={false} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      <div style={styles.analyticsRow}>
-        <div style={styles.panel}>
-          <div style={styles.panelHeader}>
-            <div><h3>Posture Score</h3><p style={styles.sub}>Composite, higher is better</p></div>
-            <div style={styles.badge}>Score: {metrics.goodPercent}</div>
-          </div>
-          <ResponsiveContainer width="100%" height={220}>
-            <PieChart>
-              <Pie data={[{ name: "score", value: metrics.goodPercent },{ name: "rest", value: 100 - metrics.goodPercent }]}
-                startAngle={180} endAngle={0} innerRadius={70} outerRadius={90} dataKey="value">
-                <Cell fill="#22c55e" /><Cell fill="#1e293b" />
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-        <div style={styles.panel}>
-          <div style={styles.panelHeader}>
-            <div><h3>Posture Distribution</h3><p style={styles.sub}>Good / Neutral / Slouch</p></div>
-            <div style={styles.badge}>Rolling 10 min</div>
-          </div>
-          <ResponsiveContainer width="100%" height={220}>
-            <PieChart>
-              <Pie data={distributionData} innerRadius={55} outerRadius={85} paddingAngle={4} dataKey="value">
-                <Cell fill="#22c55e" /><Cell fill="#facc15" /><Cell fill="#ef4444" />
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-        <div style={styles.panel}>
-          <div style={styles.panelHeader}>
-            <div><h3>Body Strain</h3><p style={styles.sub}>Relative load per region</p></div>
-            <div style={styles.badge}>Model-based</div>
-          </div>
-          <ResponsiveContainer width="100%" height={220}>
-            <BarChart data={strainData}>
-              <CartesianGrid stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="name" stroke="#94a3b8" /><YAxis stroke="#94a3b8" />
-              <Tooltip />
-              <Bar dataKey="value" radius={[6, 6, 0, 0]}>
-                <Cell fill="#22c55e" /><Cell fill="#a78bfa" /><Cell fill="#6366f1" /><Cell fill="#f59e0b" />
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      <div style={{ ...styles.panel, marginTop: 25 }}>
-        <div style={styles.panelHeader}>
-          <div><h3>Recommendations</h3><p style={styles.sub}>Proactive tips based on current signals</p></div>
-          <div style={{ ...styles.badge,
-            background: metrics.goodPercent < 60 ? "rgba(220,38,38,0.15)" : "rgba(34,197,94,0.15)",
-            border: metrics.goodPercent < 60 ? "1px solid rgba(220,38,38,0.4)" : "1px solid rgba(34,197,94,0.4)",
-            color:  metrics.goodPercent < 60 ? "#fecaca" : "#bbf7d0" }}>
-            Status: {metrics.goodPercent < 60 ? "High fatigue" : "Stable"}
-          </div>
-        </div>
-        <div style={styles.recommendationGrid}>
-          <div style={{ ...styles.recCard, ...styles.recRed }}>
-            <div style={styles.recDotRed} />
-            <div><h4>Take a 3–5 minute micro-break</h4><p style={styles.recText}>Stand, walk, or do light stretches to lower fatigue.</p></div>
-          </div>
-          <div style={{ ...styles.recCard, ...styles.recPurple }}>
-            <div style={styles.recDotPurple} />
-            <div><h4>Realign posture</h4><p style={styles.recText}>Bring screen to eye level; engage core; feet flat.</p></div>
-          </div>
-          <div style={{ ...styles.recCard, ...styles.recYellow }}>
-            <div style={styles.recDotYellow} />
-            <div><h4>Ergonomics check</h4><p style={styles.recText}>Monitor height, chair lumbar support, desk distance.</p></div>
-          </div>
-        </div>
-      </div>
-
-      {showAlert && (
-        <div style={styles.alertBox}>
-          <div style={styles.alertIcon}>⚠</div>
-          <div>
-            <h4 style={{ margin: 0 }}>Posture Warning</h4>
-            <p style={{ margin: 0, fontSize: 14 }}>Poor posture detected. Please realign your neck and shoulders.</p>
-          </div>
-        </div>
-      )}
-    </div>
+    </>
   );
 }
 
-function Card({ title, value }) {
+/* ─── Half-circle SVG gauge ─────────────────────────────────────── */
+function HalfGauge({ value }) {
+  const color = value >= 70 ? "#22c55e" : value >= 50 ? "#f59e0b" : "#ef4444";
+
   return (
-    <div style={styles.card}>
-      <p style={styles.cardTitle}>{title}</p>
-      <h2>{value}</h2>
+    <div style={{ position: "relative", width: "100%", height: 240 }}>
+      <ResponsiveContainer width="100%" height={240}>
+        <PieChart>
+          <Pie
+            data={[{ value }, { value: 100 - value }]}
+            startAngle={180}
+            endAngle={0}
+            cx="50%"
+            cy="65%"
+            innerRadius={90}
+            outerRadius={120}
+            dataKey="value"
+            strokeWidth={2}
+            stroke="rgba(255,255,255,0.08)"
+          >
+            <Cell fill={color} />
+            <Cell fill="rgba(148,163,184,0.15)" />
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+
+      {/* number */}
+      <div
+        style={{
+          position: "absolute",
+          top: "64%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+        }}
+      >
+        <div style={{ fontSize: 38, fontWeight: 800, color }}>{value}</div>
+        <div style={{ fontSize: 15, color: "#647499" }}>/ 100</div>
+      </div>
+
+      {/* labels */}
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "65%", // sits just under arc ends
+          width: "68%",
+          transform: "translateX(-50%)",
+          display: "flex",
+          justifyContent: "space-between",
+          pointerEvents: "none",
+        }}
+      >
+        <span style={{ color: "#647499", fontSize: 16 }}>0</span>
+        <span style={{ color: "#647499", fontSize: 16 }}>100</span>
+      </div>
     </div>
   );
 }
+
+/* ─── KPI Card ──────────────────────────────────────────────────── */
+function KpiCard({ label, value, sub, subColor }) {
+  return (
+    <div style={styles.kpiCard}>
+      <div
+        style={{
+          fontSize: 11,
+          textTransform: "uppercase",
+          letterSpacing: "0.06em",
+          color: "#94a3b8",
+          marginBottom: 6,
+        }}
+      >
+        {label}
+      </div>
+      <div
+        style={{
+          fontSize: 30,
+          fontWeight: 800,
+          letterSpacing: "-0.02em",
+          lineHeight: 1.15,
+        }}
+      >
+        {value}
+      </div>
+      <div style={{ fontSize: 12, color: subColor ?? "#94a3b8", marginTop: 6 }}>
+        {sub}
+      </div>
+    </div>
+  );
+}
+
+/* ─── Styles ─────────────────────────────────────────────────────── */
+const cardBase = {
+  background: "rgba(17,24,39,0.7)",
+  border: "1px solid rgba(148,163,184,0.15)",
+  backdropFilter: "blur(8px)",
+  boxShadow:
+    "0 10px 30px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.03)",
+  borderRadius: 16,
+};
 
 const styles = {
-  page: { padding: "30px", maxWidth: "1300px", margin: "auto" },
-
-  /* Twin page covers the ENTIRE viewport */
   twinPage: {
     position: "fixed",
     inset: 0,
     display: "flex",
     flexDirection: "column",
-    background: "#050a14",
     zIndex: 100,
     overflow: "hidden",
   },
@@ -289,50 +958,116 @@ const styles = {
     borderBottom: "1px solid rgba(255,255,255,0.08)",
     flexShrink: 0,
   },
-  /* Everything below the top bar — SkeletonTwin grows to fill it */
-  twinBody: {
-    flex: 1,
-    display: "flex",
-    overflow: "hidden",
+  twinBody: { flex: 1, display: "flex", overflow: "hidden" },
+  backBtn: {
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,0.15)",
+    color: "#94a3b8",
+    padding: "8px 18px",
+    borderRadius: 20,
+    cursor: "pointer",
+    fontSize: 14,
   },
-
-  backBtn: { background: "transparent", border: "1px solid rgba(255,255,255,0.15)",
-    color: "#94a3b8", padding: "10px 18px", borderRadius: "20px", cursor: "pointer", fontSize: "14px" },
-
-  header: { display: "flex", justifyContent: "space-between", alignItems: "center",
-    marginBottom: "30px", paddingBottom: "15px", borderBottom: "1px solid rgba(255,255,255,0.08)" },
-  logoBox:  { display: "flex", alignItems: "center", gap: "14px" },
-  logoIcon: { width: "46px", height: "46px", borderRadius: "14px",
-    background: "linear-gradient(135deg,#38bdf8,#4ade80)", display: "flex",
-    alignItems: "center", justifyContent: "center", fontSize: "22px", fontWeight: "bold", flexShrink: 0 },
-  subtitle: { color: "#94a3b8", fontSize: "14px", margin: 0 },
-  buttons:  { display: "flex", gap: "10px", alignItems: "center" },
-  liveBtn:  { background: "transparent", border: "1px solid #6ee7b7", color: "#6ee7b7", padding: "8px 14px", borderRadius: "20px", cursor: "pointer" },
-  pauseBtn: { background: "#1e293b", border: "none", color: "#6ee7b7", padding: "8px 14px", borderRadius: "20px", cursor: "pointer" },
-  resetBtn: { background: "#1e293b", border: "none", color: "#6ee7b7", padding: "8px 14px", borderRadius: "20px", cursor: "pointer" },
-  twinBtn:  { background: "linear-gradient(135deg,#38bdf8,#4ade80)", border: "none", color: "#020617", padding: "8px 16px", borderRadius: "20px", cursor: "pointer", fontWeight: "600" },
-  cards:    { display: "flex", gap: "20px", marginBottom: "30px", flexWrap: "wrap" },
-  card:     { background: "rgba(30,41,59,0.6)", backdropFilter: "blur(6px)", padding: "20px", borderRadius: "16px", width: "190px", border: "1px solid rgba(255,255,255,0.06)" },
-  cardTitle:{ color: "#94a3b8", marginBottom: "10px", fontSize: "14px" },
-  panels:   { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "25px" },
-  analyticsRow: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "25px", marginTop: "25px" },
-  panel:    { background: "rgba(30,41,59,0.6)", padding: "20px", borderRadius: "16px", minHeight: "280px", border: "1px solid rgba(255,255,255,0.06)" },
-  badge:    { fontSize: 12, padding: "6px 12px", borderRadius: "20px", border: "1px solid rgba(255,255,255,0.1)", color: "#cbd5f5" },
-  panelHeader: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "15px" },
-  sub:      { color: "#94a3b8", fontSize: "13px" },
-  recommendationGrid: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "18px" },
-  recCard:  { display: "flex", gap: "12px", padding: "18px", borderRadius: "14px", background: "rgba(15,23,42,0.55)", backdropFilter: "blur(6px)" },
-  recText:  { color: "#cbd5f5", fontSize: "14px", marginTop: "6px" },
-  recRed:    { border: "1px solid rgba(220,38,38,0.35)",  boxShadow: "0 0 0 1px rgba(220,38,38,0.15) inset" },
-  recPurple: { border: "1px solid rgba(168,85,247,0.35)", boxShadow: "0 0 0 1px rgba(168,85,247,0.15) inset" },
-  recYellow: { border: "1px solid rgba(234,179,8,0.35)",  boxShadow: "0 0 0 1px rgba(234,179,8,0.15) inset" },
-  recDotRed:    { width: "10px", height: "10px", borderRadius: "50%", background: "#ef4444", marginTop: "6px", flexShrink: 0 },
-  recDotPurple: { width: "10px", height: "10px", borderRadius: "50%", background: "#a78bfa", marginTop: "6px", flexShrink: 0 },
-  recDotYellow: { width: "10px", height: "10px", borderRadius: "50%", background: "#facc15", marginTop: "6px", flexShrink: 0 },
-  liveIndicator: { display: "flex", alignItems: "center", gap: "8px", marginRight: "15px", color: "#cbd5f5" },
-  liveDot:  { width: "10px", height: "10px", borderRadius: "50%", flexShrink: 0 },
-  alertBox: { position: "fixed", bottom: "30px", right: "30px", background: "rgba(15,23,42,0.95)",
-    border: "1px solid rgba(220,38,38,0.5)", boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
-    padding: "18px 20px", borderRadius: "14px", display: "flex", gap: "12px", alignItems: "center", zIndex: 999 },
-  alertIcon: { fontSize: "22px", color: "#ef4444" },
+  twinBtn: {
+    background: "linear-gradient(135deg,#38bdf8,#4ade80)",
+    border: "none",
+    color: "#020617",
+    padding: "8px 16px",
+    borderRadius: "20px",
+    cursor: "pointer",
+    fontWeight: "600",
+  },
+  header: { borderBottom: "1px solid rgba(100,116,139,0.3)" },
+  headerInner: {
+    maxWidth: 1300,
+    margin: "0 auto",
+    padding: "18px 28px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  headerRight: {
+    display: "flex",
+    gap: 10,
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+  main: {
+    maxWidth: 1300,
+    margin: "0 auto",
+    padding: "28px 28px",
+    display: "flex",
+    flexDirection: "column",
+    gap: 24,
+  },
+  footer: {
+    borderTop: "1px solid rgba(100,116,139,0.25)",
+    maxWidth: 1300,
+    margin: "0 auto",
+    padding: "16px 28px",
+    fontSize: 12,
+    color: "#475569",
+    width: "100%",
+  },
+  pill: {
+    borderRadius: 9999,
+    padding: "6px 14px",
+    fontSize: 13,
+    lineHeight: "18px",
+    cursor: "pointer",
+    border: "none",
+    fontWeight: 500,
+  },
+  btnOutline: {
+    background: "transparent",
+    border: "1px solid #6ee7b7",
+    color: "#6ee7b7",
+  },
+  btnSlate: {
+    background: "rgba(30,41,59,0.8)",
+    color: "#94a3b8",
+    border: "1px solid rgba(148,163,184,0.2)",
+  },
+  btnGradient: {
+    background: "linear-gradient(135deg,#10b981,#8b5cf6)",
+    color: "#fff",
+    fontWeight: 700,
+  },
+  badge: {
+    fontSize: 12,
+    padding: "5px 12px",
+    borderRadius: 9999,
+    border: "1px solid rgba(148,163,184,0.25)",
+    background:
+      "linear-gradient(180deg, rgba(30,41,59,0.9), rgba(15,23,42,0.9))",
+    color: "#cbd5e1",
+    whiteSpace: "nowrap",
+  },
+  kpiGrid: { display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 },
+  kpiCard: { ...cardBase, padding: "18px 20px" },
+  panel: { ...cardBase, padding: "20px 22px" },
+  panelHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    marginBottom: 14,
+  },
+  panelTitle: { fontWeight: 600, fontSize: 15, marginBottom: 2 },
+  panelSub: { fontSize: 12, color: "#94a3b8" },
+  twoColWide: { display: "flex", gap: 24 },
+  threeCol: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 },
+  alertBox: {
+    position: "fixed",
+    bottom: 30,
+    right: 30,
+    background: "rgba(15,23,42,0.97)",
+    border: "1px solid rgba(220,38,38,0.5)",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+    padding: "18px 20px",
+    borderRadius: 14,
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
+    zIndex: 999,
+  },
 };

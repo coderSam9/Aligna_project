@@ -1,8 +1,11 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF, Environment, Grid, Html, ContactShadows } from "@react-three/drei";
+import { EffectComposer, Bloom, ChromaticAberration, Vignette } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
 import { io } from "socket.io-client";
+import { easing } from "maath";
 
 const socket = io(import.meta.env.VITE_SOCKET_URL || "http://localhost:5051", {
   transports: ["websocket"],
@@ -28,19 +31,13 @@ const BONE_MAP = {
   kneeR:       ["mixamorig1RightLeg_061"],
 };
 
-const COLOR_GOOD = new THREE.Color("#22c55e");
-const COLOR_WARN = new THREE.Color("#facc15");
-const COLOR_BAD  = new THREE.Color("#ef4444");
-const ROT_LERP   = 0.12;
-const COLOR_LERP = 0.06;
+const COLOR_GOOD = new THREE.Color("#00ccff"); // Bright vibrant tech cyan
+const COLOR_WARN = new THREE.Color("#ffaa00"); // Warning orange
+const COLOR_BAD  = new THREE.Color("#ff0000"); // Deep critical red
 
 function findBone(bones, names) {
   return bones.find((b) => names.includes(b.name)) ||
     bones.find((b) => names.some((n) => b.name.toLowerCase().includes(n.toLowerCase()))) || null;
-}
-
-function lerpColor(c, t, s) {
-  c.r += (t.r - c.r) * s; c.g += (t.g - c.g) * s; c.b += (t.b - c.b) * s;
 }
 
 function computeScore(pd, angle) {
@@ -66,11 +63,29 @@ function Avatar({ poseData, fatigue, angle, postureStatus }) {
   const bones = useRef({});
   const meshes = useRef([]);
   const meshColors = useRef([]);
+  const hotspotSpriteRef = useRef();
   const targets = useRef({
     spineX:0,spineZ:0,spineUpperX:0,spineUpperZ:0,
     neckX:0,neckZ:0,headX:0,headZ:0,
     shoulderLZ:0,shoulderRZ:0,hipLX:0,hipRX:0,
   });
+
+  // Track max stress areas for HUD
+  const [hudTags, setHudTags] = useState([]);
+
+  // Generate a native 3D soft medical fuzzy heatmap texture
+  const heatmapTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256; canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+    grad.addColorStop(0, 'rgba(255, 0, 0, 1)');
+    grad.addColorStop(0.2, 'rgba(255, 0, 44, 0.8)');
+    grad.addColorStop(1, 'rgba(255, 0, 0, 0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 256, 256);
+    return new THREE.CanvasTexture(canvas);
+  }, []);
 
   useEffect(() => {
     const fb=[], fm=[];
@@ -78,8 +93,14 @@ function Avatar({ poseData, fatigue, angle, postureStatus }) {
       if (o.isBone) fb.push(o);
       if (o.isMesh) {
         if (!Array.isArray(o.material)) {
-          o.material = o.material.clone();
-          o.material.roughness = 0.6; o.material.metalness = 0.1;
+          o.material = new THREE.MeshStandardMaterial({
+            color: o.material.color,
+            roughness: 0.2, // Techy smooth
+            metalness: 0.8, // Metallic look
+            transparent: true,
+            opacity: 0.85,
+            wireframe: false
+          });
         }
         fm.push(o);
       }
@@ -87,10 +108,10 @@ function Avatar({ poseData, fatigue, angle, postureStatus }) {
     const b={};
     for (const [k,kw] of Object.entries(BONE_MAP)) b[k]=findBone(fb,kw);
     bones.current=b; meshes.current=fm;
-    meshColors.current=fm.map(()=>new THREE.Color("#60a5fa"));
+    meshColors.current=fm.map(()=>new THREE.Color("#00ccff"));
   }, [scene]);
 
-  useFrame(() => {
+  useFrame((state, delta) => {
     if (!group.current) return;
     const t = targets.current;
     const pd = poseData;
@@ -98,17 +119,24 @@ function Avatar({ poseData, fatigue, angle, postureStatus }) {
       const {l_shoulder,r_shoulder,l_hip,r_hip}=pd;
       const ms=[(l_shoulder[0]+r_shoulder[0])/2,(l_shoulder[1]+r_shoulder[1])/2,(l_shoulder[2]+r_shoulder[2])/2];
       const mh=[(l_hip[0]+r_hip[0])/2,(l_hip[1]+r_hip[1])/2,(l_hip[2]+r_hip[2])/2];
-      const ft=THREE.MathUtils.clamp((ms[2]-mh[2])*1.8,-0.45,0.45);
-      const st=THREE.MathUtils.clamp((l_shoulder[1]-r_shoulder[1])*2.2,-0.35,0.35);
-      const ht=THREE.MathUtils.clamp((l_hip[1]-r_hip[1])*1.5,-0.25,0.25);
-      const lr=THREE.MathUtils.clamp(-l_shoulder[1]*0.8,-0.4,0.4);
-      const rr=THREE.MathUtils.clamp(-r_shoulder[1]*0.8,-0.4,0.4);
+      const ft=THREE.MathUtils.clamp((ms[2]-mh[2])*1.8,-1.2,1.2);
+      const st=THREE.MathUtils.clamp((l_shoulder[1]-r_shoulder[1])*2.2,-0.8,0.8);
+      const ht=THREE.MathUtils.clamp((l_hip[1]-r_hip[1])*1.5,-0.6,0.6);
+      const lr=THREE.MathUtils.clamp(-l_shoulder[1]*0.8,-0.8,0.8);
+      const rr=THREE.MathUtils.clamp(-r_shoulder[1]*0.8,-0.8,0.8);
       t.spineX=ft*0.5; t.spineZ=st*0.4+ht*0.3; t.spineUpperX=ft*0.6; t.spineUpperZ=st*0.5;
       t.neckX=ft*0.8; t.neckZ=st*0.3; t.headX=ft*1.2; t.headZ=st*0.6;
       t.shoulderLZ=lr; t.shoulderRZ=-rr; t.hipLX=ht*0.5; t.hipRX=-ht*0.5;
     }
     const breathe=poseData?0:Math.sin(Date.now()*0.0006)*0.012;
-    const ab=(bk,ax,tv,ex=0)=>{const bn=bones.current[bk];if(!bn)return;bn.rotation[ax]+=(tv+ex-bn.rotation[ax])*ROT_LERP;};
+    
+    // Smooth damp bones natively so Three.js Euler matrices update properly
+    const ab=(bk,ax,tv,ex=0)=>{
+      const bn=bones.current[bk];
+      if(!bn)return;
+      bn.rotation[ax] = THREE.MathUtils.lerp(bn.rotation[ax], tv+ex, 0.08);
+    };
+
     ab("spine","x",t.spineX,breathe); ab("spine","z",t.spineZ);
     ab("spineUpper","x",t.spineUpperX,breathe*0.5); ab("spineUpper","z",t.spineUpperZ);
     ab("neck","x",t.neckX); ab("neck","z",t.neckZ);
@@ -116,13 +144,22 @@ function Avatar({ poseData, fatigue, angle, postureStatus }) {
     ab("shoulderL","z",t.shoulderLZ); ab("shoulderR","z",t.shoulderRZ);
     ab("hipL","x",t.hipLX); ab("hipR","x",t.hipRX);
 
+    // Color and glow logic
+    // Base metabolic stress from status
     const fn=Math.min(fatigue/100,1);
     const isBad=postureStatus==="bad", isWarn=postureStatus==="warning";
-    const ns=isBad?0.85:isWarn?0.5:fn*0.3;
-    const ss=isBad?0.9:isWarn?0.55:fn*0.35;
-    const shs=Math.abs(t.shoulderLZ-t.shoulderRZ)*1.5+fn*0.2;
-    const hs=Math.abs(t.hipLX-t.hipRX)*2+fn*0.15;
-    const as=fn*0.25;
+    const baseStress = isBad ? 0.4 : isWarn ? 0.2 : (fn * 0.1);
+    
+    // Physical positional stress (Dynamic)
+    // As forward tilt (neckX) increases, massive strain shifts specifically to the neck
+    const ns = Math.min(1, baseStress + Math.abs(t.neckX) * 0.9);
+    const ss = Math.min(1, baseStress + Math.abs(t.spineX) * 0.6 + 0.2);
+    const shs = Math.min(1, Math.abs(t.shoulderLZ-t.shoulderRZ) * 1.5 + baseStress);
+    const hs = Math.min(1, Math.abs(t.hipLX-t.hipRX) * 2 + baseStress);
+    const as = fn * 0.25;
+
+    let localTags = [];
+
     const zs=(n)=>{
       const nl=n.toLowerCase();
       if(nl.includes("hips_01")) return ss;
@@ -135,58 +172,159 @@ function Avatar({ poseData, fatigue, angle, postureStatus }) {
       if(nl.includes("leg_")||nl.includes("foot")||nl.includes("toe")) return fn*0.1;
       return fn*0.15;
     };
+
     meshes.current.forEach((m,i)=>{
       if(!m.material?.color) return;
       const sv=Math.min(zs(m.name),1);
       const tg=stressColor(sv);
-      lerpColor(meshColors.current[i],tg,COLOR_LERP);
+      
+      meshColors.current[i].lerp(tg, 0.1);
       m.material.color.copy(meshColors.current[i]);
-      if(m.material.emissive) m.material.emissive.copy(meshColors.current[i]).multiplyScalar(sv>0.6?0.15:0);
+      
+      // Make high stress areas actually bloom and redden intensely
+      // Note: We leave the base skin color uniformly applied. The localized red spots will come from our point lights!
+      if(m.material.emissive) {
+         m.material.emissive.copy(meshColors.current[i]);
+         m.material.emissiveIntensity = 0.05;
+      }
+      
+      // Register tags for extreme hotspots periodically
+      if (sv > 0.8 && localTags.length < 2 && Math.random() < 0.05) {
+         let tagLabel = "STRESS";
+         if(m.name.toLowerCase().includes("neck")) tagLabel = "NECK STRAIN";
+         if(m.name.toLowerCase().includes("spine")) tagLabel = "LUMBAR COMPRESSION";
+         if(m.name.toLowerCase().includes("shoulder")) tagLabel = "SHOULDER IMBALANCE";
+         
+         if(!localTags.some(t => t.label === tagLabel)) {
+           localTags.push({ label: tagLabel, boneName: m.name });
+         }
+      }
     });
+
+    // Dynamically track the SINGLE highest stress joint to prevent WebGL multiple-light crashes
+    // We move one intensely glowing red bulb to whatever joint is hurting the most!
+    let maxSv = 0;
+    let worstBoneName = null;
+    let worstBone = null;
+
+    Object.keys(BONE_MAP).forEach(key => {
+      const bone = bones.current[key];
+      if (bone) {
+        let sv = 0;
+        if (key.includes("neck") || key.includes("head")) sv = ns;
+        else if (key.includes("spine")) sv = ss;
+        else if (key.includes("shoulder")) sv = shs;
+        else if (key.includes("hip")) sv = hs;
+        else if (key.includes("Arm")) sv = as;
+
+        if (sv > maxSv) {
+           maxSv = sv;
+           worstBone = bone;
+        }
+      }
+    });
+
+    if (hotspotSpriteRef.current) {
+        if (maxSv > 0.4 && worstBone) {
+            worstBone.getWorldPosition(hotspotSpriteRef.current.position);
+            // Gently pulse the size and opacity of the red heatmap for total realism
+            const p = 1 + Math.sin(Date.now() * 0.005) * 0.1;
+            hotspotSpriteRef.current.scale.setScalar(0.6 * p); // Halved the size for strict precision
+            hotspotSpriteRef.current.material.opacity = (maxSv - 0.4) * 2;
+        } else {
+            hotspotSpriteRef.current.material.opacity = 0;
+        }
+    }
+
+    if (Math.random() < 0.05) {
+       setHudTags(localTags);
+    }
+
+    // Dynamic Camera Effects
+    if (isBad) {
+       state.camera.position.x += (Math.random() - 0.5) * 0.01;
+       state.camera.position.y += (Math.random() - 0.5) * 0.01;
+    }
   });
 
-  return <group ref={group}><primitive object={scene} scale={1.7} position={[0,-1.6,0]} /></group>;
+  return (
+    <group ref={group}>
+      <primitive object={scene} scale={1.7} position={[0,-1.6,0]} />
+      {/* Volumetric medical heatmap perfectly blended natively */}
+      <sprite ref={hotspotSpriteRef}>
+         <spriteMaterial map={heatmapTexture} color="#ff0000" blending={THREE.AdditiveBlending} depthTest={false} transparent={true} opacity={0} />
+      </sprite>
+      
+      {hudTags.map((tag, i) => {
+         const bone = meshes.current.find(m => m.name === tag.boneName);
+         if (!bone) return null;
+         const pos = new THREE.Vector3();
+         bone.getWorldPosition(pos);
+         return (
+           <Html key={i} position={[pos.x, pos.y, pos.z]} center>
+             <div style={{
+               background: "rgba(255, 0, 68, 0.2)",
+               border: "1px solid #ff0044",
+               backdropFilter: "blur(4px)",
+               color: "#ff0044",
+               padding: "4px 8px",
+               fontSize: 10,
+               fontWeight: "bold",
+               fontFamily: "monospace",
+               letterSpacing: 2,
+               whiteSpace: "nowrap",
+               pointerEvents: "none",
+               textTransform: "uppercase",
+               boxShadow: "0 0 10px rgba(255, 0, 68, 0.5)"
+             }}>
+               ⚠ {tag.label}
+             </div>
+           </Html>
+         );
+      })}
+    </group>
+  );
 }
 
 // ── Panel UI components ──────────────────────
 function ScoreRing({ score }) {
   const r=28, circ=2*Math.PI*r, fill=circ*(score/100);
-  const color=score>75?"#22c55e":score>50?"#facc15":"#ef4444";
+  const color=score>75?"#00ffcc":score>50?"#ffaa00":"#ff0044";
   return (
     <div style={{display:"flex",flexDirection:"column",alignItems:"center",margin:"6px 0 10px"}}>
       <svg width={72} height={72} style={{transform:"rotate(-90deg)"}}>
         <circle cx={36} cy={36} r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={5}/>
         <circle cx={36} cy={36} r={r} fill="none" stroke={color} strokeWidth={5}
           strokeDasharray={`${fill} ${circ}`} strokeLinecap="round"
-          style={{transition:"stroke-dasharray 0.6s ease, stroke 0.4s"}}/>
+          style={{transition:"stroke-dasharray 0.6s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.4s", filter: `drop-shadow(0 0 4px ${color})`}}/>
       </svg>
-      <div style={{position:"relative",marginTop:-50,fontSize:20,fontWeight:700,color,fontFamily:"monospace",transition:"color 0.4s"}}>
+      <div style={{position:"relative",marginTop:-50,fontSize:22,fontWeight:800,color,fontFamily:"monospace",transition:"color 0.4s", textShadow: `0 0 8px ${color}`}}>
         {Math.round(score)}
       </div>
-      <div style={{fontSize:9,color:"rgba(180,210,240,0.5)",letterSpacing:2,marginTop:30}}>POSTURE SCORE</div>
+      <div style={{fontSize:9,color:"rgba(180,210,240,0.7)",letterSpacing:3,marginTop:30}}>SYS SCORE</div>
     </div>
   );
 }
 
 function MetricRow({ label, value, color }) {
   return (
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:7}}>
-      <span style={{color:"rgba(180,210,240,0.6)",fontSize:10,letterSpacing:1,fontFamily:"monospace"}}>{label}</span>
-      <span style={{color:color||"#00c8ff",fontSize:11,fontWeight:700,fontFamily:"monospace"}}>{value}</span>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}>
+      <span style={{color:"rgba(180,210,240,0.6)",fontSize:10,letterSpacing:2,fontFamily:"monospace"}}>{label}</span>
+      <span style={{color:color||"#00e5ff",fontSize:12,fontWeight:700,fontFamily:"monospace", textShadow: color ? `0 0 5px ${color}` : "none"}}>{value}</span>
     </div>
   );
 }
 
 function StressBar({ label, value }) {
-  const color=value<40?"#22c55e":value<70?"#facc15":"#ef4444";
+  const color=value<40?"#00ffcc":value<70?"#ffaa00":"#ff0044";
   return (
-    <div style={{marginBottom:8}}>
-      <div style={{display:"flex",justifyContent:"space-between",marginBottom:3}}>
-        <span style={{color:"rgba(180,210,240,0.6)",fontSize:9,letterSpacing:1,fontFamily:"monospace"}}>{label}</span>
-        <span style={{color,fontSize:9,fontFamily:"monospace"}}>{value}%</span>
+    <div style={{marginBottom:10}}>
+      <div style={{display:"flex",justifyContent:"space-between",marginBottom:4}}>
+        <span style={{color:"rgba(180,210,240,0.6)",fontSize:9,letterSpacing:1.5,fontFamily:"monospace"}}>{label}</span>
+        <span style={{color,fontSize:10,fontFamily:"monospace", fontWeight:"bold", textShadow:`0 0 4px ${color}`}}>{value}%</span>
       </div>
-      <div style={{height:3,background:"rgba(255,255,255,0.08)",borderRadius:2,overflow:"hidden"}}>
-        <div style={{height:"100%",width:`${value}%`,background:color,borderRadius:2,transition:"width 0.5s ease, background 0.4s"}}/>
+      <div style={{height:4,background:"rgba(255,255,255,0.05)",borderRadius:2,overflow:"hidden", border:"1px solid rgba(255,255,255,0.1)"}}>
+        <div style={{height:"100%",width:`${value}%`,background:color,borderRadius:1,transition:"width 0.8s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s", boxShadow:`0 0 8px ${color}`}}/>
       </div>
     </div>
   );
@@ -194,10 +332,11 @@ function StressBar({ label, value }) {
 
 function PanelCard({ title, children }) {
   return (
-    <div style={{background:"rgba(8,15,30,0.82)",border:"1px solid rgba(0,200,255,0.18)",
-      borderRadius:10,padding:"12px 14px",marginBottom:12,backdropFilter:"blur(8px)"}}>
-      <div style={{color:"#00c8ff",fontSize:9,letterSpacing:3,textTransform:"uppercase",
-        fontFamily:"monospace",marginBottom:10,borderBottom:"1px solid rgba(0,200,255,0.15)",paddingBottom:6}}>
+    <div style={{background:"rgba(4, 8, 16, 0.6)",border:"1px solid rgba(0, 229, 255, 0.3)",
+      borderRadius:6,padding:"16px",marginBottom:16,backdropFilter:"blur(12px)", boxShadow:"inset 0 0 20px rgba(0, 229, 255, 0.05)"}}>
+      <div style={{color:"#00e5ff",fontSize:10,fontWeight:"bold",letterSpacing:4,textTransform:"uppercase",
+        fontFamily:"monospace",marginBottom:14,borderBottom:"1px solid rgba(0,229,255,0.3)",paddingBottom:8, display:"flex", alignItems:"center"}}>
+        <div style={{width:6, height:6, background:"#00e5ff", marginRight:8, borderRadius:"50%", boxShadow:"0 0 8px #00e5ff"}} />
         {title}
       </div>
       {children}
@@ -207,28 +346,29 @@ function PanelCard({ title, children }) {
 
 function ConnectionDot({ connected }) {
   return (
-    <div style={{display:"flex",alignItems:"center",gap:6,marginTop:4}}>
-      <div style={{width:7,height:7,borderRadius:"50%",
-        background:connected?"#22c55e":"#ef4444",
-        boxShadow:connected?"0 0 6px #22c55e":"0 0 6px #ef4444",transition:"background 0.4s"}}/>
-      <span style={{color:"rgba(180,210,240,0.6)",fontSize:9,fontFamily:"monospace",letterSpacing:1}}>
-        {connected?"LIVE":"OFFLINE"}
+    <div style={{display:"flex",alignItems:"center",gap:8,marginTop:12, padding:"8px", background:"rgba(0,0,0,0.3)", borderRadius:4, border:"1px solid rgba(255,255,255,0.05)"}}>
+      <div style={{width:8,height:8,borderRadius:"50%",
+        background:connected?"#00ffcc":"#ff0044",
+        boxShadow:connected?"0 0 10px #00ffcc":"0 0 10px #ff0044",transition:"background 0.4s"}}/>
+      <span style={{color:connected?"#00ffcc":"#ff0044",fontSize:10,fontFamily:"monospace",letterSpacing:2, fontWeight:"bold"}}>
+        {connected?"UPLINK ACTIVE":"SIGNAL LOST"}
       </span>
     </div>
   );
 }
 
 function AlertBanner({ postureStatus }) {
-  const msg={bad:"⚠ Poor posture detected — sit upright",warning:"⚡ Posture degrading — adjust your position",good:null}[postureStatus];
+  const msg={bad:"CRITICAL POSTURE DEGRADATION",warning:"WARNING: POSTURE ANOMALY DETECTED",good:null}[postureStatus];
   if (!msg) return null;
-  const border=postureStatus==="bad"?"#ef4444":"#facc15";
+  const border=postureStatus==="bad"?"#ff0044":"#ffaa00";
   return (
-    <div style={{position:"absolute",top:12,left:"50%",transform:"translateX(-50%)",
-      background:postureStatus==="bad"?"rgba(239,68,68,0.15)":"rgba(250,204,21,0.15)",
-      border:`1px solid ${border}`,borderRadius:8,padding:"6px 20px",
-      color:border,fontSize:12,letterSpacing:1,fontFamily:"monospace",
-      zIndex:10,pointerEvents:"none",whiteSpace:"nowrap"}}>
-      {msg}
+    <div style={{position:"absolute",top:24,left:"50%",transform:"translateX(-50%)",
+      background:postureStatus==="bad"?"rgba(255,0,68,0.15)":"rgba(255,170,0,0.15)",
+      border:`1px solid ${border}`,borderRadius:4,padding:"10px 30px",
+      color:border,fontSize:14,fontWeight:"bold",letterSpacing:4,fontFamily:"monospace",
+      zIndex:10,pointerEvents:"none",whiteSpace:"nowrap", textShadow:`0 0 8px ${border}`, backdropFilter:"blur(4px)",
+      boxShadow:`0 0 20px ${postureStatus==="bad"?"rgba(255,0,68,0.3)":"rgba(255,170,0,0.3)"}`}}>
+       {msg}
     </div>
   );
 }
@@ -239,7 +379,7 @@ export default function SkeletonTwin() {
   const [fatigue,       setFatigue]       = useState(0);
   const [angle,         setAngle]         = useState(0);
   const [postureStatus, setPostureStatus] = useState("good");
-  const [connected,     setConnected]     = useState(false);
+  const [connected,     setConnected]     = useState(socket.connected);
   const [score,         setScore]         = useState(100);
   const [alertCount,    setAlertCount]    = useState(0);
   const [sessionSecs,   setSessionSecs]   = useState(0);
@@ -251,6 +391,7 @@ export default function SkeletonTwin() {
   const hs = Math.round(Math.min(100,fatigue*0.25));
 
   useEffect(()=>{
+    if (socket.connected) setConnected(true);
     socket.on("connect",()=>setConnected(true));
     socket.on("disconnect",()=>setConnected(false));
     socket.on("pose_data",(d)=>{
@@ -272,93 +413,111 @@ export default function SkeletonTwin() {
   useEffect(()=>{const id=setInterval(()=>setSessionSecs(s=>s+1),1000);return()=>clearInterval(id);},[]);
 
   const sessionTime=`${String(Math.floor(sessionSecs/60)).padStart(2,"0")}:${String(sessionSecs%60).padStart(2,"0")}`;
-  const statusColor=postureStatus==="bad"?"#ef4444":postureStatus==="warning"?"#facc15":"#22c55e";
+  const statusColor=postureStatus==="bad"?"#ff0044":postureStatus==="warning"?"#ffaa00":"#00ffcc";
   const sparkPath=history.length>1
     ?history.map((v,i)=>{const x=(i/(history.length-1))*160,y=30-(v/100)*28;return`${i===0?"M":"L"}${x.toFixed(1)} ${y.toFixed(1)}`;}).join(" "):"";
 
   return (
-    // Fills 100% of whatever container App gives it
     <div style={{
       width:"100%", height:"100%",
       display:"flex", flexDirection:"row",
-      background:"radial-gradient(ellipse at 40% 40%, #0a1628 0%, #050a14 100%)",
+      background:"#020408", // Deep tech black
+      backgroundImage: "radial-gradient(ellipse at center, rgba(0, 229, 255, 0.05) 0%, transparent 70%)",
       overflow:"hidden",
     }}>
 
-      {/* LEFT SIDEBAR — 18% width, never less than 180px */}
+      {/* LEFT SIDEBAR */}
       <div style={{
-        width:"25%", minWidth:200, maxWidth:300,
+        width:"25%", minWidth:220, maxWidth:320,
         display:"flex", flexDirection:"column",
-        padding:"16px 0 16px 16px",
+        padding:"24px 0 24px 24px",
         overflowY:"auto",
         flexShrink:0,
+        zIndex:2,
       }}>
-        <PanelCard title="Posture Score">
+        <PanelCard title="Telemetry">
           <ScoreRing score={score}/>
-          <MetricRow label="STATUS"  value={postureStatus.toUpperCase()} color={statusColor}/>
-          <MetricRow label="ANGLE"   value={`${angle.toFixed(1)}°`}      color={Math.abs(angle)>15?"#ef4444":"#22c55e"}/>
-          <MetricRow label="FATIGUE" value={`${Math.round(fatigue)}%`}   color={fatigue>70?"#ef4444":fatigue>40?"#facc15":"#22c55e"}/>
+          <MetricRow label="INTEGRITY" value={postureStatus.toUpperCase()} color={statusColor}/>
+          <MetricRow label="DEVIATION"   value={`${angle.toFixed(1)}°`}      color={Math.abs(angle)>15?"#ff0044":"#00ffcc"}/>
+          <MetricRow label="FATIGUE IDX" value={`${Math.round(fatigue)}%`}   color={fatigue>70?"#ff0044":fatigue>40?"#ffaa00":"#00ffcc"}/>
         </PanelCard>
-        <PanelCard title="Session">
-          <MetricRow label="TIME"    value={sessionTime} color="#00c8ff"/>
-          <MetricRow label="ALERTS"  value={alertCount}  color={alertCount>5?"#ef4444":"#facc15"}/>
-          <MetricRow label="AVG SCR" value={history.length?`${Math.round(history.reduce((a,b)=>a+b,0)/history.length)}`:"--"}/>
+        <PanelCard title="System Ops">
+          <MetricRow label="UPTIME"    value={sessionTime} color="#00e5ff"/>
+          <MetricRow label="ANOMALIES"  value={alertCount}  color={alertCount>5?"#ff0044":"#ffaa00"}/>
+          <MetricRow label="MEAN SYNC" value={history.length?`${Math.round(history.reduce((a,b)=>a+b,0)/history.length)}`:"--"}/>
           <ConnectionDot connected={connected}/>
         </PanelCard>
       </div>
 
-      {/* 3D CANVAS — takes all remaining width */}
+      {/* 3D CANVAS */}
       <div style={{flex:1, position:"relative", overflow:"hidden"}}>
-        <Canvas camera={{position:[0,1.2,3.6],fov:45}} shadows style={{width:"100%",height:"100%"}}>
-          <ambientLight intensity={0.5}/>
-          <directionalLight position={[3,6,3]} intensity={1.2} castShadow/>
-          <directionalLight position={[-3,2,-2]} intensity={0.4} color="#0044aa"/>
-          <pointLight position={[0,3,2]} intensity={0.6} color="#00c8ff"/>
+        <Canvas camera={{position:[0,1.2,3.8],fov:45}}>
+          <color attach="background" args={["#020408"]} />
+          <ambientLight intensity={0.4}/>
+          <spotLight position={[5, 5, 5]} intensity={2.0} color="#0088ff" penumbra={1} aungular={0.5} />
+          <spotLight position={[-5, 5, -5]} intensity={2.0} color="#ff0044" penumbra={1} aungular={0.5} />
+          
+          {/* Techy Environment */}
+          <Environment preset="city" blur={0.8} />
+          
+          <Grid infiniteGrid fadeDistance={20} sectionColor="#004488" cellColor="#001133" sectionSize={1} cellSize={0.2} position={[0, -1.6, 0]} />
+          <ContactShadows position={[0, -1.59, 0]} opacity={0.5} scale={10} blur={2} far={4} />
+
           <Avatar poseData={poseData} fatigue={fatigue} angle={angle} postureStatus={postureStatus}/>
-          <OrbitControls enableZoom={true} minDistance={2} maxDistance={6} enablePan={false}/>
+          <OrbitControls enableZoom={true} minDistance={2} maxDistance={6} enablePan={false} autoRotate={postureStatus==="good"} autoRotateSpeed={0.5} />
+          
+          <EffectComposer multisampling={4}>
+             <Bloom luminanceThreshold={0.4} luminanceSmoothing={0.9} height={300} intensity={1.5} />
+             <Vignette eskil={false} offset={0.1} darkness={1.1} />
+          </EffectComposer>
         </Canvas>
         <AlertBanner postureStatus={postureStatus}/>
+        
+        {/* Reticle Overlay */}
+        <div style={{position:"absolute", top:"50%", left:"50%", transform:"translate(-50%, -50%)", width: "80%", height: "80%", border: "1px dashed rgba(0, 229, 255, 0.1)", borderRadius: "50%", pointerEvents: "none", zIndex:1 }}>
+           <div style={{position:"absolute", top:0, left:"50%", width:2, height:15, background:"rgba(0, 229, 255, 0.5)", transform:"translateX(-50%)"}} />
+           <div style={{position:"absolute", bottom:0, left:"50%", width:2, height:15, background:"rgba(0, 229, 255, 0.5)", transform:"translateX(-50%)"}} />
+           <div style={{position:"absolute", left:0, top:"50%", height:2, width:15, background:"rgba(0, 229, 255, 0.5)", transform:"translateY(-50%)"}} />
+           <div style={{position:"absolute", right:0, top:"50%", height:2, width:15, background:"rgba(0, 229, 255, 0.5)", transform:"translateY(-50%)"}} />
+        </div>
       </div>
 
-      {/* RIGHT SIDEBAR — 18% width */}
+      {/* RIGHT SIDEBAR */}
       <div style={{
-        width:"20%", minWidth:200, maxWidth:300,
+        width:"25%", minWidth:220, maxWidth:320,
         display:"flex", flexDirection:"column",
-        padding:"16px 16px 16px 0",
+        padding:"24px 24px 24px 0",
         overflowY:"auto",
         flexShrink:0,
+        zIndex:2,
       }}>
-        <PanelCard title="Stress Heatmap">
-          <StressBar label="NECK / C7"    value={ns}/>
-          <StressBar label="LOWER SPINE"  value={ss}/>
-          <StressBar label="SHOULDERS"    value={shs}/>
-          <StressBar label="HIP / PELVIS" value={hs}/>
-          <div style={{display:"flex",gap:10,justifyContent:"center",marginTop:8}}>
-            {[["#22c55e","Good"],["#facc15","Warning"],["#ef4444","Bad"]].map(([c,l])=>(
-              <div key={l} style={{display:"flex",alignItems:"center",gap:4}}>
-                <div style={{width:8,height:8,borderRadius:"50%",background:c}}/>
-                <span style={{color:"rgba(180,210,240,0.6)",fontSize:9,fontFamily:"monospace",letterSpacing:1}}>{l}</span>
-              </div>
-            ))}
+        <PanelCard title="Stress Diagnostics">
+          <StressBar label="CERVICAL SECT (C1-C7)"    value={ns}/>
+          <StressBar label="LUMBAR SECT (L1-L5)"  value={ss}/>
+          <StressBar label="DELTOID TENSION"    value={shs}/>
+          <StressBar label="PELVIC TILT" value={hs}/>
+          <div style={{display:"flex",gap:12,justifyContent:"center",marginTop:16}}>
+             {[["#00ffcc","NOMINAL"],["#ffaa00","ELEVATED"],["#ff0044","CRITICAL"]].map(([c,l])=>(
+               <div key={l} style={{display:"flex",alignItems:"center",gap:6}}>
+                  <div style={{width:8,height:8,borderRadius:"1px",background:c, boxShadow:`0 0 6px ${c}`}}/>
+                  <span style={{color:"rgba(180,210,240,0.8)",fontSize:8,fontFamily:"monospace",letterSpacing:1, fontWeight:"bold"}}>{l}</span>
+               </div>
+             ))}
           </div>
         </PanelCard>
 
-        <PanelCard title="Score History">
+        <PanelCard title="Signal Graph">
           {history.length>1
-            ?<svg width="100%" height={40} viewBox="0 0 160 32" preserveAspectRatio="none" style={{display:"block"}}>
-                <path d={sparkPath} fill="none" stroke="#00c8ff" strokeWidth={1.5} strokeLinecap="round"/>
-                <line x1={0} y1={30-(75/100)*28} x2={160} y2={30-(75/100)*28}
-                  stroke="rgba(250,204,21,0.3)" strokeWidth={0.5} strokeDasharray="3 3"/>
+            ?<svg width="100%" height={50} viewBox="0 0 160 40" preserveAspectRatio="none" style={{display:"block", background:"rgba(0,0,0,0.2)", borderRadius:4}}>
+                <path d={sparkPath} fill="none" stroke="#00e5ff" strokeWidth={1.5} strokeLinecap="round" style={{filter:"drop-shadow(0 0 2px #00e5ff)"}}/>
+                <line x1={0} y1={40-(75/100)*38} x2={160} y2={40-(75/100)*38}
+                  stroke="rgba(255, 170, 0, 0.4)" strokeWidth={1} strokeDasharray="4 4"/>
               </svg>
-            :<div style={{color:"rgba(180,210,240,0.3)",fontSize:9,fontFamily:"monospace",textAlign:"center"}}>Waiting for data...</div>
+            :<div style={{color:"rgba(180,210,240,0.4)",fontSize:10,fontFamily:"monospace",textAlign:"center", padding:"10px"}}>AWAITING PACKETS...</div>
           }
         </PanelCard>
 
-        <PanelCard title="Device">
-          <MetricRow label="DEVICE ID" value={poseData?"CAM-01":"--"}    color="#00c8ff"/>
-          <MetricRow label="FPS"       value={connected?"30":"0"}         color={connected?"#22c55e":"#ef4444"}/>
-          <MetricRow label="LATENCY"   value={connected?"~12ms":"--"}     color="#00c8ff"/>
-        </PanelCard>
+
       </div>
 
     </div>
