@@ -47,7 +47,6 @@ Socket → 3D Digital Twin (Real-time Visualization)
 
 - Python
 - Flask + Flask-SocketIO
-- Eventlet
 - Requests
 
 ---
@@ -133,21 +132,6 @@ Server running on port 5050
 
 ```bash
 cd device-simulator
-python -m venv venv
-```
-
-### Activate environment:
-
-#### Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-#### Mac/Linux:
-
-```bash
-source venv/bin/activate
 ```
 
 ### Install dependencies:
@@ -162,16 +146,37 @@ pip install -r requirements.txt
 python simulator.py
 ```
 
-### 💡 Alternative (if dependencies already installed)
+### 🧠 Simulator Notes
 
-If you already have required Python packages installed globally, you can run:
+- The simulator uses Flask-SocketIO (threading mode)
+- No additional async libraries (like eventlet) are required
+- Runs on port `5051` by default
 
-```bash
-python3 simulator.py
-```
+---
 
-✔ Sends posture data every second
-✔ Emits real-time socket data
+### ⚠️ Port Configuration Notes
+
+- Backend runs on: `http://127.0.0.1:5050`
+- Simulator sends data to: `http://127.0.0.1:5050/api/posture`
+- Simulator Socket.IO server runs on: `http://localhost:5051`
+
+#### Common Issue
+
+If you see errors like:
+ECONNREFUSED 127.0.0.1:5050
+
+👉 This means the backend is not running or is running on a different port.
+
+#### Fix
+
+- Always start the backend before running the simulator
+- Verify backend port in `server.js`:
+
+````js
+const PORT = process.env.PORT || 5050;
+
+If you change the backend port, update this in simulator.py:
+BACKEND_URL = "http://127.0.0.1:5050/api/posture"
 
 ---
 
@@ -180,12 +185,12 @@ python3 simulator.py
 ```bash
 cd dashboard
 npm install
-```
+````
 
 ### 🔐 Create `.env`
 
 ```env
-VITE_API_URL=http://localhost:5050
+VITE_API_URL=http://127.0.0.1:5050
 VITE_SOCKET_URL=http://localhost:5051
 ```
 
@@ -202,9 +207,9 @@ npm run dev
 Start services in this exact order:
 
 ```bash
-1. Backend (Node.js)  --> node .\server.js
-2. Simulator (Python) --> py .\simulator.py
-3. Frontend (React)   --> npm run dev
+1. Backend (Node.js)
+2. Simulator (Python)
+3. Frontend (React)
 ```
 
 ---
@@ -218,16 +223,10 @@ Send posture data:
 ```json
 {
   "deviceId": "POSTURE_01",
-  "angle": 17.6,
-  "fatigueLevel": 0.8,
+  "angle": 25,
+  "fatigueLevel": 40,
   "postureStatus": "good",
-  "poseData": {
-    "l_shoulder": [-0.2, 1, 0.2770213270787423],
-    "r_shoulder": [0.2, 1, 0.2770213270787423],
-    "l_hip": [-0.2, 0, 0],
-    "r_hip": [0.2, 0, 0]
-  },
-  "timestamp": "2026-04-02T19:03:31.528182"
+  "timestamp": "2026-04-02T10:00:00Z"
 }
 ```
 
@@ -280,5 +279,3 @@ Returns latest 50 posture records
 - These are already included in `.gitignore`
 
 ---
-
-
