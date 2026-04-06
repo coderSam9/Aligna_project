@@ -185,7 +185,7 @@ npm install
 ### 🔐 Create `.env`
 
 ```env
-VITE_API_URL=http://127.0.0.1:5050
+VITE_API_URL=http://localhost:5050
 VITE_SOCKET_URL=http://localhost:5051
 ```
 
@@ -202,9 +202,9 @@ npm run dev
 Start services in this exact order:
 
 ```bash
-1. Backend (Node.js)
-2. Simulator (Python)
-3. Frontend (React)
+1. Backend (Node.js)  --> node .\server.js
+2. Simulator (Python) --> py .\simulator.py
+3. Frontend (React)   --> npm run dev
 ```
 
 ---
@@ -218,10 +218,16 @@ Send posture data:
 ```json
 {
   "deviceId": "POSTURE_01",
-  "angle": 25,
-  "fatigueLevel": 40,
+  "angle": 17.6,
+  "fatigueLevel": 0.8,
   "postureStatus": "good",
-  "timestamp": "2026-04-02T10:00:00Z"
+  "poseData": {
+    "l_shoulder": [-0.2, 1, 0.2770213270787423],
+    "r_shoulder": [0.2, 1, 0.2770213270787423],
+    "l_hip": [-0.2, 0, 0],
+    "r_hip": [0.2, 0, 0]
+  },
+  "timestamp": "2026-04-02T19:03:31.528182"
 }
 ```
 
