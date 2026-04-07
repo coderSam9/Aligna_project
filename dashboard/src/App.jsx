@@ -13,7 +13,7 @@ import {
 } from "recharts";
 import { PieChart, Pie, Cell, BarChart, Bar } from "recharts";
 import axios from "axios";
-import SkeletonTwin from "./components/Twin";
+import SkeletonTwin, { socket } from "./components/Twin";
 import AIRecommendationsChat from "./components/AIRecommendationsChat";
 
 /* ─── brand gradient background ───────────────────────────────────── */
@@ -86,18 +86,29 @@ function AlignaLogo() {
   );
 }
 
-function TwinPage({ onBack }) {
+function TwinPage({ onBack, isManualMode, sandboxData, isRunning }) {
   return (
     <div style={{ ...styles.twinPage, ...brandGradient }}>
-      <div style={styles.twinTopBar}>
+      <div style={{ ...styles.twinTopBar, position: "relative" }}>
         <AlignaLogo />
+        {!isRunning && (
+          <span style={{
+            position: "absolute", left: "50%", transform: "translateX(-50%)",
+            background: "rgba(148, 163, 184, 0.15)", border: "1px solid #94a3b8", borderRadius: 4, padding: "4px 12px",
+            color: "#cbd5e1", fontSize: 12, fontWeight: "bold", letterSpacing: 2, fontFamily: "monospace",
+            textShadow: "0 0 8px #94a3b8"
+          }}>PAUSED</span>
+        )}
         <button style={styles.backBtn} onClick={onBack}>
           ← Back
         </button>
       </div>
       <div style={styles.twinBody}>
-        <SkeletonTwin />
+        <SkeletonTwin isManualMode={isManualMode} sandboxData={sandboxData} isRunning={isRunning} />
       </div>
+      <footer style={{ ...styles.footer, textAlign: "center", maxWidth: "none", flexShrink: 0, zIndex: 10, background: "#020408" }}>
+        Aligna • Simulated data for demo. Replace with your sensor/ML pipeline.
+      </footer>
     </div>
   );
 }
@@ -202,6 +213,8 @@ export default function App() {
     avgAngle: 0,
   });
   const [isLive, setIsLive] = useState(false);
+  const [serverOk, setServerOk] = useState(false);
+  const receiveTimeout = React.useRef(null);
   const [showAlert, setShowAlert] = useState(false);
   const [isRunning, setIsRunning] = useState(true);
   const [clockDisplay, setClockDisplay] = useState("00:00:00");
@@ -210,11 +223,14 @@ export default function App() {
 
   const [isManualMode, setIsManualMode] = useState(false);
   const [manualDataStack, setManualDataStack] = useState([]);
+  const [latestManualPoint, setLatestManualPoint] = useState(null);
+  const latestLivePointRef = React.useRef(null);
   
   const [showModal, setShowModal] = useState(false);
   const playbackQueueRef = React.useRef([]);
   const playbackIntervalRef = React.useRef(null);
   const isRunningRef = React.useRef(isRunning);
+  const liveDataBufferRef = React.useRef([]);
 
   useEffect(() => {
     isRunningRef.current = isRunning;
@@ -233,6 +249,10 @@ export default function App() {
     elapsedMs.current = 0;
     runningSince.current = Date.now();
     setClockDisplay("00:00:00");
+    
+    // Hard clear the background buffers so data doesn't instantly violently respawn
+    liveDataBufferRef.current = [];
+    setManualDataStack([]);
   };
 
   const handleFileUpload = (e) => {
@@ -276,6 +296,7 @@ export default function App() {
         return;
       }
       const nextPoint = playbackQueueRef.current.shift();
+      setLatestManualPoint(nextPoint);
       setManualDataStack(prev => {
         const nextStack = [...prev, nextPoint].slice(-50);
         processData(nextStack);
@@ -288,6 +309,7 @@ export default function App() {
     if (playbackIntervalRef.current) clearInterval(playbackIntervalRef.current);
     playbackQueueRef.current = [];
     setIsManualMode(false);
+    setLatestManualPoint(null);
     setManualDataStack([]);
     setShowModal(false);
     resetSession();
@@ -360,25 +382,86 @@ export default function App() {
     };
   }, [isRunning]);
 
-  /* ── original data-fetching logic ── */
+  /* ── WebSocket Data Logic ── */
+  const lastUpdateRef = React.useRef(0);
+
   useEffect(() => {
-    if (!isRunning || isManualMode) return;
-    const fetchData = async () => {
+    const checkServer = async () => {
       try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/posture`
-        );
-        setIsLive(true);
-        processData(res.data);
+        const baseUrl = import.meta.env.VITE_API_URL || "http://127.0.0.1:5050";
+        const res = await fetch(`${baseUrl}/api/posture`);
+        setServerOk(res.ok);
       } catch (err) {
-        console.log("Fetch error:", err);
-        setIsLive(false);
+        setServerOk(false);
       }
     };
-    fetchData();
-    const interval = setInterval(fetchData, 4000);
+    checkServer();
+    const interval = setInterval(checkServer, 2000);
     return () => clearInterval(interval);
-  }, [isRunning, isManualMode]);
+  }, []);
+
+  useEffect(() => {
+    if (isManualMode) return;
+
+    const handlePose = (item) => {
+      setIsLive(true);
+      if (receiveTimeout.current) clearTimeout(receiveTimeout.current);
+      receiveTimeout.current = setTimeout(() => {
+        setIsLive(false);
+      }, 2000);
+      
+      if (!isRunningRef.current) return;
+      latestLivePointRef.current = item;
+
+      // Structure the item roughly like the original API structure with a timestamp
+      const frameData = {
+        timestamp: Date.now(),
+        angle: item.angle || 0,
+        fatigueLevel: item.fatigueLevel || 0,
+        postureStatus: item.postureStatus || "good"
+      };
+
+      liveDataBufferRef.current.push(frameData);
+      if (liveDataBufferRef.current.length > 50) {
+        liveDataBufferRef.current.shift();
+      }
+
+      // Throttle the dashboard UI updates to 500ms to preserve performance while appearing perfectly real-time
+      const now = Date.now();
+      if (now - lastUpdateRef.current >= 500) {
+        processData([...liveDataBufferRef.current]);
+        lastUpdateRef.current = now;
+      }
+    };
+
+    socket.on("pose_data", handlePose);
+    socket.on("connect", () => setServerOk(true));
+    
+    // Also mark dead connection if it disconnects
+    const handleDisconnect = () => setIsLive(false);
+    socket.on("disconnect", handleDisconnect);
+
+    return () => {
+      socket.off("pose_data", handlePose);
+      socket.off("connect");
+      socket.off("disconnect", handleDisconnect);
+    };
+  }, [isManualMode]);
+
+  let connectionState = "disconnected";
+  if (isManualMode) connectionState = "sandbox";
+  else if (serverOk && isLive) connectionState = "live";
+  else if (serverOk && !isLive) connectionState = "waiting";
+  else connectionState = "disconnected";
+  
+  const isWaiting = connectionState === "waiting" || connectionState === "disconnected";
+
+  const statusProps = {
+    sandbox: { text: "Sandbox mode", color: "#a855f7", dot: "#a855f7" },
+    live: { text: "Live data streaming", color: "#22c55e", dot: "#22c55e" },
+    waiting: { text: "Waiting for device", color: "#cbd5e1", dot: "#eab308" },
+    disconnected: { text: "Disconnected", color: "#cbd5e1", dot: "#ef4444" }
+  }[connectionState];
 
   /* ── original derived data — untouched ── */
   const distributionData = [
@@ -465,7 +548,7 @@ export default function App() {
       ? "Slouching"
       : "Stable";
 
-  if (page === "twin") return <TwinPage onBack={() => setPage("dashboard")} />;
+  if (page === "twin") return <TwinPage onBack={() => setPage("dashboard")} isManualMode={isManualMode} sandboxData={isManualMode ? latestManualPoint : latestLivePointRef.current} isRunning={isRunning} />;
 
   return (
     <>
@@ -488,7 +571,7 @@ export default function App() {
                   ...styles.pill,
                   background: "rgba(30,41,59,0.8)",
                   border: "1px solid rgba(148,163,184,0.25)",
-                  color: "#cbd5e1",
+                  color: statusProps.color,
                   display: "flex",
                   alignItems: "center",
                   gap: 6,
@@ -499,12 +582,12 @@ export default function App() {
                     width: 8,
                     height: 8,
                     borderRadius: "50%",
-                    background: isLive && (!isManualMode) ? "#22c55e" : "#ef4444",
-                    boxShadow: isLive && (!isManualMode) ? "0 0 8px #22c55e" : "0 0 8px #ef4444",
+                    background: statusProps.dot,
+                    boxShadow: `0 0 8px ${statusProps.dot}`,
                     flexShrink: 0,
                   }}
                 />
-                {isLive && (!isManualMode) ? "Live data streaming" : "Disconnected"}
+                {statusProps.text}
               </span>
 
               <button
@@ -585,7 +668,7 @@ export default function App() {
             />
             <KpiCard
               label="Good Posture"
-              value={metrics.goodPercent + "%"}
+              value={isWaiting ? "0%" : metrics.goodPercent + "%"}
               sub={
                 metrics.goodPercent > 70
                   ? "Excellent"
@@ -603,19 +686,19 @@ export default function App() {
             />
             <KpiCard
               label="Slouch Time"
-              value={metrics.slouchTime}
+              value={isWaiting ? "0m 0s" : metrics.slouchTime}
               sub="No streak"
               subColor="#f87171"
             />
             <KpiCard
               label="Micro-Breaks"
-              value={metrics.breaks}
+              value={isWaiting ? 0 : metrics.breaks}
               sub="Recommended every 30–40 min"
               subColor="#a78bfa"
             />
             <KpiCard
               label="Avg Neck Angle"
-              value={metrics.avgAngle + "°"}
+              value={isWaiting ? "0°" : metrics.avgAngle + "°"}
               sub="Target: −10° to +10°"
               subColor="#94a3b8"
             />
@@ -634,7 +717,7 @@ export default function App() {
                 <span style={styles.badge}>Thresholds enabled</span>
               </div>
               <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={postureData}>
+                <LineChart data={isWaiting ? [] : postureData}>
                   <CartesianGrid stroke="rgba(255,255,255,0.05)" />
                   <ReferenceArea
                     y1={-10}
@@ -729,7 +812,7 @@ export default function App() {
                 <span style={styles.badge}>Modeled</span>
               </div>
               <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={fatigueData}>
+                <LineChart data={isWaiting ? [] : fatigueData}>
                   <CartesianGrid stroke="rgba(255,255,255,0.05)" />
                   <ReferenceArea
                     y1={0}
@@ -818,18 +901,20 @@ export default function App() {
                         : "#fecaca",
                   }}
                 >
-                  Score: {metrics.goodPercent}
+                  Score: {isWaiting ? 0 : metrics.goodPercent}
                 </span>
               </div>
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  position: "absolute",
+                  bottom: -15,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: 380,
                   height: 240,
                 }}
               >
-                <HalfGauge value={metrics.goodPercent} />
+                <HalfGauge value={isWaiting ? 0 : metrics.goodPercent} />
               </div>
             </div>
 
@@ -846,6 +931,7 @@ export default function App() {
                 <PieChart>
                   <Pie
                     data={distributionData}
+                    isAnimationActive={false}
                     innerRadius={55}
                     outerRadius={85}
                     paddingAngle={4}
@@ -884,7 +970,12 @@ export default function App() {
                   />
                   {/* kill default tooltip & cursor rectangle */}
                   <Tooltip content={() => null} cursor={false} />
-                  <Bar dataKey="value" radius={[6, 6, 0, 0]} cursor="default">
+                  <Bar
+                    dataKey="value"
+                    radius={[6, 6, 0, 0]}
+                    cursor="default"
+                    isAnimationActive={false}
+                  >
                     {strainData.map((entry, index) => (
                       <Cell
                         key={index}
@@ -923,6 +1014,7 @@ export default function App() {
               metrics={metrics}
               postureData={postureData}
               fatigueData={fatigueData}
+              connectionState={connectionState}
             />
           </div>
         </main>
@@ -1007,6 +1099,7 @@ function HalfGauge({ value }) {
         <PieChart>
           <Pie
             data={[{ value }, { value: 100 - value }]}
+            isAnimationActive={false}
             startAngle={180}
             endAngle={0}
             cx="50%"

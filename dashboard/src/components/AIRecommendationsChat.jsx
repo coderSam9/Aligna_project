@@ -131,7 +131,7 @@ const SUGGESTED = [
 ];
 
 /* ── Main Component ──────────────────────────────────────────────── */
-export default function AIRecommendationsChat({ metrics, postureData, fatigueData }) {
+export default function AIRecommendationsChat({ metrics, postureData, fatigueData, connectionState }) {
   const [insights, setInsights] = useState([]);
   const [insightsLoading, setInsightsLoading] = useState(false);
   const [insightsError, setInsightsError] = useState(null);
@@ -212,8 +212,18 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
   /* ── Status badge ── */
   const latestFatigue = fatigueData?.length ? fatigueData[fatigueData.length - 1].fatigue : 0;
   const latestNeck = postureData?.length ? postureData[postureData.length - 1].neck : 0;
-  const overallTone = latestFatigue > 70 || latestNeck > 35 ? "bad" : latestFatigue > 50 || latestNeck > 20 ? "warn" : "good";
+  const isDisconnected = connectionState === "disconnected";
+  const isWaiting = connectionState === "waiting";
+  const overallTone = isDisconnected ? "bad" : isWaiting ? "warn" : latestFatigue > 70 || latestNeck > 35 ? "bad" : latestFatigue > 50 || latestNeck > 20 ? "warn" : "good";
   const statusLabel = { bad: "Needs Attention", warn: "Fair", good: "Looking Good" };
+  const statusLabelText = isDisconnected ? "Disconnected" : isWaiting ? "Waiting for device" : statusLabel[overallTone];
+  
+  let displayInsights = insights;
+  if (isDisconnected) {
+     displayInsights = [{ title: "Server Disconnected", desc: "Cannot reach Aligna backend. Please start the server.", tone: "bad" }];
+  } else if (isWaiting) {
+     displayInsights = [{ title: "Waiting for device...", desc: "No live data streaming. Please ensure the device is transmitting.", tone: "warn" }];
+  }
 
   return (
     <>
@@ -273,7 +283,7 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
               fontWeight: 600,
             }}
           >
-            {statusLabel[overallTone]}
+            {statusLabelText}
           </span>
         </div>
       </div>
@@ -292,7 +302,7 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
             <button
               className="refresh-btn"
               onClick={fetchInsights}
-              disabled={insightsLoading}
+              disabled={insightsLoading || isWaiting || isDisconnected}
               style={{
                 background: "transparent",
                 border: "1px solid rgba(148,163,184,0.2)",
@@ -300,17 +310,17 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
                 fontSize: 11,
                 padding: "4px 10px",
                 borderRadius: 9999,
-                cursor: insightsLoading ? "not-allowed" : "pointer",
+                cursor: insightsLoading || isWaiting || isDisconnected ? "not-allowed" : "pointer",
                 display: "flex", alignItems: "center", gap: 5,
                 transition: "all 0.2s",
               }}
             >
-              <span style={{ display: "inline-block", animation: insightsLoading ? "spin 1s linear infinite" : "none" }}>↻</span>
-              {insightsLoading ? "Analyzing..." : "Refresh"}
+              <span style={{ display: "inline-block", animation: insightsLoading && !(isWaiting || isDisconnected) ? "spin 1s linear infinite" : "none" }}>↻</span>
+              {insightsLoading && !(isWaiting || isDisconnected) ? "Analyzing..." : "Refresh"}
             </button>
           </div>
 
-          {insightsLoading && insights.length === 0 && (
+          {insightsLoading && !(isWaiting || isDisconnected) && displayInsights.length === 0 && (
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[0, 1, 2].map(i => (
                 <div key={i} style={{
@@ -323,7 +333,7 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
             </div>
           )}
 
-          {insightsError && (
+          {insightsError && !(isWaiting || isDisconnected) && (
             <div style={{
               padding: "14px 16px", borderRadius: 14,
               background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)",
@@ -333,7 +343,7 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
             </div>
           )}
 
-          {!insightsLoading && insights.length === 0 && !insightsError && (
+          {!insightsLoading && !(isWaiting || isDisconnected) && displayInsights.length === 0 && !insightsError && (
             <div style={{
               padding: "20px", borderRadius: 14, textAlign: "center",
               background: "rgba(30,41,59,0.4)", border: "1px solid rgba(148,163,184,0.1)",
@@ -343,7 +353,7 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
             </div>
           )}
 
-          {insights.map((item, i) => (
+          {displayInsights.map((item, i) => (
             <InsightCard key={i} index={i} {...item} />
           ))}
 
@@ -357,10 +367,10 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
               {[
-                { label: "Neck Angle", value: `${latestNeck.toFixed(1)}°`, good: latestNeck < 20 },
-                { label: "Fatigue", value: `${latestFatigue.toFixed(0)}/100`, good: latestFatigue < 50 },
-                { label: "Good Posture", value: `${metrics?.goodPercent ?? 0}%`, good: (metrics?.goodPercent ?? 0) >= 60 },
-                { label: "Breaks", value: metrics?.breaks ?? 0, good: true },
+                { label: "Neck Angle", value: `${(isDisconnected || isWaiting) ? "0.0" : latestNeck.toFixed(1)}°`, good: (isDisconnected || isWaiting) || latestNeck < 20 },
+                { label: "Fatigue", value: `${(isDisconnected || isWaiting) ? "0" : latestFatigue.toFixed(0)}/100`, good: (isDisconnected || isWaiting) || latestFatigue < 50 },
+                { label: "Good Posture", value: `${(isDisconnected || isWaiting) ? "0" : (metrics?.goodPercent ?? 0)}%`, good: (isDisconnected || isWaiting) || (metrics?.goodPercent ?? 0) >= 60 },
+                { label: "Breaks", value: (isDisconnected || isWaiting) ? 0 : (metrics?.breaks ?? 0), good: true },
               ].map(({ label, value, good }) => (
                 <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <span style={{ fontSize: 12, color: "#64748b" }}>{label}</span>
