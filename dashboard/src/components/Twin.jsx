@@ -640,7 +640,7 @@ function AlertBanner({ postureStatus }) {
       shadow: "rgba(255,170,0,0.3)"
     },
     good: {
-      msg: "OPTIMAL POSTURE MAINTAINED",
+      msg: "GOOD POSTURE MAINTAINED",
       color: "#00ffcc",
       bg: "rgba(0,255,204,0.15)",
       shadow: "rgba(0,255,204,0.3)"

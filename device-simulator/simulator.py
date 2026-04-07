@@ -11,7 +11,7 @@ socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 # Configuration
 DEVICE_ID = "POSTURE_01"
-BAD_POSTURE_THRESHOLD = 20
+BAD_POSTURE_THRESHOLD = 30
 BAD_POSTURE_TIME = 3
 BACKEND_URL = "http://127.0.0.1:5050/api/posture"
 
