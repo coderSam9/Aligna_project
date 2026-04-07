@@ -14,6 +14,7 @@ import {
 import { PieChart, Pie, Cell, BarChart, Bar } from "recharts";
 import axios from "axios";
 import SkeletonTwin from "./components/Twin";
+import AIRecommendationsChat from "./components/AIRecommendationsChat";
 
 /* ─── brand gradient background ───────────────────────────────────── */
 const brandGradient = {
@@ -916,30 +917,13 @@ export default function App() {
             </div>
           </div>
 
-          {/* ── Recommendations ── */}
+          {/* ── AI Recommendations & Chat ── */}
           <div style={{ ...styles.panel, marginTop: 0 }}>
-            <div style={styles.panelHeader}>
-              <div>
-                <div style={styles.panelTitle}>Recommendations</div>
-                <div style={styles.panelSub}>
-                  Proactive tips based on current signals
-                </div>
-              </div>
-              <span
-                style={{
-                  ...styles.badge,
-                  ...statusPillStyle(metrics.goodPercent, 0),
-                }}
-              >
-                Status: {statusText}
-              </span>
-            </div>
-            <div className="aligna-divider" />
-            <div style={styles.threeCol}>
-              <RecCard {...rec1} />
-              <RecCard {...rec2} />
-              <RecCard {...rec3} />
-            </div>
+            <AIRecommendationsChat
+              metrics={metrics}
+              postureData={postureData}
+              fatigueData={fatigueData}
+            />
           </div>
         </main>
 
