@@ -626,17 +626,40 @@ function ConnectionDot({ connectionState }) {
 }
 
 function AlertBanner({ postureStatus }) {
-  const msg={bad:"CRITICAL POSTURE DEGRADATION",warning:"WARNING: POSTURE ANOMALY DETECTED",good:null}[postureStatus];
-  if (!msg) return null;
-  const border=postureStatus==="bad"?"#ff0044":"#ffaa00";
+  const config = {
+    bad: {
+      msg: "CRITICAL POSTURE DEGRADATION",
+      color: "#ff0044",
+      bg: "rgba(255,0,68,0.15)",
+      shadow: "rgba(255,0,68,0.3)"
+    },
+    warning: {
+      msg: "WARNING: POSTURE ANOMALY DETECTED",
+      color: "#ffaa00",
+      bg: "rgba(255,170,0,0.15)",
+      shadow: "rgba(255,170,0,0.3)"
+    },
+    good: {
+      msg: "OPTIMAL POSTURE MAINTAINED",
+      color: "#00ffcc",
+      bg: "rgba(0,255,204,0.15)",
+      shadow: "rgba(0,255,204,0.3)"
+    }
+  }[postureStatus];
+
+  if (!config || !config.msg) return null;
+
   return (
-    <div style={{position:"absolute",top:24,left:"50%",transform:"translateX(-50%)",
-      background:postureStatus==="bad"?"rgba(255,0,68,0.15)":"rgba(255,170,0,0.15)",
-      border:`1px solid ${border}`,borderRadius:4,padding:"10px 30px",
-      color:border,fontSize:14,fontWeight:"bold",letterSpacing:4,fontFamily:"monospace",
-      zIndex:10,pointerEvents:"none",whiteSpace:"nowrap", textShadow:`0 0 8px ${border}`, backdropFilter:"blur(4px)",
-      boxShadow:`0 0 20px ${postureStatus==="bad"?"rgba(255,0,68,0.3)":"rgba(255,170,0,0.3)"}`}}>
-       {msg}
+    <div style={{
+      position: "absolute", top: 24, left: "50%", transform: "translateX(-50%)",
+      background: config.bg,
+      border: `1px solid ${config.color}`, borderRadius: 4, padding: "10px 30px",
+      color: config.color, fontSize: 14, fontWeight: "bold", letterSpacing: 4, fontFamily: "monospace",
+      zIndex: 10, pointerEvents: "none", whiteSpace: "nowrap", textShadow: `0 0 8px ${config.color}`, 
+      backdropFilter: "blur(4px)",
+      boxShadow: `0 0 20px ${config.shadow}`
+    }}>
+       {config.msg}
     </div>
   );
 }
