@@ -213,6 +213,11 @@ export default function App() {
   const [showModal, setShowModal] = useState(false);
   const playbackQueueRef = React.useRef([]);
   const playbackIntervalRef = React.useRef(null);
+  const isRunningRef = React.useRef(isRunning);
+
+  useEffect(() => {
+    isRunningRef.current = isRunning;
+  }, [isRunning]);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -246,6 +251,8 @@ export default function App() {
     if (playbackIntervalRef.current) clearInterval(playbackIntervalRef.current);
     
     playbackIntervalRef.current = setInterval(() => {
+      if (!isRunningRef.current) return; // Respect pause button
+
       if (playbackQueueRef.current.length === 0) {
         clearInterval(playbackIntervalRef.current);
         setIsManualMode(false); // Auto-exit sandbox when complete
