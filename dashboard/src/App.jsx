@@ -204,7 +204,8 @@ export default function App() {
   const [showAlert, setShowAlert] = useState(false);
   const [isRunning, setIsRunning] = useState(true);
   const [clockDisplay, setClockDisplay] = useState("00:00:00");
-  const sessionStart = React.useRef(Date.now());
+  const runningSince = React.useRef(Date.now());
+  const elapsedMs = React.useRef(0);
 
   /* ── NEW: hovered bar index for Body Strain ── */
   const [hoveredBar, setHoveredBar] = useState(null);
@@ -212,11 +213,15 @@ export default function App() {
   /* ── live HH:MM:SS clock — purely display, resets with Reset button ── */
   useEffect(() => {
     if (!isRunning) return;
-    const id = setInterval(
-      () => setClockDisplay(formatHMS(Date.now() - sessionStart.current)),
-      1000
-    );
-    return () => clearInterval(id);
+    runningSince.current = Date.now();
+    const id = setInterval(() => {
+      const currentRunTime = elapsedMs.current + (Date.now() - runningSince.current);
+      setClockDisplay(formatHMS(currentRunTime));
+    }, 1000);
+    return () => {
+      elapsedMs.current += Date.now() - runningSince.current;
+      clearInterval(id);
+    };
   }, [isRunning]);
 
   /* ── original data-fetching logic — untouched ── */
@@ -229,12 +234,12 @@ export default function App() {
         );
         setIsLive(true);
         const postureFormatted = res.data.map((item) => ({
-          time: new Date(item.timestamp).toLocaleTimeString().slice(3, 8),
+          time: new Date(item.timestamp).toLocaleTimeString("en-US", { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
           neck: item.angle,
           back: Math.round(item.angle * 0.8),
         }));
         const fatigueFormatted = res.data.map((item) => ({
-          time: new Date(item.timestamp).toLocaleTimeString().slice(3, 8),
+          time: new Date(item.timestamp).toLocaleTimeString("en-US", { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
           fatigue: Math.min(100, Math.round(item.fatigueLevel || 0)),
         }));
         setPostureData(postureFormatted);
@@ -405,16 +410,24 @@ export default function App() {
               </span>
 
               <button
-                style={{ ...styles.pill, ...styles.btnOutline }}
+                style={{
+                  ...styles.pill,
+                  ...(isRunning ? styles.btnOutline : styles.btnGradient)
+                }}
                 onClick={() => setIsRunning(true)}
               >
-                Live Simulation
+                {isRunning ? "Live Simulation" : "▶ Resume"}
               </button>
               <button
-                style={{ ...styles.pill, ...styles.btnSlate }}
+                style={{
+                  ...styles.pill,
+                  ...(!isRunning ? styles.btnOutline : styles.btnSlate),
+                  opacity: !isRunning ? 0.7 : 1
+                }}
                 onClick={() => setIsRunning(false)}
+                disabled={!isRunning}
               >
-                Pause
+                {isRunning ? "Pause" : "Paused"}
               </button>
               <button
                 style={{ ...styles.pill, ...styles.btnSlate }}
@@ -428,7 +441,8 @@ export default function App() {
                     breaks: 0,
                     avgAngle: 0,
                   });
-                  sessionStart.current = Date.now();
+                  elapsedMs.current = 0;
+                  runningSince.current = Date.now();
                   setClockDisplay("00:00:00");
                 }}
               >
