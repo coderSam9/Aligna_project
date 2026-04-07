@@ -219,6 +219,21 @@ export default function App() {
     isRunningRef.current = isRunning;
   }, [isRunning]);
 
+  const resetSession = () => {
+    setPostureData([]);
+    setFatigueData([]);
+    setMetrics({
+      duration: "0m",
+      goodPercent: 0,
+      slouchTime: "0s",
+      breaks: 0,
+      avgAngle: 0,
+    });
+    elapsedMs.current = 0;
+    runningSince.current = Date.now();
+    setClockDisplay("00:00:00");
+  };
+
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -245,6 +260,7 @@ export default function App() {
       alert("No data loaded. Please upload a JSON file first.");
       return;
     }
+    resetSession();
     setIsManualMode(true);
     setManualDataStack([]);
     setShowModal(false);
@@ -499,8 +515,7 @@ export default function App() {
                 }}
                 onClick={() => {
                   setIsManualMode(false);
-                  setPostureData([]);
-                  setFatigueData([]);
+                  resetSession();
                 }}
               >
                 📡 Live Device
@@ -541,20 +556,7 @@ export default function App() {
               </button>
               <button
                 style={{ ...styles.pill, ...styles.btnSlate }}
-                onClick={() => {
-                  setPostureData([]);
-                  setFatigueData([]);
-                  setMetrics({
-                    duration: "0m",
-                    goodPercent: 0,
-                    slouchTime: "0s",
-                    breaks: 0,
-                    avgAngle: 0,
-                  });
-                  elapsedMs.current = 0;
-                  runningSince.current = Date.now();
-                  setClockDisplay("00:00:00");
-                }}
+                onClick={resetSession}
               >
                 Reset
               </button>
