@@ -271,7 +271,6 @@ export default function App() {
 
       if (playbackQueueRef.current.length === 0) {
         clearInterval(playbackIntervalRef.current);
-        setIsManualMode(false); // Auto-exit sandbox when complete
         alert("Simulation Playback Complete!");
         return;
       }
@@ -290,6 +289,7 @@ export default function App() {
     setIsManualMode(false);
     setManualDataStack([]);
     setShowModal(false);
+    resetSession();
   };
 
   const processData = (dataArray) => {
@@ -513,10 +513,7 @@ export default function App() {
                   border: isManualMode ? "1px solid rgba(148,163,184,0.2)" : "none",
                   color: isManualMode ? "#94a3b8" : "#fff",
                 }}
-                onClick={() => {
-                  setIsManualMode(false);
-                  resetSession();
-                }}
+                onClick={stopPlayback}
               >
                 📡 Live Device
               </button>
