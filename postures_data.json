@@ -1,0 +1,5927 @@
+[
+  {
+    "_id": "69d3b24bc92fbfca0ae3d3f9",
+    "deviceId": "POSTURE_01",
+    "angle": 16.69,
+    "fatigueLevel": 0.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.278166566498824],
+      "r_shoulder": [0.2, 1, 0.278166566498824],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:16:58.989Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b24cc92fbfca0ae3d3fb",
+    "deviceId": "POSTURE_01",
+    "angle": 15.56,
+    "fatigueLevel": 0.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.259269954981528],
+      "r_shoulder": [0.2, 1, 0.259269954981528],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:00.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b24dc92fbfca0ae3d3fd",
+    "deviceId": "POSTURE_01",
+    "angle": 15.44,
+    "fatigueLevel": 0.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.257383084998123],
+      "r_shoulder": [0.2, 1, 0.257383084998123],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:01.162Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b24ec92fbfca0ae3d3ff",
+    "deviceId": "POSTURE_01",
+    "angle": 15.36,
+    "fatigueLevel": 0.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.256031108371193],
+      "r_shoulder": [0.2, 1, 0.256031108371193],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:02.243Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b24fc92fbfca0ae3d402",
+    "deviceId": "POSTURE_01",
+    "angle": 15.77,
+    "fatigueLevel": 0.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.262780266309011],
+      "r_shoulder": [0.2, 1, 0.262780266309011],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:03.322Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b250c92fbfca0ae3d404",
+    "deviceId": "POSTURE_01",
+    "angle": 16.65,
+    "fatigueLevel": 0.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.277428387405523],
+      "r_shoulder": [0.2, 1, 0.277428387405523],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:04.407Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b251c92fbfca0ae3d406",
+    "deviceId": "POSTURE_01",
+    "angle": 14.28,
+    "fatigueLevel": 0.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.237983856480304],
+      "r_shoulder": [0.2, 1, 0.237983856480304],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:05.491Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b252c92fbfca0ae3d409",
+    "deviceId": "POSTURE_01",
+    "angle": 14.85,
+    "fatigueLevel": 0.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.247447091804385],
+      "r_shoulder": [0.2, 1, 0.247447091804385],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:06.577Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b253c92fbfca0ae3d40b",
+    "deviceId": "POSTURE_01",
+    "angle": 16.1,
+    "fatigueLevel": 0.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.268358128030728],
+      "r_shoulder": [0.2, 1, 0.268358128030728],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:07.656Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b254c92fbfca0ae3d40d",
+    "deviceId": "POSTURE_01",
+    "angle": 16.27,
+    "fatigueLevel": 1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.271185016460843],
+      "r_shoulder": [0.2, 1, 0.271185016460843],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:08.736Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b255c92fbfca0ae3d40f",
+    "deviceId": "POSTURE_01",
+    "angle": 17.91,
+    "fatigueLevel": 1.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.298532789541324],
+      "r_shoulder": [0.2, 1, 0.298532789541324],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:09.825Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b256c92fbfca0ae3d412",
+    "deviceId": "POSTURE_01",
+    "angle": 17.11,
+    "fatigueLevel": 1.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.285175871868632],
+      "r_shoulder": [0.2, 1, 0.285175871868632],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:10.901Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b257c92fbfca0ae3d414",
+    "deviceId": "POSTURE_01",
+    "angle": 15.71,
+    "fatigueLevel": 1.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.261843669113044],
+      "r_shoulder": [0.2, 1, 0.261843669113044],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:11.978Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b259c92fbfca0ae3d416",
+    "deviceId": "POSTURE_01",
+    "angle": 14.54,
+    "fatigueLevel": 1.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.242267821652955],
+      "r_shoulder": [0.2, 1, 0.242267821652955],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:13.054Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b25ac92fbfca0ae3d418",
+    "deviceId": "POSTURE_01",
+    "angle": 15.67,
+    "fatigueLevel": 1.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.261180886671569],
+      "r_shoulder": [0.2, 1, 0.261180886671569],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:14.133Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b25bc92fbfca0ae3d41b",
+    "deviceId": "POSTURE_01",
+    "angle": 15.79,
+    "fatigueLevel": 1.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.263222917644871],
+      "r_shoulder": [0.2, 1, 0.263222917644871],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:15.211Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b25cc92fbfca0ae3d41d",
+    "deviceId": "POSTURE_01",
+    "angle": 17.67,
+    "fatigueLevel": 1.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.29445655627534],
+      "r_shoulder": [0.2, 1, 0.29445655627534],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:16.290Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b25dc92fbfca0ae3d41f",
+    "deviceId": "POSTURE_01",
+    "angle": 15.56,
+    "fatigueLevel": 1.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.259341175351859],
+      "r_shoulder": [0.2, 1, 0.259341175351859],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:17.368Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b25ec92fbfca0ae3d422",
+    "deviceId": "POSTURE_01",
+    "angle": 19.23,
+    "fatigueLevel": 1.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.320418049497337],
+      "r_shoulder": [0.2, 1, 0.320418049497337],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:18.445Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b25fc92fbfca0ae3d424",
+    "deviceId": "POSTURE_01",
+    "angle": 19.42,
+    "fatigueLevel": 2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.323739366022148],
+      "r_shoulder": [0.2, 1, 0.323739366022148],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:19.525Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b260c92fbfca0ae3d426",
+    "deviceId": "POSTURE_01",
+    "angle": 19.02,
+    "fatigueLevel": 2.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.316990024060485],
+      "r_shoulder": [0.2, 1, 0.316990024060485],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:20.602Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b261c92fbfca0ae3d428",
+    "deviceId": "POSTURE_01",
+    "angle": 18.43,
+    "fatigueLevel": 2.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.307191163626817],
+      "r_shoulder": [0.2, 1, 0.307191163626817],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:21.678Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b262c92fbfca0ae3d42b",
+    "deviceId": "POSTURE_01",
+    "angle": 18.57,
+    "fatigueLevel": 2.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.309495184939792],
+      "r_shoulder": [0.2, 1, 0.309495184939792],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:22.755Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b263c92fbfca0ae3d42d",
+    "deviceId": "POSTURE_01",
+    "angle": 20.04,
+    "fatigueLevel": 2.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.333987754587393],
+      "r_shoulder": [0.2, 1, 0.333987754587393],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:23.834Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b264c92fbfca0ae3d42f",
+    "deviceId": "POSTURE_01",
+    "angle": 19.26,
+    "fatigueLevel": 2.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.321031158774602],
+      "r_shoulder": [0.2, 1, 0.321031158774602],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:24.914Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b266c92fbfca0ae3d431",
+    "deviceId": "POSTURE_01",
+    "angle": 22.31,
+    "fatigueLevel": 2.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.371758283590287],
+      "r_shoulder": [0.2, 1, 0.371758283590287],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:25.994Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b267c92fbfca0ae3d434",
+    "deviceId": "POSTURE_01",
+    "angle": 23.04,
+    "fatigueLevel": 2.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.383983640674188],
+      "r_shoulder": [0.2, 1, 0.383983640674188],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:27.073Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b268c92fbfca0ae3d436",
+    "deviceId": "POSTURE_01",
+    "angle": 22.37,
+    "fatigueLevel": 2.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.372868687469667],
+      "r_shoulder": [0.2, 1, 0.372868687469667],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:28.153Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b269c92fbfca0ae3d438",
+    "deviceId": "POSTURE_01",
+    "angle": 22.87,
+    "fatigueLevel": 2.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.381121877435136],
+      "r_shoulder": [0.2, 1, 0.381121877435136],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:29.231Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b26ac92fbfca0ae3d43a",
+    "deviceId": "POSTURE_01",
+    "angle": 21.23,
+    "fatigueLevel": 3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.353879051016054],
+      "r_shoulder": [0.2, 1, 0.353879051016054],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:30.309Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b26bc92fbfca0ae3d43d",
+    "deviceId": "POSTURE_01",
+    "angle": 23.1,
+    "fatigueLevel": 3.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.384968053067661],
+      "r_shoulder": [0.2, 1, 0.384968053067661],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:31.384Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b26cc92fbfca0ae3d43f",
+    "deviceId": "POSTURE_01",
+    "angle": 23.81,
+    "fatigueLevel": 3.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.396762371317011],
+      "r_shoulder": [0.2, 1, 0.396762371317011],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:32.470Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b26dc92fbfca0ae3d441",
+    "deviceId": "POSTURE_01",
+    "angle": 21.97,
+    "fatigueLevel": 3.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.36623540568825],
+      "r_shoulder": [0.2, 1, 0.36623540568825],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:33.552Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b26ec92fbfca0ae3d444",
+    "deviceId": "POSTURE_01",
+    "angle": 24.63,
+    "fatigueLevel": 3.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.410447944558601],
+      "r_shoulder": [0.2, 1, 0.410447944558601],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:17:34.631Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2d5e12ee9ef13667458",
+    "deviceId": "POSTURE_01",
+    "angle": 16.3,
+    "fatigueLevel": 0.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.271674671941582],
+      "r_shoulder": [0.2, 1, 0.271674671941582],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:17.858Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2d6e12ee9ef1366745a",
+    "deviceId": "POSTURE_01",
+    "angle": 15.5,
+    "fatigueLevel": 0.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.258326804932249],
+      "r_shoulder": [0.2, 1, 0.258326804932249],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:18.969Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2d8e12ee9ef1366745c",
+    "deviceId": "POSTURE_01",
+    "angle": 15.81,
+    "fatigueLevel": 0.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.26346901811425],
+      "r_shoulder": [0.2, 1, 0.26346901811425],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:20.043Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2d9e12ee9ef1366745e",
+    "deviceId": "POSTURE_01",
+    "angle": 16.68,
+    "fatigueLevel": 0.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.278071897557739],
+      "r_shoulder": [0.2, 1, 0.278071897557739],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:21.112Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2dae12ee9ef13667460",
+    "deviceId": "POSTURE_01",
+    "angle": 14.53,
+    "fatigueLevel": 0.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.242207520841162],
+      "r_shoulder": [0.2, 1, 0.242207520841162],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:22.182Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2dbe12ee9ef13667463",
+    "deviceId": "POSTURE_01",
+    "angle": 16.67,
+    "fatigueLevel": 0.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.277913394372979],
+      "r_shoulder": [0.2, 1, 0.277913394372979],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:23.252Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2dce12ee9ef13667465",
+    "deviceId": "POSTURE_01",
+    "angle": 16.1,
+    "fatigueLevel": 0.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.268380298179604],
+      "r_shoulder": [0.2, 1, 0.268380298179604],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:24.328Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2dde12ee9ef13667467",
+    "deviceId": "POSTURE_01",
+    "angle": 18.05,
+    "fatigueLevel": 0.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.300830632121233],
+      "r_shoulder": [0.2, 1, 0.300830632121233],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:25.398Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2dee12ee9ef1366746a",
+    "deviceId": "POSTURE_01",
+    "angle": 15.6,
+    "fatigueLevel": 0.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.260050004952632],
+      "r_shoulder": [0.2, 1, 0.260050004952632],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:26.470Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2dfe12ee9ef1366746c",
+    "deviceId": "POSTURE_01",
+    "angle": 15.69,
+    "fatigueLevel": 1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.261580516004218],
+      "r_shoulder": [0.2, 1, 0.261580516004218],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:27.534Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e0e12ee9ef1366746e",
+    "deviceId": "POSTURE_01",
+    "angle": 17.22,
+    "fatigueLevel": 1.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.286972162202403],
+      "r_shoulder": [0.2, 1, 0.286972162202403],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:28.601Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e1e12ee9ef13667471",
+    "deviceId": "POSTURE_01",
+    "angle": 17.27,
+    "fatigueLevel": 1.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.287810644992942],
+      "r_shoulder": [0.2, 1, 0.287810644992942],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:29.671Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e3e12ee9ef13667473",
+    "deviceId": "POSTURE_01",
+    "angle": 18.38,
+    "fatigueLevel": 1.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.30626632895542],
+      "r_shoulder": [0.2, 1, 0.30626632895542],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:31.082Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e4e12ee9ef13667475",
+    "deviceId": "POSTURE_01",
+    "angle": 18.08,
+    "fatigueLevel": 1.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.301293689092138],
+      "r_shoulder": [0.2, 1, 0.301293689092138],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:32.147Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e5e12ee9ef13667477",
+    "deviceId": "POSTURE_01",
+    "angle": 18.66,
+    "fatigueLevel": 1.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.310941666882607],
+      "r_shoulder": [0.2, 1, 0.310941666882607],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:33.215Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e6e12ee9ef1366747b",
+    "deviceId": "POSTURE_01",
+    "angle": 17.85,
+    "fatigueLevel": 1.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.297491296351597],
+      "r_shoulder": [0.2, 1, 0.297491296351597],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:34.284Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e7e12ee9ef1366747d",
+    "deviceId": "POSTURE_01",
+    "angle": 17.5,
+    "fatigueLevel": 1.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.291622716811279],
+      "r_shoulder": [0.2, 1, 0.291622716811279],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:35.350Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e8e12ee9ef1366747f",
+    "deviceId": "POSTURE_01",
+    "angle": 16.57,
+    "fatigueLevel": 1.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.276184279870111],
+      "r_shoulder": [0.2, 1, 0.276184279870111],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:36.411Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2e9e12ee9ef13667481",
+    "deviceId": "POSTURE_01",
+    "angle": 19.2,
+    "fatigueLevel": 1.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.319928270464529],
+      "r_shoulder": [0.2, 1, 0.319928270464529],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:37.479Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2eae12ee9ef13667484",
+    "deviceId": "POSTURE_01",
+    "angle": 21.89,
+    "fatigueLevel": 2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.364814869833931],
+      "r_shoulder": [0.2, 1, 0.364814869833931],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:38.544Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2ebe12ee9ef13667486",
+    "deviceId": "POSTURE_01",
+    "angle": 19.73,
+    "fatigueLevel": 2.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.328882458732649],
+      "r_shoulder": [0.2, 1, 0.328882458732649],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:39.609Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2ece12ee9ef13667488",
+    "deviceId": "POSTURE_01",
+    "angle": 21.55,
+    "fatigueLevel": 2.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.359202227369882],
+      "r_shoulder": [0.2, 1, 0.359202227369882],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:40.675Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2ede12ee9ef1366748b",
+    "deviceId": "POSTURE_01",
+    "angle": 20.72,
+    "fatigueLevel": 2.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.345334458036847],
+      "r_shoulder": [0.2, 1, 0.345334458036847],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:41.744Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2eee12ee9ef1366748d",
+    "deviceId": "POSTURE_01",
+    "angle": 21.99,
+    "fatigueLevel": 2.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.36647081475195],
+      "r_shoulder": [0.2, 1, 0.36647081475195],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:42.811Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2efe12ee9ef1366748f",
+    "deviceId": "POSTURE_01",
+    "angle": 21.84,
+    "fatigueLevel": 2.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.364075261182109],
+      "r_shoulder": [0.2, 1, 0.364075261182109],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:43.877Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f0e12ee9ef13667491",
+    "deviceId": "POSTURE_01",
+    "angle": 22.6,
+    "fatigueLevel": 2.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.376639062342224],
+      "r_shoulder": [0.2, 1, 0.376639062342224],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:44.963Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f2e12ee9ef13667494",
+    "deviceId": "POSTURE_01",
+    "angle": 21.86,
+    "fatigueLevel": 2.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.364319561425183],
+      "r_shoulder": [0.2, 1, 0.364319561425183],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:46.027Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f3e12ee9ef13667496",
+    "deviceId": "POSTURE_01",
+    "angle": 25.27,
+    "fatigueLevel": 2.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.421182058443102],
+      "r_shoulder": [0.2, 1, 0.421182058443102],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:47.089Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f4e12ee9ef13667498",
+    "deviceId": "POSTURE_01",
+    "angle": 24.9,
+    "fatigueLevel": 2.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.415078764230181],
+      "r_shoulder": [0.2, 1, 0.415078764230181],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:48.153Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f5e12ee9ef1366749a",
+    "deviceId": "POSTURE_01",
+    "angle": 26.09,
+    "fatigueLevel": 3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.434822737876384],
+      "r_shoulder": [0.2, 1, 0.434822737876384],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:49.221Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f6e12ee9ef1366749d",
+    "deviceId": "POSTURE_01",
+    "angle": 26.06,
+    "fatigueLevel": 3.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.434392836709652],
+      "r_shoulder": [0.2, 1, 0.434392836709652],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:50.290Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f7e12ee9ef1366749f",
+    "deviceId": "POSTURE_01",
+    "angle": 27.64,
+    "fatigueLevel": 3.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.460743128469112],
+      "r_shoulder": [0.2, 1, 0.460743128469112],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:51.357Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f8e12ee9ef136674a1",
+    "deviceId": "POSTURE_01",
+    "angle": 25.74,
+    "fatigueLevel": 3.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.42901650547761],
+      "r_shoulder": [0.2, 1, 0.42901650547761],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:52.420Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2f9e12ee9ef136674a3",
+    "deviceId": "POSTURE_01",
+    "angle": 26.99,
+    "fatigueLevel": 3.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.449802722869694],
+      "r_shoulder": [0.2, 1, 0.449802722869694],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:53.486Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2fae12ee9ef136674a6",
+    "deviceId": "POSTURE_01",
+    "angle": 29.62,
+    "fatigueLevel": 3.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.493680710127935],
+      "r_shoulder": [0.2, 1, 0.493680710127935],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:54.551Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2fbe12ee9ef136674a8",
+    "deviceId": "POSTURE_01",
+    "angle": 28.69,
+    "fatigueLevel": 3.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.478137925876804],
+      "r_shoulder": [0.2, 1, 0.478137925876804],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:55.620Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2fce12ee9ef136674aa",
+    "deviceId": "POSTURE_01",
+    "angle": 32.19,
+    "fatigueLevel": 3.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.536468664160908],
+      "r_shoulder": [0.2, 1, 0.536468664160908],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:56.686Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2fde12ee9ef136674ac",
+    "deviceId": "POSTURE_01",
+    "angle": 32.47,
+    "fatigueLevel": 3.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.541151100640685],
+      "r_shoulder": [0.2, 1, 0.541151100640685],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:57.749Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2fee12ee9ef136674ae",
+    "deviceId": "POSTURE_01",
+    "angle": 33.34,
+    "fatigueLevel": 3.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.555653233080933],
+      "r_shoulder": [0.2, 1, 0.555653233080933],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:58.814Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b2ffe12ee9ef136674b0",
+    "deviceId": "POSTURE_01",
+    "angle": 31.17,
+    "fatigueLevel": 4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.519469598126875],
+      "r_shoulder": [0.2, 1, 0.519469598126875],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:19:59.882Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b300e12ee9ef136674b2",
+    "deviceId": "POSTURE_01",
+    "angle": 34.14,
+    "fatigueLevel": 4.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.568921615378671],
+      "r_shoulder": [0.2, 1, 0.568921615378671],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:00.949Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b302e12ee9ef136674b4",
+    "deviceId": "POSTURE_01",
+    "angle": 32.28,
+    "fatigueLevel": 4.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.538078941416709],
+      "r_shoulder": [0.2, 1, 0.538078941416709],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:02.017Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b303e12ee9ef136674b6",
+    "deviceId": "POSTURE_01",
+    "angle": 34.44,
+    "fatigueLevel": 4.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.573929514598689],
+      "r_shoulder": [0.2, 1, 0.573929514598689],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:03.084Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b304e12ee9ef136674b8",
+    "deviceId": "POSTURE_01",
+    "angle": 35.47,
+    "fatigueLevel": 4.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.591241926533084],
+      "r_shoulder": [0.2, 1, 0.591241926533084],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:04.149Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b305e12ee9ef136674ba",
+    "deviceId": "POSTURE_01",
+    "angle": 38.66,
+    "fatigueLevel": 4.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.644387071334133],
+      "r_shoulder": [0.2, 1, 0.644387071334133],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:05.215Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b306e12ee9ef136674bc",
+    "deviceId": "POSTURE_01",
+    "angle": 39.68,
+    "fatigueLevel": 4.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.661274710862635],
+      "r_shoulder": [0.2, 1, 0.661274710862635],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:06.283Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b307e12ee9ef136674be",
+    "deviceId": "POSTURE_01",
+    "angle": 38.08,
+    "fatigueLevel": 4.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.634618772370713],
+      "r_shoulder": [0.2, 1, 0.634618772370713],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:07.349Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b308e12ee9ef136674c0",
+    "deviceId": "POSTURE_01",
+    "angle": 38.76,
+    "fatigueLevel": 4.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.646039242561305],
+      "r_shoulder": [0.2, 1, 0.646039242561305],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:08.417Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b309e12ee9ef136674c4",
+    "deviceId": "POSTURE_01",
+    "angle": 39.38,
+    "fatigueLevel": 4.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.656351579451972],
+      "r_shoulder": [0.2, 1, 0.656351579451972],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:09.484Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b30ae12ee9ef136674c6",
+    "deviceId": "POSTURE_01",
+    "angle": 41.97,
+    "fatigueLevel": 5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.699444744264439],
+      "r_shoulder": [0.2, 1, 0.699444744264439],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:10.552Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b30be12ee9ef136674c8",
+    "deviceId": "POSTURE_01",
+    "angle": 40.31,
+    "fatigueLevel": 5.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.671799060926343],
+      "r_shoulder": [0.2, 1, 0.671799060926343],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:11.620Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b30ce12ee9ef136674ca",
+    "deviceId": "POSTURE_01",
+    "angle": 44.25,
+    "fatigueLevel": 5.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.737555052340798],
+      "r_shoulder": [0.2, 1, 0.737555052340798],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:12.685Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b30de12ee9ef136674cd",
+    "deviceId": "POSTURE_01",
+    "angle": 43.67,
+    "fatigueLevel": 5.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.727779973432779],
+      "r_shoulder": [0.2, 1, 0.727779973432779],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:13.753Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b30ee12ee9ef136674cf",
+    "deviceId": "POSTURE_01",
+    "angle": 45.07,
+    "fatigueLevel": 5.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.75122605782502],
+      "r_shoulder": [0.2, 1, 0.75122605782502],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:14.818Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b30fe12ee9ef136674d1",
+    "deviceId": "POSTURE_01",
+    "angle": 45.02,
+    "fatigueLevel": 5.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.750359501731708],
+      "r_shoulder": [0.2, 1, 0.750359501731708],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:15.887Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b310e12ee9ef136674d4",
+    "deviceId": "POSTURE_01",
+    "angle": 48.66,
+    "fatigueLevel": 5.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.810958108556856],
+      "r_shoulder": [0.2, 1, 0.810958108556856],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:16.953Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b312e12ee9ef136674d6",
+    "deviceId": "POSTURE_01",
+    "angle": 46.96,
+    "fatigueLevel": 5.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.78272916271195],
+      "r_shoulder": [0.2, 1, 0.78272916271195],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:18.018Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b313e12ee9ef136674d8",
+    "deviceId": "POSTURE_01",
+    "angle": 49.96,
+    "fatigueLevel": 5.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.832708826086122],
+      "r_shoulder": [0.2, 1, 0.832708826086122],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:19.084Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b314e12ee9ef136674da",
+    "deviceId": "POSTURE_01",
+    "angle": 49.07,
+    "fatigueLevel": 5.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.817914561569031],
+      "r_shoulder": [0.2, 1, 0.817914561569031],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:20.153Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b315e12ee9ef136674dd",
+    "deviceId": "POSTURE_01",
+    "angle": 15.83,
+    "fatigueLevel": 0,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.263877407728771],
+      "r_shoulder": [0.2, 1, 0.263877407728771],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:21.217Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b316e12ee9ef136674df",
+    "deviceId": "POSTURE_01",
+    "angle": 16.07,
+    "fatigueLevel": 0.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.267864313925886],
+      "r_shoulder": [0.2, 1, 0.267864313925886],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:22.284Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b317e12ee9ef136674e1",
+    "deviceId": "POSTURE_01",
+    "angle": 15.55,
+    "fatigueLevel": 0.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.259095311876795],
+      "r_shoulder": [0.2, 1, 0.259095311876795],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:23.351Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b318e12ee9ef136674e3",
+    "deviceId": "POSTURE_01",
+    "angle": 13.04,
+    "fatigueLevel": 0.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.217293277110171],
+      "r_shoulder": [0.2, 1, 0.217293277110171],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:24.417Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b319e12ee9ef136674e6",
+    "deviceId": "POSTURE_01",
+    "angle": 14.87,
+    "fatigueLevel": 0.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.247756278504456],
+      "r_shoulder": [0.2, 1, 0.247756278504456],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:25.483Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b31ae12ee9ef136674e8",
+    "deviceId": "POSTURE_01",
+    "angle": 15.37,
+    "fatigueLevel": 0.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.256152130488519],
+      "r_shoulder": [0.2, 1, 0.256152130488519],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:26.546Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b31be12ee9ef136674ea",
+    "deviceId": "POSTURE_01",
+    "angle": 16.81,
+    "fatigueLevel": 0.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.280226467470351],
+      "r_shoulder": [0.2, 1, 0.280226467470351],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:27.621Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b31ce12ee9ef136674ec",
+    "deviceId": "POSTURE_01",
+    "angle": 16.18,
+    "fatigueLevel": 0.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.26971966633427],
+      "r_shoulder": [0.2, 1, 0.26971966633427],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:28.687Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b31de12ee9ef136674ef",
+    "deviceId": "POSTURE_01",
+    "angle": 17.89,
+    "fatigueLevel": 0.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.298231455534452],
+      "r_shoulder": [0.2, 1, 0.298231455534452],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:29.757Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b31ee12ee9ef136674f1",
+    "deviceId": "POSTURE_01",
+    "angle": 14.65,
+    "fatigueLevel": 0.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.244131703887886],
+      "r_shoulder": [0.2, 1, 0.244131703887886],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:30.823Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b31fe12ee9ef136674f3",
+    "deviceId": "POSTURE_01",
+    "angle": 17.35,
+    "fatigueLevel": 1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.28924660513984],
+      "r_shoulder": [0.2, 1, 0.28924660513984],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:31.891Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b320e12ee9ef136674f5",
+    "deviceId": "POSTURE_01",
+    "angle": 14.92,
+    "fatigueLevel": 1.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.248730621914207],
+      "r_shoulder": [0.2, 1, 0.248730621914207],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:32.957Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b322e12ee9ef136674f8",
+    "deviceId": "POSTURE_01",
+    "angle": 17,
+    "fatigueLevel": 1.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.283337384801106],
+      "r_shoulder": [0.2, 1, 0.283337384801106],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:34.023Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b323e12ee9ef136674fa",
+    "deviceId": "POSTURE_01",
+    "angle": 19.27,
+    "fatigueLevel": 1.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.321175976477385],
+      "r_shoulder": [0.2, 1, 0.321175976477385],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:35.105Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b324e12ee9ef136674fc",
+    "deviceId": "POSTURE_01",
+    "angle": 16.55,
+    "fatigueLevel": 1.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.275764377027517],
+      "r_shoulder": [0.2, 1, 0.275764377027517],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:36.172Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b325e12ee9ef136674fe",
+    "deviceId": "POSTURE_01",
+    "angle": 18.99,
+    "fatigueLevel": 1.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.316543436782916],
+      "r_shoulder": [0.2, 1, 0.316543436782916],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:37.238Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b326e12ee9ef13667501",
+    "deviceId": "POSTURE_01",
+    "angle": 19.44,
+    "fatigueLevel": 1.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.323997982070008],
+      "r_shoulder": [0.2, 1, 0.323997982070008],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:38.304Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b327e12ee9ef13667503",
+    "deviceId": "POSTURE_01",
+    "angle": 16.76,
+    "fatigueLevel": 1.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.27940012104881],
+      "r_shoulder": [0.2, 1, 0.27940012104881],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:39.371Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b328e12ee9ef13667505",
+    "deviceId": "POSTURE_01",
+    "angle": 18.75,
+    "fatigueLevel": 1.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.312480179385262],
+      "r_shoulder": [0.2, 1, 0.312480179385262],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:40.436Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b329e12ee9ef13667508",
+    "deviceId": "POSTURE_01",
+    "angle": 18,
+    "fatigueLevel": 1.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.299924434723322],
+      "r_shoulder": [0.2, 1, 0.299924434723322],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:41.502Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b32ae12ee9ef1366750a",
+    "deviceId": "POSTURE_01",
+    "angle": 17.31,
+    "fatigueLevel": 2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.288442919502615],
+      "r_shoulder": [0.2, 1, 0.288442919502615],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:42.569Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b32be12ee9ef1366750c",
+    "deviceId": "POSTURE_01",
+    "angle": 20.3,
+    "fatigueLevel": 2.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.338381171098129],
+      "r_shoulder": [0.2, 1, 0.338381171098129],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:43.635Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b32ce12ee9ef1366750e",
+    "deviceId": "POSTURE_01",
+    "angle": 21.17,
+    "fatigueLevel": 2.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.352803481976593],
+      "r_shoulder": [0.2, 1, 0.352803481976593],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:44.698Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b32de12ee9ef13667511",
+    "deviceId": "POSTURE_01",
+    "angle": 19.13,
+    "fatigueLevel": 2.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.3189017511905],
+      "r_shoulder": [0.2, 1, 0.3189017511905],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:45.760Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b32ee12ee9ef13667513",
+    "deviceId": "POSTURE_01",
+    "angle": 18.63,
+    "fatigueLevel": 2.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.310482354612133],
+      "r_shoulder": [0.2, 1, 0.310482354612133],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:46.823Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b32fe12ee9ef13667515",
+    "deviceId": "POSTURE_01",
+    "angle": 22.03,
+    "fatigueLevel": 2.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.367195763744788],
+      "r_shoulder": [0.2, 1, 0.367195763744788],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:47.887Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b330e12ee9ef13667517",
+    "deviceId": "POSTURE_01",
+    "angle": 19.22,
+    "fatigueLevel": 2.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.320308629381502],
+      "r_shoulder": [0.2, 1, 0.320308629381502],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:48.955Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b332e12ee9ef1366751a",
+    "deviceId": "POSTURE_01",
+    "angle": 22.91,
+    "fatigueLevel": 2.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.38180180602661],
+      "r_shoulder": [0.2, 1, 0.38180180602661],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:50.021Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b333e12ee9ef1366751c",
+    "deviceId": "POSTURE_01",
+    "angle": 23.52,
+    "fatigueLevel": 2.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.391979509741315],
+      "r_shoulder": [0.2, 1, 0.391979509741315],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:51.088Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b334e12ee9ef1366751e",
+    "deviceId": "POSTURE_01",
+    "angle": 21.73,
+    "fatigueLevel": 2.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.362174843247614],
+      "r_shoulder": [0.2, 1, 0.362174843247614],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:52.152Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b335e12ee9ef13667520",
+    "deviceId": "POSTURE_01",
+    "angle": 23.06,
+    "fatigueLevel": 3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.384401618442223],
+      "r_shoulder": [0.2, 1, 0.384401618442223],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:53.219Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b336e12ee9ef13667523",
+    "deviceId": "POSTURE_01",
+    "angle": 24.74,
+    "fatigueLevel": 3.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.412335252604982],
+      "r_shoulder": [0.2, 1, 0.412335252604982],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:54.282Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b337e12ee9ef13667525",
+    "deviceId": "POSTURE_01",
+    "angle": 24.93,
+    "fatigueLevel": 3.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.415513656099026],
+      "r_shoulder": [0.2, 1, 0.415513656099026],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:55.351Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b338e12ee9ef13667527",
+    "deviceId": "POSTURE_01",
+    "angle": 24.51,
+    "fatigueLevel": 3.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.408580909529853],
+      "r_shoulder": [0.2, 1, 0.408580909529853],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:56.417Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b339e12ee9ef1366752a",
+    "deviceId": "POSTURE_01",
+    "angle": 26.57,
+    "fatigueLevel": 3.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.44289037716818],
+      "r_shoulder": [0.2, 1, 0.44289037716818],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:57.484Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b33ae12ee9ef1366752c",
+    "deviceId": "POSTURE_01",
+    "angle": 25.84,
+    "fatigueLevel": 3.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.430735750067541],
+      "r_shoulder": [0.2, 1, 0.430735750067541],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:58.550Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b33be12ee9ef1366752e",
+    "deviceId": "POSTURE_01",
+    "angle": 28.8,
+    "fatigueLevel": 3.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.480013395433468],
+      "r_shoulder": [0.2, 1, 0.480013395433468],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:20:59.616Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b33ce12ee9ef13667530",
+    "deviceId": "POSTURE_01",
+    "angle": 26.89,
+    "fatigueLevel": 3.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.448171955639655],
+      "r_shoulder": [0.2, 1, 0.448171955639655],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:00.685Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b33de12ee9ef13667533",
+    "deviceId": "POSTURE_01",
+    "angle": 30.1,
+    "fatigueLevel": 3.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.501615217698616],
+      "r_shoulder": [0.2, 1, 0.501615217698616],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:01.754Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b33ee12ee9ef13667535",
+    "deviceId": "POSTURE_01",
+    "angle": 27.61,
+    "fatigueLevel": 3.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.460199924494731],
+      "r_shoulder": [0.2, 1, 0.460199924494731],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:02.822Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b33fe12ee9ef13667537",
+    "deviceId": "POSTURE_01",
+    "angle": 30.01,
+    "fatigueLevel": 4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.500149122875551],
+      "r_shoulder": [0.2, 1, 0.500149122875551],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:03.888Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b340e12ee9ef13667539",
+    "deviceId": "POSTURE_01",
+    "angle": 30.53,
+    "fatigueLevel": 4.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.508888361505952],
+      "r_shoulder": [0.2, 1, 0.508888361505952],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:04.955Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b342e12ee9ef1366753c",
+    "deviceId": "POSTURE_01",
+    "angle": 30.54,
+    "fatigueLevel": 4.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.508974632331799],
+      "r_shoulder": [0.2, 1, 0.508974632331799],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:06.030Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b343e12ee9ef1366753e",
+    "deviceId": "POSTURE_01",
+    "angle": 32.32,
+    "fatigueLevel": 4.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.538733212291059],
+      "r_shoulder": [0.2, 1, 0.538733212291059],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:07.094Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b344e12ee9ef13667540",
+    "deviceId": "POSTURE_01",
+    "angle": 33.89,
+    "fatigueLevel": 4.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.564896374560384],
+      "r_shoulder": [0.2, 1, 0.564896374560384],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:08.163Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b345e12ee9ef13667542",
+    "deviceId": "POSTURE_01",
+    "angle": 34.74,
+    "fatigueLevel": 4.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.57906683062871],
+      "r_shoulder": [0.2, 1, 0.57906683062871],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:09.229Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b346e12ee9ef13667545",
+    "deviceId": "POSTURE_01",
+    "angle": 36.1,
+    "fatigueLevel": 4.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.601684547505505],
+      "r_shoulder": [0.2, 1, 0.601684547505505],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:10.295Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b347e12ee9ef13667547",
+    "deviceId": "POSTURE_01",
+    "angle": 35.68,
+    "fatigueLevel": 4.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.594655122039528],
+      "r_shoulder": [0.2, 1, 0.594655122039528],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:11.364Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b348e12ee9ef13667549",
+    "deviceId": "POSTURE_01",
+    "angle": 35.32,
+    "fatigueLevel": 4.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.588666656455202],
+      "r_shoulder": [0.2, 1, 0.588666656455202],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:12.427Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b349e12ee9ef1366754c",
+    "deviceId": "POSTURE_01",
+    "angle": 37.49,
+    "fatigueLevel": 4.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.624885071257079],
+      "r_shoulder": [0.2, 1, 0.624885071257079],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:13.491Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b34ae12ee9ef1366754e",
+    "deviceId": "POSTURE_01",
+    "angle": 39.68,
+    "fatigueLevel": 5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.661261640144298],
+      "r_shoulder": [0.2, 1, 0.661261640144298],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:14.556Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b34be12ee9ef13667550",
+    "deviceId": "POSTURE_01",
+    "angle": 38.11,
+    "fatigueLevel": 5.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.635222181901036],
+      "r_shoulder": [0.2, 1, 0.635222181901036],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:15.623Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b34ce12ee9ef13667552",
+    "deviceId": "POSTURE_01",
+    "angle": 41.91,
+    "fatigueLevel": 5.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.698471209845599],
+      "r_shoulder": [0.2, 1, 0.698471209845599],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:16.694Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b34de12ee9ef13667555",
+    "deviceId": "POSTURE_01",
+    "angle": 40.28,
+    "fatigueLevel": 5.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.671408015917964],
+      "r_shoulder": [0.2, 1, 0.671408015917964],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:17.759Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b34ee12ee9ef13667557",
+    "deviceId": "POSTURE_01",
+    "angle": 41.26,
+    "fatigueLevel": 5.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.68773730428929],
+      "r_shoulder": [0.2, 1, 0.68773730428929],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:18.824Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b34fe12ee9ef13667559",
+    "deviceId": "POSTURE_01",
+    "angle": 43.05,
+    "fatigueLevel": 5.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.717565007287179],
+      "r_shoulder": [0.2, 1, 0.717565007287179],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:19.907Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b350e12ee9ef1366755b",
+    "deviceId": "POSTURE_01",
+    "angle": 45.88,
+    "fatigueLevel": 5.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.764649613868481],
+      "r_shoulder": [0.2, 1, 0.764649613868481],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:20.975Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b352e12ee9ef1366755d",
+    "deviceId": "POSTURE_01",
+    "angle": 44.89,
+    "fatigueLevel": 5.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.748136466243443],
+      "r_shoulder": [0.2, 1, 0.748136466243443],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:22.037Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b353e12ee9ef1366755f",
+    "deviceId": "POSTURE_01",
+    "angle": 48.38,
+    "fatigueLevel": 5.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.806253108362637],
+      "r_shoulder": [0.2, 1, 0.806253108362637],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:23.106Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b354e12ee9ef13667561",
+    "deviceId": "POSTURE_01",
+    "angle": 47.9,
+    "fatigueLevel": 5.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.798329860684595],
+      "r_shoulder": [0.2, 1, 0.798329860684595],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:24.172Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b355e12ee9ef13667563",
+    "deviceId": "POSTURE_01",
+    "angle": 12.18,
+    "fatigueLevel": 0,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.20306085937455],
+      "r_shoulder": [0.2, 1, 0.20306085937455],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:25.238Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b356e12ee9ef13667565",
+    "deviceId": "POSTURE_01",
+    "angle": 13.1,
+    "fatigueLevel": 0.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.21833665314733],
+      "r_shoulder": [0.2, 1, 0.21833665314733],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:26.306Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b357e12ee9ef13667567",
+    "deviceId": "POSTURE_01",
+    "angle": 11.53,
+    "fatigueLevel": 0.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.192209897979142],
+      "r_shoulder": [0.2, 1, 0.192209897979142],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:27.368Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b358e12ee9ef13667569",
+    "deviceId": "POSTURE_01",
+    "angle": 12.26,
+    "fatigueLevel": 0.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.204395215065418],
+      "r_shoulder": [0.2, 1, 0.204395215065418],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:28.435Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b359e12ee9ef1366756b",
+    "deviceId": "POSTURE_01",
+    "angle": 12.4,
+    "fatigueLevel": 0.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.206646002868986],
+      "r_shoulder": [0.2, 1, 0.206646002868986],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:29.500Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b35ae12ee9ef1366756d",
+    "deviceId": "POSTURE_01",
+    "angle": 13.19,
+    "fatigueLevel": 0.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.219750359139996],
+      "r_shoulder": [0.2, 1, 0.219750359139996],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:30.567Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b35be12ee9ef13667570",
+    "deviceId": "POSTURE_01",
+    "angle": 13.93,
+    "fatigueLevel": 0.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.232172065879358],
+      "r_shoulder": [0.2, 1, 0.232172065879358],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:31.632Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b35ce12ee9ef13667572",
+    "deviceId": "POSTURE_01",
+    "angle": 14.5,
+    "fatigueLevel": 0.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.241704126116299],
+      "r_shoulder": [0.2, 1, 0.241704126116299],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:32.698Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b35de12ee9ef13667575",
+    "deviceId": "POSTURE_01",
+    "angle": 13.39,
+    "fatigueLevel": 0.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.22313690504649],
+      "r_shoulder": [0.2, 1, 0.22313690504649],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:33.757Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b35ee12ee9ef13667577",
+    "deviceId": "POSTURE_01",
+    "angle": 12.61,
+    "fatigueLevel": 0.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.210189401556178],
+      "r_shoulder": [0.2, 1, 0.210189401556178],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:34.820Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b35fe12ee9ef13667579",
+    "deviceId": "POSTURE_01",
+    "angle": 12.7,
+    "fatigueLevel": 1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.211724937041073],
+      "r_shoulder": [0.2, 1, 0.211724937041073],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:35.884Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b360e12ee9ef1366757c",
+    "deviceId": "POSTURE_01",
+    "angle": 11.79,
+    "fatigueLevel": 1.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.196446854730285],
+      "r_shoulder": [0.2, 1, 0.196446854730285],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:36.953Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b362e12ee9ef1366757e",
+    "deviceId": "POSTURE_01",
+    "angle": 14.83,
+    "fatigueLevel": 1.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.247189748161169],
+      "r_shoulder": [0.2, 1, 0.247189748161169],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:38.015Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b363e12ee9ef13667580",
+    "deviceId": "POSTURE_01",
+    "angle": 13.17,
+    "fatigueLevel": 1.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.219464237385486],
+      "r_shoulder": [0.2, 1, 0.219464237385486],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:39.076Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b364e12ee9ef13667582",
+    "deviceId": "POSTURE_01",
+    "angle": 12.96,
+    "fatigueLevel": 1.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.216019926015497],
+      "r_shoulder": [0.2, 1, 0.216019926015497],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:40.142Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b365e12ee9ef13667585",
+    "deviceId": "POSTURE_01",
+    "angle": 14,
+    "fatigueLevel": 1.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.233314818074693],
+      "r_shoulder": [0.2, 1, 0.233314818074693],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:41.210Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b366e12ee9ef13667587",
+    "deviceId": "POSTURE_01",
+    "angle": 12.03,
+    "fatigueLevel": 1.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.200513765552138],
+      "r_shoulder": [0.2, 1, 0.200513765552138],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:42.273Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b367e12ee9ef13667589",
+    "deviceId": "POSTURE_01",
+    "angle": 15.62,
+    "fatigueLevel": 1.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.260365798494536],
+      "r_shoulder": [0.2, 1, 0.260365798494536],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:43.343Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b368e12ee9ef1366758b",
+    "deviceId": "POSTURE_01",
+    "angle": 12.42,
+    "fatigueLevel": 1.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.207030663400037],
+      "r_shoulder": [0.2, 1, 0.207030663400037],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:44.409Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b369e12ee9ef1366758e",
+    "deviceId": "POSTURE_01",
+    "angle": 13.99,
+    "fatigueLevel": 1.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.233227213351538],
+      "r_shoulder": [0.2, 1, 0.233227213351538],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:45.475Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b36ae12ee9ef13667590",
+    "deviceId": "POSTURE_01",
+    "angle": 14.63,
+    "fatigueLevel": 2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.243805995237971],
+      "r_shoulder": [0.2, 1, 0.243805995237971],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:46.537Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b36be12ee9ef13667592",
+    "deviceId": "POSTURE_01",
+    "angle": 13.82,
+    "fatigueLevel": 2.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.230299720668946],
+      "r_shoulder": [0.2, 1, 0.230299720668946],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:47.602Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b36ce12ee9ef13667594",
+    "deviceId": "POSTURE_01",
+    "angle": 16.81,
+    "fatigueLevel": 2.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.280221916157011],
+      "r_shoulder": [0.2, 1, 0.280221916157011],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:48.659Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b36de12ee9ef13667597",
+    "deviceId": "POSTURE_01",
+    "angle": 14.94,
+    "fatigueLevel": 2.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.248939875828454],
+      "r_shoulder": [0.2, 1, 0.248939875828454],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:49.723Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b36ee12ee9ef13667599",
+    "deviceId": "POSTURE_01",
+    "angle": 14.06,
+    "fatigueLevel": 2.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.234305200147017],
+      "r_shoulder": [0.2, 1, 0.234305200147017],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:50.783Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b36fe12ee9ef1366759b",
+    "deviceId": "POSTURE_01",
+    "angle": 14.54,
+    "fatigueLevel": 2.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.242268569959937],
+      "r_shoulder": [0.2, 1, 0.242268569959937],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:51.847Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b370e12ee9ef1366759d",
+    "deviceId": "POSTURE_01",
+    "angle": 14.22,
+    "fatigueLevel": 2.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.237047502558542],
+      "r_shoulder": [0.2, 1, 0.237047502558542],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:52.912Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b371e12ee9ef136675a0",
+    "deviceId": "POSTURE_01",
+    "angle": 15,
+    "fatigueLevel": 2.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.249962462426661],
+      "r_shoulder": [0.2, 1, 0.249962462426661],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:53.994Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b373e12ee9ef136675a2",
+    "deviceId": "POSTURE_01",
+    "angle": 15.43,
+    "fatigueLevel": 2.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.257107899933734],
+      "r_shoulder": [0.2, 1, 0.257107899933734],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:55.053Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b374e12ee9ef136675a4",
+    "deviceId": "POSTURE_01",
+    "angle": 18.39,
+    "fatigueLevel": 2.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.306430515062115],
+      "r_shoulder": [0.2, 1, 0.306430515062115],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:56.116Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b375e12ee9ef136675a6",
+    "deviceId": "POSTURE_01",
+    "angle": 17.99,
+    "fatigueLevel": 3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.299807773060223],
+      "r_shoulder": [0.2, 1, 0.299807773060223],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:57.181Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b376e12ee9ef136675a9",
+    "deviceId": "POSTURE_01",
+    "angle": 15.92,
+    "fatigueLevel": 3.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.265395416089071],
+      "r_shoulder": [0.2, 1, 0.265395416089071],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:58.246Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b377e12ee9ef136675ab",
+    "deviceId": "POSTURE_01",
+    "angle": 19.83,
+    "fatigueLevel": 3.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.330460433330775],
+      "r_shoulder": [0.2, 1, 0.330460433330775],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:21:59.316Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b378e12ee9ef136675ad",
+    "deviceId": "POSTURE_01",
+    "angle": 18.15,
+    "fatigueLevel": 3.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.302516560638186],
+      "r_shoulder": [0.2, 1, 0.302516560638186],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:00.379Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b379e12ee9ef136675b0",
+    "deviceId": "POSTURE_01",
+    "angle": 20.74,
+    "fatigueLevel": 3.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.345668916175952],
+      "r_shoulder": [0.2, 1, 0.345668916175952],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:01.442Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b37ae12ee9ef136675b2",
+    "deviceId": "POSTURE_01",
+    "angle": 20.16,
+    "fatigueLevel": 3.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.33602983972319],
+      "r_shoulder": [0.2, 1, 0.33602983972319],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:02.500Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b37be12ee9ef136675b4",
+    "deviceId": "POSTURE_01",
+    "angle": 22.24,
+    "fatigueLevel": 3.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.370679878998139],
+      "r_shoulder": [0.2, 1, 0.370679878998139],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:03.566Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b37ce12ee9ef136675b6",
+    "deviceId": "POSTURE_01",
+    "angle": 21.71,
+    "fatigueLevel": 3.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.361906406853739],
+      "r_shoulder": [0.2, 1, 0.361906406853739],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:04.632Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b37de12ee9ef136675b9",
+    "deviceId": "POSTURE_01",
+    "angle": 20.48,
+    "fatigueLevel": 3.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.341266245251983],
+      "r_shoulder": [0.2, 1, 0.341266245251983],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:05.690Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b37ee12ee9ef136675bb",
+    "deviceId": "POSTURE_01",
+    "angle": 21.74,
+    "fatigueLevel": 3.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.362310777715674],
+      "r_shoulder": [0.2, 1, 0.362310777715674],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:06.750Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b37fe12ee9ef136675bd",
+    "deviceId": "POSTURE_01",
+    "angle": 24.05,
+    "fatigueLevel": 4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.400758188497125],
+      "r_shoulder": [0.2, 1, 0.400758188497125],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:07.811Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b380e12ee9ef136675bf",
+    "deviceId": "POSTURE_01",
+    "angle": 24.36,
+    "fatigueLevel": 4.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.40595159443148],
+      "r_shoulder": [0.2, 1, 0.40595159443148],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:08.877Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b381e12ee9ef136675c2",
+    "deviceId": "POSTURE_01",
+    "angle": 25.24,
+    "fatigueLevel": 4.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.420685965013346],
+      "r_shoulder": [0.2, 1, 0.420685965013346],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:09.939Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b383e12ee9ef136675c4",
+    "deviceId": "POSTURE_01",
+    "angle": 27.16,
+    "fatigueLevel": 4.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.452585567394222],
+      "r_shoulder": [0.2, 1, 0.452585567394222],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:10.999Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b384e12ee9ef136675c6",
+    "deviceId": "POSTURE_01",
+    "angle": 26.33,
+    "fatigueLevel": 4.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.438897440188903],
+      "r_shoulder": [0.2, 1, 0.438897440188903],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:12.062Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b385e12ee9ef136675c8",
+    "deviceId": "POSTURE_01",
+    "angle": 25.52,
+    "fatigueLevel": 4.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.425369832513797],
+      "r_shoulder": [0.2, 1, 0.425369832513797],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:13.125Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b386e12ee9ef136675cb",
+    "deviceId": "POSTURE_01",
+    "angle": 29.35,
+    "fatigueLevel": 4.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.489118222694988],
+      "r_shoulder": [0.2, 1, 0.489118222694988],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:14.189Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b387e12ee9ef136675cd",
+    "deviceId": "POSTURE_01",
+    "angle": 30.07,
+    "fatigueLevel": 4.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.501142617912879],
+      "r_shoulder": [0.2, 1, 0.501142617912879],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:15.254Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b388e12ee9ef136675cf",
+    "deviceId": "POSTURE_01",
+    "angle": 30.39,
+    "fatigueLevel": 4.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.50649902520395],
+      "r_shoulder": [0.2, 1, 0.50649902520395],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:16.322Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b389e12ee9ef136675d2",
+    "deviceId": "POSTURE_01",
+    "angle": 31.1,
+    "fatigueLevel": 4.9,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.518371297890468],
+      "r_shoulder": [0.2, 1, 0.518371297890468],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:17.383Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b38ae12ee9ef136675d4",
+    "deviceId": "POSTURE_01",
+    "angle": 31.69,
+    "fatigueLevel": 5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.52816729702722],
+      "r_shoulder": [0.2, 1, 0.52816729702722],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:18.442Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b38be12ee9ef136675d6",
+    "deviceId": "POSTURE_01",
+    "angle": 32.42,
+    "fatigueLevel": 5.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.540324961759982],
+      "r_shoulder": [0.2, 1, 0.540324961759982],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:19.529Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b38ce12ee9ef136675d8",
+    "deviceId": "POSTURE_01",
+    "angle": 31.92,
+    "fatigueLevel": 5.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.531991771210282],
+      "r_shoulder": [0.2, 1, 0.531991771210282],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:20.592Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b38de12ee9ef136675db",
+    "deviceId": "POSTURE_01",
+    "angle": 35.7,
+    "fatigueLevel": 5.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.594978579137642],
+      "r_shoulder": [0.2, 1, 0.594978579137642],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:22:21.655Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b623702df0385c094dc4",
+    "deviceId": "POSTURE_01",
+    "angle": 14.6,
+    "fatigueLevel": 0.1,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.243290737321112],
+      "r_shoulder": [0.2, 1, 0.243290737321112],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:23.888Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b625702df0385c094dc6",
+    "deviceId": "POSTURE_01",
+    "angle": 14.56,
+    "fatigueLevel": 0.2,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.24260950707144],
+      "r_shoulder": [0.2, 1, 0.24260950707144],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:25.008Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b626702df0385c094dc8",
+    "deviceId": "POSTURE_01",
+    "angle": 15.24,
+    "fatigueLevel": 0.3,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.253940627012426],
+      "r_shoulder": [0.2, 1, 0.253940627012426],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:26.097Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b627702df0385c094dca",
+    "deviceId": "POSTURE_01",
+    "angle": 14.22,
+    "fatigueLevel": 0.4,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.236987658746385],
+      "r_shoulder": [0.2, 1, 0.236987658746385],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:27.177Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b628702df0385c094dcc",
+    "deviceId": "POSTURE_01",
+    "angle": 16.62,
+    "fatigueLevel": 0.5,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.277021327078742],
+      "r_shoulder": [0.2, 1, 0.277021327078742],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:28.272Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b629702df0385c094dce",
+    "deviceId": "POSTURE_01",
+    "angle": 16.15,
+    "fatigueLevel": 0.6,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.269091982812971],
+      "r_shoulder": [0.2, 1, 0.269091982812971],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:29.356Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b62a702df0385c094dd0",
+    "deviceId": "POSTURE_01",
+    "angle": 13.3,
+    "fatigueLevel": 0.7,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.221603269423327],
+      "r_shoulder": [0.2, 1, 0.221603269423327],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:30.436Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d3b62b702df0385c094dd2",
+    "deviceId": "POSTURE_01",
+    "angle": 17.6,
+    "fatigueLevel": 0.8,
+    "postureStatus": "good",
+    "poseData": {
+      "l_shoulder": [-0.2, 1, 0.293322002325363],
+      "r_shoulder": [0.2, 1, 0.293322002325363],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-06T13:33:31.528Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2241937bf7cd1cbc4e5",
+    "deviceId": "POSTURE_01",
+    "angle": 28.06,
+    "fatigueLevel": 50.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.43297309853978, 0.611178952743919, 0.467656425586611],
+      "r_shoulder": [-0.0329730985397797, 1.38882104725608, 0.467656425586611],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:24.219Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2251937bf7cd1cbc4e7",
+    "deviceId": "POSTURE_01",
+    "angle": 36.99,
+    "fatigueLevel": 50.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.490887962420336, 0.633913583379617, 0.616448339484028],
+      "r_shoulder": [-0.0908879624203357, 1.36608641662038, 0.616448339484028],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:25.305Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2261937bf7cd1cbc4e9",
+    "deviceId": "POSTURE_01",
+    "angle": 43.27,
+    "fatigueLevel": 50.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.495260507920339, 0.801798580680169, 0.721176932192113],
+      "r_shoulder": [-0.0952605079203388, 1.19820141931983, 0.721176932192113],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:26.368Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2271937bf7cd1cbc4eb",
+    "deviceId": "POSTURE_01",
+    "angle": 46.52,
+    "fatigueLevel": 50.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.447267484365286, 1.04691100528353, 0.775380065156551],
+      "r_shoulder": [-0.0472674843652856, 0.953088994716471, 0.775380065156551],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:27.428Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2281937bf7cd1cbc4ed",
+    "deviceId": "POSTURE_01",
+    "angle": 53.37,
+    "fatigueLevel": 50.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.354876521733958, 1.27472297957608, 0.889556178919093],
+      "r_shoulder": [0.0451234782660423, 0.725277020423916, 0.889556178919093],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:28.494Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2291937bf7cd1cbc4ef",
+    "deviceId": "POSTURE_01",
+    "angle": 56.05,
+    "fatigueLevel": 50.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.235163986796698, 1.39380500002571, 0.93422081675778],
+      "r_shoulder": [0.164836013203302, 0.60619499997429, 0.93422081675778],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:29.556Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e22a1937bf7cd1cbc4f1",
+    "deviceId": "POSTURE_01",
+    "angle": 56.19,
+    "fatigueLevel": 51.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.109346789567405, 1.35833861196679, 0.936474971211242],
+      "r_shoulder": [0.290653210432595, 0.64166138803321, 0.936474971211242],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:30.617Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e22b1937bf7cd1cbc4f3",
+    "deviceId": "POSTURE_01",
+    "angle": 55.79,
+    "fatigueLevel": 51.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.000720426230462645, 1.18164117164305, 0.929887197675947],
+      "r_shoulder": [0.400720426230463, 0.818358828356954, 0.929887197675947],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:31.682Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e22c1937bf7cd1cbc4f5",
+    "deviceId": "POSTURE_01",
+    "angle": 56.1,
+    "fatigueLevel": 51.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0749593053218965, 0.933043738131806, 0.934931225434092],
+      "r_shoulder": [0.474959305321897, 1.06695626186819, 0.934931225434092],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:32.748Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e22d1937bf7cd1cbc4f7",
+    "deviceId": "POSTURE_01",
+    "angle": 57.78,
+    "fatigueLevel": 51.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0999511289280988, 0.709603815031617, 0.963060485832641],
+      "r_shoulder": [0.499951128928099, 1.29039618496838, 0.963060485832641],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:33.822Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e22e1937bf7cd1cbc4f9",
+    "deviceId": "POSTURE_01",
+    "angle": 57.33,
+    "fatigueLevel": 51.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0708786176521621, 0.602829211470696, 0.95545435334006],
+      "r_shoulder": [0.470878617652162, 1.3971707885293, 0.95545435334006],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:34.887Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e22f1937bf7cd1cbc4fb",
+    "deviceId": "POSTURE_01",
+    "angle": 57.44,
+    "fatigueLevel": 51.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.00637773980441952, 0.652566915583513, 0.957283314629201],
+      "r_shoulder": [0.393622260195581, 1.34743308441649, 0.957283314629201],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:35.950Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2311937bf7cd1cbc4fd",
+    "deviceId": "POSTURE_01",
+    "angle": 59.98,
+    "fatigueLevel": 51.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.117803575996259, 0.838246006549682, 0.999674151251233],
+      "r_shoulder": [0.282196424003741, 1.16175399345032, 0.999674151251233],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:37.010Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2321937bf7cd1cbc4ff",
+    "deviceId": "POSTURE_01",
+    "angle": 59.77,
+    "fatigueLevel": 52.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.244064471526718, 1.08772987170066, 0.996162057658165],
+      "r_shoulder": [0.155935528473282, 0.912270128299344, 0.996162057658165],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:38.072Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2331937bf7cd1cbc501",
+    "deviceId": "POSTURE_01",
+    "angle": 59.37,
+    "fatigueLevel": 52.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.362753786763473, 1.30317295303617, 0.989449559859201],
+      "r_shoulder": [0.0372462132365266, 0.696827046963834, 0.989449559859201],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:39.137Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2341937bf7cd1cbc503",
+    "deviceId": "POSTURE_01",
+    "angle": 58.21,
+    "fatigueLevel": 52.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.452285648321315, 1.39895685152314, 0.970210841865193],
+      "r_shoulder": [-0.0522856483213151, 0.601043148476857, 0.970210841865193],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:40.201Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2351937bf7cd1cbc505",
+    "deviceId": "POSTURE_01",
+    "angle": 59.47,
+    "fatigueLevel": 52.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.496798512937823, 1.33760765265938, 0.991183961498138],
+      "r_shoulder": [-0.0967985129378228, 0.662392347340621, 0.991183961498138],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:41.265Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2361937bf7cd1cbc507",
+    "deviceId": "POSTURE_01",
+    "angle": 58.83,
+    "fatigueLevel": 52.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.488336320640439, 1.14306161025939, 0.980444352149847],
+      "r_shoulder": [-0.0883363206404395, 0.856938389740605, 0.980444352149847],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:42.330Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2371937bf7cd1cbc509",
+    "deviceId": "POSTURE_01",
+    "angle": 57.99,
+    "fatigueLevel": 52.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.428491956744255, 0.892522651771796, 0.966528059974257],
+      "r_shoulder": [-0.0284919567442547, 1.1074773482282, 0.966528059974257],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:43.393Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2381937bf7cd1cbc50b",
+    "deviceId": "POSTURE_01",
+    "angle": 58.8,
+    "fatigueLevel": 53,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.327851138656308, 0.684097117662263, 0.980058526415532],
+      "r_shoulder": [0.072148861343692, 1.31590288233774, 0.980058526415532],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:44.457Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2391937bf7cd1cbc50d",
+    "deviceId": "POSTURE_01",
+    "angle": 60.34,
+    "fatigueLevel": 53.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.205060351357944, 0.600128041695826, 1.00574926190767],
+      "r_shoulder": [0.194939648642056, 1.39987195830417, 1.00574926190767],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:45.516Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e23a1937bf7cd1cbc50f",
+    "deviceId": "POSTURE_01",
+    "angle": 60.18,
+    "fatigueLevel": 53.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0779956463659517, 0.676371736028018, 1.00297050792256],
+      "r_shoulder": [0.322004353634048, 1.32362826397198, 1.00297050792256],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:46.605Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e23b1937bf7cd1cbc511",
+    "deviceId": "POSTURE_01",
+    "angle": 59.94,
+    "fatigueLevel": 53.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0242462382313482, 0.880115885329099, 0.999066059147843],
+      "r_shoulder": [0.424246238231348, 1.1198841146709, 0.999066059147843],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:47.668Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e23c1937bf7cd1cbc513",
+    "deviceId": "POSTURE_01",
+    "angle": 60.21,
+    "fatigueLevel": 53.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0865131120601533, 1.13109750214572, 1.00356406932093],
+      "r_shoulder": [0.486513112060153, 0.868902497854276, 1.00356406932093],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:48.732Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e23d1937bf7cd1cbc515",
+    "deviceId": "POSTURE_01",
+    "angle": 59.06,
+    "fatigueLevel": 53.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0977157257735365, 1.3300947012361, 0.984362418428582],
+      "r_shoulder": [0.497715725773537, 0.669905298763896, 0.984362418428582],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:49.793Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e23e1937bf7cd1cbc517",
+    "deviceId": "POSTURE_01",
+    "angle": 61.28,
+    "fatigueLevel": 53.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0561816463211725, 1.39974749379197, 1.02135130969938],
+      "r_shoulder": [0.456181646321173, 0.600252506208029, 1.02135130969938],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:50.853Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e23f1937bf7cd1cbc519",
+    "deviceId": "POSTURE_01",
+    "angle": 61.16,
+    "fatigueLevel": 54.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0310318075496796, 1.31269061091146, 1.01935831988493],
+      "r_shoulder": [0.36896819245032, 0.687309389088542, 1.01935831988493],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:51.916Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2401937bf7cd1cbc51b",
+    "deviceId": "POSTURE_01",
+    "angle": 60.31,
+    "fatigueLevel": 54.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.148700906778512, 1.10196692589174, 1.00519740411003],
+      "r_shoulder": [0.251299093221488, 0.898033074108258, 1.00519740411003],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:52.982Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2421937bf7cd1cbc51d",
+    "deviceId": "POSTURE_01",
+    "angle": 59.29,
+    "fatigueLevel": 54.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.275806859493455, 0.85044824252878, 0.988227959607464],
+      "r_shoulder": [0.124193140506545, 1.14955175747122, 0.988227959607464],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:54.050Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2431937bf7cd1cbc51f",
+    "deviceId": "POSTURE_01",
+    "angle": 61.12,
+    "fatigueLevel": 54.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.390105832295363, 0.657191001052955, 1.01871014659437],
+      "r_shoulder": [0.0098941677046375, 1.34280899894704, 1.01871014659437],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:55.127Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2441937bf7cd1cbc521",
+    "deviceId": "POSTURE_01",
+    "angle": 60.35,
+    "fatigueLevel": 54.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.47050767768663, 0.602628558546185, 1.00583156735412],
+      "r_shoulder": [-0.07050767768663, 1.39737144145381, 1.00583156735412],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:56.221Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2451937bf7cd1cbc523",
+    "deviceId": "POSTURE_01",
+    "angle": 61.18,
+    "fatigueLevel": 54.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.499991596908758, 0.713999636652656, 1.01967667638373],
+      "r_shoulder": [-0.0999915969087576, 1.28600036334734, 1.01967667638373],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:57.320Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2461937bf7cd1cbc525",
+    "deviceId": "POSTURE_01",
+    "angle": 58.04,
+    "fatigueLevel": 54.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.473521421140082, 0.940047897336992, 0.967409528073166],
+      "r_shoulder": [-0.0735214211400821, 1.05995210266301, 0.967409528073166],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:58.397Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2471937bf7cd1cbc527",
+    "deviceId": "POSTURE_01",
+    "angle": 61.88,
+    "fatigueLevel": 55.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.398114050711837, 1.18782977996352, 1.03136167062459],
+      "r_shoulder": [0.00188594928816266, 0.81217022003648, 1.03136167062459],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:53:59.462Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2481937bf7cd1cbc529",
+    "deviceId": "POSTURE_01",
+    "angle": 60.24,
+    "fatigueLevel": 55.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.287285822787199, 1.36141638704689, 1.00402561583241],
+      "r_shoulder": [0.112714177212801, 0.638583612953115, 1.00402561583241],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:00.528Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2491937bf7cd1cbc52b",
+    "deviceId": "POSTURE_01",
+    "angle": 59.05,
+    "fatigueLevel": 55.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.160989156207933, 1.39237185939922, 0.984204866904774],
+      "r_shoulder": [0.239010843792067, 0.607628140600777, 0.984204866904774],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:01.592Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e24a1937bf7cd1cbc52d",
+    "deviceId": "POSTURE_01",
+    "angle": 60.88,
+    "fatigueLevel": 55.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0413455104203603, 1.26821465073346, 1.01466382708978],
+      "r_shoulder": [0.35865448957964, 0.731785349266538, 1.01466382708978],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:02.659Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e24b1937bf7cd1cbc52f",
+    "deviceId": "POSTURE_01",
+    "angle": 61.12,
+    "fatigueLevel": 55.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0497813572655218, 1.03798510293982, 1.01860014532509],
+      "r_shoulder": [0.449781357265522, 0.96201489706018, 1.01860014532509],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:03.725Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e24c1937bf7cd1cbc531",
+    "deviceId": "POSTURE_01",
+    "angle": 58.89,
+    "fatigueLevel": 55.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.096099548690255, 0.793230438004994, 0.98157272295748],
+      "r_shoulder": [0.496099548690255, 1.20676956199501, 0.98157272295748],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:04.789Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e24d1937bf7cd1cbc533",
+    "deviceId": "POSTURE_01",
+    "angle": 61.46,
+    "fatigueLevel": 56,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0894798113883114, 0.629579401418676, 1.02435887696253],
+      "r_shoulder": [0.489479811388311, 1.37042059858132, 1.02435887696253],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:05.857Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e24e1937bf7cd1cbc535",
+    "deviceId": "POSTURE_01",
+    "angle": 59.14,
+    "fatigueLevel": 56.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0309733523404995, 0.612707963236188, 0.985611992008783],
+      "r_shoulder": [0.4309733523405, 1.38729203676381, 0.985611992008783],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:06.923Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e24f1937bf7cd1cbc538",
+    "deviceId": "POSTURE_01",
+    "angle": 61.19,
+    "fatigueLevel": 56.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0691287871343895, 0.749379724733718, 1.01988725455114],
+      "r_shoulder": [0.330871212865611, 1.25062027526628, 1.01988725455114],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:07.991Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2511937bf7cd1cbc53a",
+    "deviceId": "POSTURE_01",
+    "angle": 59.36,
+    "fatigueLevel": 56.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.192593664616719, 0.985189115178002, 0.989259959288733],
+      "r_shoulder": [0.207406335383281, 1.014810884822, 0.989259959288733],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:09.058Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2521937bf7cd1cbc53c",
+    "deviceId": "POSTURE_01",
+    "angle": 58.81,
+    "fatigueLevel": 56.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.31683418586081, 1.22587255067279, 0.980205591860792],
+      "r_shoulder": [0.0831658141391904, 0.774127449327206, 0.980205591860792],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:10.120Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2531937bf7cd1cbc53e",
+    "deviceId": "POSTURE_01",
+    "angle": 59.63,
+    "fatigueLevel": 56.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.420340944834948, 1.37796503960897, 0.993860090615875],
+      "r_shoulder": [-0.0203409448349476, 0.622034960391027, 0.993860090615875],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:11.182Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2541937bf7cd1cbc540",
+    "deviceId": "POSTURE_01",
+    "angle": 61.52,
+    "fatigueLevel": 56.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.484633130546773, 1.38175230040288, 1.02538620644887],
+      "r_shoulder": [-0.084633130546773, 0.618247699597122, 1.02538620644887],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:12.243Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2551937bf7cd1cbc542",
+    "deviceId": "POSTURE_01",
+    "angle": 59.75,
+    "fatigueLevel": 57.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.498361957711438, 1.23519761982054, 0.995826859132384],
+      "r_shoulder": [-0.0983619577114379, 0.764802380179456, 0.995826859132384],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:13.308Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2561937bf7cd1cbc544",
+    "deviceId": "POSTURE_01",
+    "angle": 59.42,
+    "fatigueLevel": 57.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.45886824302554, 0.996262702584355, 0.990300586769192],
+      "r_shoulder": [-0.0588682430255403, 1.00373729741564, 0.990300586769192],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:14.371Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2571937bf7cd1cbc546",
+    "deviceId": "POSTURE_01",
+    "angle": 60.77,
+    "fatigueLevel": 57.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.373207313074512, 0.758702224445833, 1.01275388972178],
+      "r_shoulder": [0.0267926869254883, 1.24129777555417, 1.01275388972178],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:15.435Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2581937bf7cd1cbc548",
+    "deviceId": "POSTURE_01",
+    "angle": 59.82,
+    "fatigueLevel": 57.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.257216767025639, 0.616457103893523, 0.997025297346992],
+      "r_shoulder": [0.142783232974361, 1.38354289610648, 0.997025297346992],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:16.494Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2591937bf7cd1cbc54a",
+    "deviceId": "POSTURE_01",
+    "angle": 58.17,
+    "fatigueLevel": 57.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.130355569356397, 0.624447170691498, 0.969426132926935],
+      "r_shoulder": [0.269644430643603, 1.3755528293085, 0.969426132926935],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:17.559Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e25a1937bf7cd1cbc54c",
+    "deviceId": "POSTURE_01",
+    "angle": 58.77,
+    "fatigueLevel": 57.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0160444829797568, 0.78056736653677, 0.979506437278143],
+      "r_shoulder": [0.383955517020243, 1.21943263346323, 0.979506437278143],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:18.624Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e25b1937bf7cd1cbc54e",
+    "deviceId": "POSTURE_01",
+    "angle": 59.93,
+    "fatigueLevel": 57.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0655616685974519, 1.02382868000948, 0.998873133954532],
+      "r_shoulder": [0.465561668597452, 0.97617131999052, 0.998873133954532],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:19.691Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e25c1937bf7cd1cbc550",
+    "deviceId": "POSTURE_01",
+    "angle": 59.41,
+    "fatigueLevel": 58.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0995072523253744, 1.25750781753299, 0.990237729651072],
+      "r_shoulder": [0.499507252325374, 0.74249218246701, 0.990237729651072],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:20.757Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e25d1937bf7cd1cbc552",
+    "deviceId": "POSTURE_01",
+    "angle": 59.63,
+    "fatigueLevel": 58.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0798139833279416, 1.3892832777108, 0.993804900790101],
+      "r_shoulder": [0.479813983327942, 0.6107167222892, 0.993804900790101],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:21.823Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e25e1937bf7cd1cbc554",
+    "deviceId": "POSTURE_01",
+    "angle": 60.87,
+    "fatigueLevel": 58.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0102151704544914, 1.3674527054762, 1.01451037661415],
+      "r_shoulder": [0.410215170454491, 0.632547294523803, 1.01451037661415],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:22.887Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e25f1937bf7cd1cbc556",
+    "deviceId": "POSTURE_01",
+    "angle": 59.65,
+    "fatigueLevel": 58.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0970762726108144, 1.20058539316876, 0.99412886420539],
+      "r_shoulder": [0.302923727389186, 0.799414606831236, 0.99412886420539],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:23.952Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2611937bf7cd1cbc558",
+    "deviceId": "POSTURE_01",
+    "angle": 58.96,
+    "fatigueLevel": 58.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.222820387638705, 0.954414375524149, 0.98263534304203],
+      "r_shoulder": [0.177179612361295, 1.04558562447585, 0.98263534304203],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:25.018Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2621937bf7cd1cbc55a",
+    "deviceId": "POSTURE_01",
+    "angle": 58.47,
+    "fatigueLevel": 58.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.344284008415308, 0.726584147578513, 0.974536082669749],
+      "r_shoulder": [0.055715991584692, 1.27341585242149, 0.974536082669749],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:26.082Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2631937bf7cd1cbc55c",
+    "deviceId": "POSTURE_01",
+    "angle": 61.79,
+    "fatigueLevel": 59,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.440205004992442, 0.606330281069494, 1.02988043205858],
+      "r_shoulder": [-0.040205004992442, 1.39366971893051, 1.02988043205858],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:27.149Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2641937bf7cd1cbc55e",
+    "deviceId": "POSTURE_01",
+    "angle": 61.07,
+    "fatigueLevel": 59.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.493026375645055, 0.64181766874944, 1.01789349093264],
+      "r_shoulder": [-0.0930263756450546, 1.35818233125056, 1.01789349093264],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:28.215Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2651937bf7cd1cbc560",
+    "deviceId": "POSTURE_01",
+    "angle": 61.94,
+    "fatigueLevel": 59.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.493417405732586, 0.818633882693153, 1.03234235867225],
+      "r_shoulder": [-0.0934174057325856, 1.18136611730685, 1.03234235867225],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:29.279Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2661937bf7cd1cbc562",
+    "deviceId": "POSTURE_01",
+    "angle": 58.24,
+    "fatigueLevel": 59.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.441263880098581, 1.06738562306593, 0.970676851620717],
+      "r_shoulder": [-0.0412638800985811, 0.932614376934072, 0.970676851620717],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:30.346Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2671937bf7cd1cbc564",
+    "deviceId": "POSTURE_01",
+    "angle": 58.24,
+    "fatigueLevel": 59.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.34568610850101, 1.28976647197876, 0.970710723702837],
+      "r_shoulder": [0.0543138914989899, 0.710233528021244, 0.970710723702837],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:31.414Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2681937bf7cd1cbc566",
+    "deviceId": "POSTURE_01",
+    "angle": 60.99,
+    "fatigueLevel": 59.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.224116726396818, 1.39708916871388, 1.01652312116395],
+      "r_shoulder": [0.175883273603182, 0.602910831286125, 1.01652312116395],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:32.480Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2691937bf7cd1cbc568",
+    "deviceId": "POSTURE_01",
+    "angle": 58.15,
+    "fatigueLevel": 59.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0982240178317919, 1.34728967978923, 0.969214861807054],
+      "r_shoulder": [0.301775982168208, 0.652710320210771, 0.969214861807054],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:33.547Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e26a1937bf7cd1cbc56a",
+    "deviceId": "POSTURE_01",
+    "angle": 59.03,
+    "fatigueLevel": 60.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.00943275337647612, 1.16005487201165, 0.983812496707987],
+      "r_shoulder": [0.409432753376476, 0.83994512798835, 0.983812496707987],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:34.613Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e26b1937bf7cd1cbc56c",
+    "deviceId": "POSTURE_01",
+    "angle": 59.73,
+    "fatigueLevel": 60.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0795930013101402, 0.90921983454246, 0.995428561197632],
+      "r_shoulder": [0.47959300131014, 1.09078016545754, 0.995428561197632],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:35.681Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e26c1937bf7cd1cbc56e",
+    "deviceId": "POSTURE_01",
+    "angle": 59.43,
+    "fatigueLevel": 60.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0995385359981383, 0.694628011285283, 0.990543898492606],
+      "r_shoulder": [0.499538535998138, 1.30537198871472, 0.990543898492606],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:36.747Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e26d1937bf7cd1cbc570",
+    "deviceId": "POSTURE_01",
+    "angle": 60.61,
+    "fatigueLevel": 60.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0658926686723015, 0.600797903845088, 1.01024801654156],
+      "r_shoulder": [0.465892668672302, 1.39920209615491, 1.01024801654156],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:37.812Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e26e1937bf7cd1cbc572",
+    "deviceId": "POSTURE_01",
+    "angle": 58.95,
+    "fatigueLevel": 60.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0153980732937779, 0.664665190680213, 0.982504987288193],
+      "r_shoulder": [0.384601926706222, 1.33533480931979, 0.982504987288193],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:38.879Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e26f1937bf7cd1cbc574",
+    "deviceId": "POSTURE_01",
+    "angle": 59.04,
+    "fatigueLevel": 60.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.129906542978291, 0.861437647698635, 0.983933003474672],
+      "r_shoulder": [0.270093457021709, 1.13856235230137, 0.983933003474672],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:39.946Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2711937bf7cd1cbc576",
+    "deviceId": "POSTURE_01",
+    "angle": 59.33,
+    "fatigueLevel": 60.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.256937621027116, 1.1130100365057, 0.988895005265914],
+      "r_shoulder": [0.143062378972884, 0.8869899634943, 0.988895005265914],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:41.013Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2721937bf7cd1cbc578",
+    "deviceId": "POSTURE_01",
+    "angle": 58.3,
+    "fatigueLevel": 61.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.373782404024963, 1.31987093681358, 0.971688691308805],
+      "r_shoulder": [0.0262175959750369, 0.680129063186419, 0.971688691308805],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:42.080Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2731937bf7cd1cbc57a",
+    "deviceId": "POSTURE_01",
+    "angle": 61.96,
+    "fatigueLevel": 61.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.459491080535538, 1.39999800318039, 1.03270667763226],
+      "r_shoulder": [-0.059491080535538, 0.600001996819609, 1.03270667763226],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:43.148Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2741937bf7cd1cbc57c",
+    "deviceId": "POSTURE_01",
+    "angle": 60.19,
+    "fatigueLevel": 61.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.498510282836913, 1.32182661051551, 1.00320595637855],
+      "r_shoulder": [-0.0985102828369127, 0.678173389484494, 1.00320595637855],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:44.213Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2751937bf7cd1cbc57e",
+    "deviceId": "POSTURE_01",
+    "angle": 61.84,
+    "fatigueLevel": 61.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.484183325977207, 1.11673573630416, 1.03064164713418],
+      "r_shoulder": [-0.0841833259772069, 0.883264263695843, 1.03064164713418],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:45.278Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2761937bf7cd1cbc580",
+    "deviceId": "POSTURE_01",
+    "angle": 60.1,
+    "fatigueLevel": 61.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.419453556824105, 0.866608506470814, 1.00167987833875],
+      "r_shoulder": [-0.0194535568241045, 1.13339149352919, 1.00167987833875],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:46.338Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2771937bf7cd1cbc582",
+    "deviceId": "POSTURE_01",
+    "angle": 60.52,
+    "fatigueLevel": 61.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.3158312658481, 0.668652493991317, 1.00874857868988],
+      "r_shoulder": [0.0841687341519005, 1.33134750600868, 1.00874857868988],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:47.399Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2781937bf7cd1cbc584",
+    "deviceId": "POSTURE_01",
+    "angle": 60.3,
+    "fatigueLevel": 62,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.191544383985448, 0.600357525618287, 1.00493683558365],
+      "r_shoulder": [0.208455616014552, 1.39964247438171, 1.00493683558365],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:48.460Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2791937bf7cd1cbc586",
+    "deviceId": "POSTURE_01",
+    "angle": 61.23,
+    "fatigueLevel": 62.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0690820538213272, 0.688312749485086, 1.02045151221132],
+      "r_shoulder": [0.330917946178673, 1.31168725051491, 1.02045151221132],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:49.519Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e27a1937bf7cd1cbc588",
+    "deviceId": "POSTURE_01",
+    "angle": 58.51,
+    "fatigueLevel": 62.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0305215943765597, 0.898607192515259, 0.975128570187607],
+      "r_shoulder": [0.43052159437656, 1.10139280748474, 0.975128570187607],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:50.580Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e27b1937bf7cd1cbc58a",
+    "deviceId": "POSTURE_01",
+    "angle": 58.08,
+    "fatigueLevel": 62.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0891499671349547, 1.14864624008764, 0.968042171913794],
+      "r_shoulder": [0.489149967134955, 0.85135375991236, 0.968042171913794],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:51.642Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e27c1937bf7cd1cbc58c",
+    "deviceId": "POSTURE_01",
+    "angle": 60.28,
+    "fatigueLevel": 62.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0963938262875223, 1.34046787108217, 1.00465926917695],
+      "r_shoulder": [0.496393826287522, 0.659532128917831, 1.00465926917695],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:52.705Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e27d1937bf7cd1cbc58e",
+    "deviceId": "POSTURE_01",
+    "angle": 61.41,
+    "fatigueLevel": 62.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0502452047163688, 1.39834822937329, 1.02350815304859],
+      "r_shoulder": [0.450245204716369, 0.601651770626706, 1.02350815304859],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:53.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e27e1937bf7cd1cbc590",
+    "deviceId": "POSTURE_01",
+    "angle": 58.11,
+    "fatigueLevel": 62.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0403089376542122, 1.29838504096824, 0.968557566842082],
+      "r_shoulder": [0.359691062345788, 0.701614959031759, 0.968557566842082],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:54.840Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e27f1937bf7cd1cbc592",
+    "deviceId": "POSTURE_01",
+    "angle": 59.25,
+    "fatigueLevel": 63.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.159056205033701, 1.08156782695754, 0.987580379696263],
+      "r_shoulder": [0.240943794966299, 0.918432173042465, 0.987580379696263],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:55.901Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2801937bf7cd1cbc594",
+    "deviceId": "POSTURE_01",
+    "angle": 61.11,
+    "fatigueLevel": 63.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.285265861608116, 0.832420090492409, 1.01850376755628],
+      "r_shoulder": [0.114734138391884, 1.16757990950759, 1.01850376755628],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:56.964Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2821937bf7cd1cbc596",
+    "deviceId": "POSTURE_01",
+    "angle": 59.17,
+    "fatigueLevel": 63.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.396223571433157, 0.649226326871631, 0.986138395673317],
+      "r_shoulder": [0.00377642856684304, 1.35077367312837, 0.986138395673317],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:58.026Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2831937bf7cd1cbc598",
+    "deviceId": "POSTURE_01",
+    "angle": 61.51,
+    "fatigueLevel": 63.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.472285019219147, 0.603669726104471, 1.02513687318933],
+      "r_shoulder": [-0.0722850192191467, 1.39633027389553, 1.02513687318933],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:54:59.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2841937bf7cd1cbc59a",
+    "deviceId": "POSTURE_01",
+    "angle": 59.33,
+    "fatigueLevel": 63.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.499990823408414, 0.713858351792993, 0.98884003417041],
+      "r_shoulder": [-0.0999908234084144, 1.28614164820701, 0.98884003417041],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:00.151Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2851937bf7cd1cbc59c",
+    "deviceId": "POSTURE_01",
+    "angle": 58.53,
+    "fatigueLevel": 63.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.474292143002134, 0.936314323618677, 0.975554658264052],
+      "r_shoulder": [-0.0742921430021336, 1.06368567638132, 0.975554658264052],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:01.213Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2861937bf7cd1cbc59e",
+    "deviceId": "POSTURE_01",
+    "angle": 60.86,
+    "fatigueLevel": 63.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.399971551143294, 1.18343162266412, 1.01430313701467],
+      "r_shoulder": [0.000028448856706442, 0.816568377335881, 1.01430313701467],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:02.274Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2871937bf7cd1cbc5a0",
+    "deviceId": "POSTURE_01",
+    "angle": 61.35,
+    "fatigueLevel": 64.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.290142210422603, 1.35881353813814, 1.02250073781786],
+      "r_shoulder": [0.109857789577397, 0.641186461861865, 1.02250073781786],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:03.335Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2881937bf7cd1cbc5a2",
+    "deviceId": "POSTURE_01",
+    "angle": 61.48,
+    "fatigueLevel": 64.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.163532335926407, 1.39333612046099, 1.02472110130644],
+      "r_shoulder": [0.236467664073593, 0.606663879539014, 1.02472110130644],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:04.402Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2891937bf7cd1cbc5a4",
+    "deviceId": "POSTURE_01",
+    "angle": 61.88,
+    "fatigueLevel": 64.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0442281075039398, 1.27319794253263, 1.03128591894721],
+      "r_shoulder": [0.35577189249606, 0.726802057467367, 1.03128591894721],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:05.462Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e28a1937bf7cd1cbc5a6",
+    "deviceId": "POSTURE_01",
+    "angle": 58.57,
+    "fatigueLevel": 64.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0475951940137369, 1.04575977782633, 0.976128025922397],
+      "r_shoulder": [0.447595194013737, 0.954240222173668, 0.976128025922397],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:06.524Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e28b1937bf7cd1cbc5a8",
+    "deviceId": "POSTURE_01",
+    "angle": 59.74,
+    "fatigueLevel": 64.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0953947429213378, 0.800473620687173, 0.995715253828946],
+      "r_shoulder": [0.495394742921338, 1.19952637931283, 0.995715253828946],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:07.586Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e28c1937bf7cd1cbc5ab",
+    "deviceId": "POSTURE_01",
+    "angle": 61.59,
+    "fatigueLevel": 64.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0906711842668285, 0.633206986166637, 1.02643719384332],
+      "r_shoulder": [0.490671184266829, 1.36679301383336, 1.02643719384332],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:08.650Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e28d1937bf7cd1cbc5ad",
+    "deviceId": "POSTURE_01",
+    "angle": 61.68,
+    "fatigueLevel": 65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0346876575771143, 0.609930368693751, 1.02807331366619],
+      "r_shoulder": [0.434687657577114, 1.39006963130625, 1.02807331366619],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:09.706Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e28e1937bf7cd1cbc5af",
+    "deviceId": "POSTURE_01",
+    "angle": 59.93,
+    "fatigueLevel": 65.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0625864898414423, 0.738148229886222, 0.998848395171965],
+      "r_shoulder": [0.337413510158558, 1.26185177011378, 0.998848395171965],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:10.762Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e28f1937bf7cd1cbc5b1",
+    "deviceId": "POSTURE_01",
+    "angle": 61.61,
+    "fatigueLevel": 65.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.184169293761173, 0.968356900884627, 1.02688940736528],
+      "r_shoulder": [0.215830706238828, 1.03164309911537, 1.02688940736528],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:11.819Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2901937bf7cd1cbc5b3",
+    "deviceId": "POSTURE_01",
+    "angle": 60.96,
+    "fatigueLevel": 65.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.308815769624058, 1.21138081357927, 1.01602861828605],
+      "r_shoulder": [0.0911842303759416, 0.788619186420732, 1.01602861828605],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:12.879Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2911937bf7cd1cbc5b5",
+    "deviceId": "POSTURE_01",
+    "angle": 59.54,
+    "fatigueLevel": 65.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.41397042082357, 1.37151882783697, 0.992255058252615],
+      "r_shoulder": [-0.0139704208235697, 0.628481172163031, 0.992255058252615],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:13.937Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2921937bf7cd1cbc5b7",
+    "deviceId": "POSTURE_01",
+    "angle": 60.76,
+    "fatigueLevel": 65.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.48135671940344, 1.38718595367657, 1.01270809730142],
+      "r_shoulder": [-0.0813567194034395, 0.612814046323434, 1.01270809730142],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:14.992Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2941937bf7cd1cbc5b9",
+    "deviceId": "POSTURE_01",
+    "angle": 60.16,
+    "fatigueLevel": 65.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.499310540810977, 1.252661264118, 1.00274726790224],
+      "r_shoulder": [-0.0993105408109772, 0.747338735881996, 1.00274726790224],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:16.048Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2951937bf7cd1cbc5bb",
+    "deviceId": "POSTURE_01",
+    "angle": 59.74,
+    "fatigueLevel": 66.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.464673342186301, 1.02003828453397, 0.995707625437796],
+      "r_shoulder": [-0.0646733421863006, 0.979961715466029, 0.995707625437796],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:17.104Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2961937bf7cd1cbc5bd",
+    "deviceId": "POSTURE_01",
+    "angle": 61.84,
+    "fatigueLevel": 66.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.383223437966845, 0.779021901358313, 1.03072837245184],
+      "r_shoulder": [0.0167765620331554, 1.22097809864169, 1.03072837245184],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:18.163Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2971937bf7cd1cbc5bf",
+    "deviceId": "POSTURE_01",
+    "angle": 60.03,
+    "fatigueLevel": 66.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.269866171391886, 0.624604413296771, 1.00046674367481],
+      "r_shoulder": [0.130133828608114, 1.37539558670323, 1.00046674367481],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:19.218Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2981937bf7cd1cbc5c1",
+    "deviceId": "POSTURE_01",
+    "angle": 60.76,
+    "fatigueLevel": 66.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.14230449530539, 0.616735173668214, 1.01267515024927],
+      "r_shoulder": [0.25769550469461, 1.38326482633179, 1.01267515024927],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:20.289Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2991937bf7cd1cbc5c3",
+    "deviceId": "POSTURE_01",
+    "angle": 58.23,
+    "fatigueLevel": 66.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0263261243299328, 0.759615233810921, 0.97045216003683],
+      "r_shoulder": [0.373673875670067, 1.24038476618908, 0.97045216003683],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:21.349Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e29a1937bf7cd1cbc5c5",
+    "deviceId": "POSTURE_01",
+    "angle": 58.15,
+    "fatigueLevel": 66.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0588499132822556, 0.996190151671741, 0.969107594513323],
+      "r_shoulder": [0.458849913282256, 1.00380984832826, 0.969107594513323],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:22.408Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e29b1937bf7cd1cbc5c7",
+    "deviceId": "POSTURE_01",
+    "angle": 58.64,
+    "fatigueLevel": 66.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0983275935179047, 1.23466729621899, 0.97727793574468],
+      "r_shoulder": [0.498327593517905, 0.765332703781008, 0.97727793574468],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:23.468Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e29c1937bf7cd1cbc5c9",
+    "deviceId": "POSTURE_01",
+    "angle": 60.77,
+    "fatigueLevel": 67.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0850899649506816, 1.38087233411591, 1.01285936705836],
+      "r_shoulder": [0.485089964950682, 0.619127665884086, 1.01285936705836],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:24.524Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e29d1937bf7cd1cbc5cb",
+    "deviceId": "POSTURE_01",
+    "angle": 59.14,
+    "fatigueLevel": 67.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0218753849334639, 1.37942696269077, 0.985725119826471],
+      "r_shoulder": [0.421875384933464, 0.620573037309226, 0.985725119826471],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:25.578Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e29e1937bf7cd1cbc5cd",
+    "deviceId": "POSTURE_01",
+    "angle": 61.46,
+    "fatigueLevel": 67.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0800930824762484, 1.23136058476634, 1.02429484842343],
+      "r_shoulder": [0.319906917523752, 0.768639415233664, 1.02429484842343],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:26.632Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e29f1937bf7cd1cbc5cf",
+    "deviceId": "POSTURE_01",
+    "angle": 59.49,
+    "fatigueLevel": 67.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.203236689114498, 0.993526778758939, 0.99156155682981],
+      "r_shoulder": [0.196763310885502, 1.00647322124106, 0.99156155682981],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:27.686Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a01937bf7cd1cbc5d1",
+    "deviceId": "POSTURE_01",
+    "angle": 61.8,
+    "fatigueLevel": 67.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.326873710904785, 0.756340992764386, 1.02997614024138],
+      "r_shoulder": [0.0731262890952153, 1.24365900723561, 1.02997614024138],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:28.751Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a11937bf7cd1cbc5d3",
+    "deviceId": "POSTURE_01",
+    "angle": 58.65,
+    "fatigueLevel": 67.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.429264851642565, 0.614074145345318, 0.977530304498908],
+      "r_shoulder": [-0.0292648516425649, 1.38592585465468, 0.977530304498908],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:29.834Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a21937bf7cd1cbc5d5",
+    "deviceId": "POSTURE_01",
+    "angle": 58.9,
+    "fatigueLevel": 68,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.488477662587006, 0.626826779726837, 0.981583468459124],
+      "r_shoulder": [-0.0884776625870063, 1.37317322027316, 0.981583468459124],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:30.891Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a31937bf7cd1cbc5d7",
+    "deviceId": "POSTURE_01",
+    "angle": 59.74,
+    "fatigueLevel": 68.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.496905688067627, 0.78422396369422, 0.995615257234074],
+      "r_shoulder": [-0.0969056880676268, 1.21577603630578, 0.995615257234074],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:31.946Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a51937bf7cd1cbc5d9",
+    "deviceId": "POSTURE_01",
+    "angle": 59.11,
+    "fatigueLevel": 68.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.453310325982005, 1.02507162392967, 0.985182376921043],
+      "r_shoulder": [-0.0533103259820045, 0.974928376070335, 0.985182376921043],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:33.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a61937bf7cd1cbc5db",
+    "deviceId": "POSTURE_01",
+    "angle": 60.73,
+    "fatigueLevel": 68.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.364960626767406, 1.25691696463051, 1.01209912511948],
+      "r_shoulder": [0.0350393732325944, 0.743083035369493, 1.01209912511948],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:34.058Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a71937bf7cd1cbc5dd",
+    "deviceId": "POSTURE_01",
+    "angle": 60.9,
+    "fatigueLevel": 68.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.247675306211516, 1.3885929721893, 1.0149349564183],
+      "r_shoulder": [0.152324693788484, 0.611407027810703, 1.0149349564183],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:35.114Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a81937bf7cd1cbc5df",
+    "deviceId": "POSTURE_01",
+    "angle": 59.7,
+    "fatigueLevel": 68.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.121585004925306, 1.36893912146074, 0.994947208120979],
+      "r_shoulder": [0.278414995074694, 0.631060878539262, 0.994947208120979],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:36.175Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2a91937bf7cd1cbc5e1",
+    "deviceId": "POSTURE_01",
+    "angle": 60.6,
+    "fatigueLevel": 68.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.00934264906161367, 1.20488707314527, 1.00992178725316],
+      "r_shoulder": [0.390657350938386, 0.795112926854735, 1.00992178725316],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:37.235Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2aa1937bf7cd1cbc5e3",
+    "deviceId": "POSTURE_01",
+    "angle": 59.29,
+    "fatigueLevel": 69.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0688132553312865, 0.961909796010473, 0.988139393521636],
+      "r_shoulder": [0.468813255331287, 1.03809020398953, 0.988139393521636],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:38.290Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2ab1937bf7cd1cbc5e5",
+    "deviceId": "POSTURE_01",
+    "angle": 60.69,
+    "fatigueLevel": 69.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0997987117561511, 0.733119072791124, 1.01147162542368],
+      "r_shoulder": [0.499798711756151, 1.26688092720888, 1.01147162542368],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:39.349Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2ac1937bf7cd1cbc5e7",
+    "deviceId": "POSTURE_01",
+    "angle": 58.76,
+    "fatigueLevel": 69.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0774128258564953, 0.607942490496568, 0.97927794998668],
+      "r_shoulder": [0.477412825856495, 1.39205750950343, 0.97927794998668],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:40.417Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2ad1937bf7cd1cbc5e9",
+    "deviceId": "POSTURE_01",
+    "angle": 60.41,
+    "fatigueLevel": 69.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.00601286091715425, 0.637313849421078, 1.0067903197999],
+      "r_shoulder": [0.406012860917154, 1.36268615057892, 1.0067903197999],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:41.475Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2ae1937bf7cd1cbc5eb",
+    "deviceId": "POSTURE_01",
+    "angle": 61.47,
+    "fatigueLevel": 69.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.101899796151521, 0.808337900258257, 1.02446781350121],
+      "r_shoulder": [0.298100203848479, 1.19166209974174, 1.02446781350121],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:42.535Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2af1937bf7cd1cbc5ed",
+    "deviceId": "POSTURE_01",
+    "angle": 60.55,
+    "fatigueLevel": 69.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.22664173622233, 1.05319569292705, 1.00920337987488],
+      "r_shoulder": [0.17335826377767, 0.946804307072952, 1.00920337987488],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:43.590Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b01937bf7cd1cbc5ef",
+    "deviceId": "POSTURE_01",
+    "angle": 60.59,
+    "fatigueLevel": 69.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.347027944997794, 1.27796403581015, 1.00990832426303],
+      "r_shoulder": [0.052972055002206, 0.722035964189853, 1.00990832426303],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:44.648Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b11937bf7cd1cbc5f1",
+    "deviceId": "POSTURE_01",
+    "angle": 60.23,
+    "fatigueLevel": 70.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.44155939230284, 1.39444959392213, 1.00380111261788],
+      "r_shoulder": [-0.0415593923028396, 0.605550406077871, 1.00380111261788],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:45.707Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b21937bf7cd1cbc5f3",
+    "deviceId": "POSTURE_01",
+    "angle": 60.7,
+    "fatigueLevel": 70.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.49330660288899, 1.35699888590149, 1.01161529007022],
+      "r_shoulder": [-0.0933066028889895, 0.643001114098511, 1.01161529007022],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:46.765Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b31937bf7cd1cbc5f5",
+    "deviceId": "POSTURE_01",
+    "angle": 59.42,
+    "fatigueLevel": 70.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.493359236882675, 1.18086928102174, 0.990396746561987],
+      "r_shoulder": [-0.093359236882675, 0.819130718978259, 0.990396746561987],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:47.821Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b41937bf7cd1cbc5f7",
+    "deviceId": "POSTURE_01",
+    "angle": 60.25,
+    "fatigueLevel": 70.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.441720280882567, 0.934131350916057, 1.00423898868285],
+      "r_shoulder": [-0.0417202808825668, 1.06586864908394, 1.00423898868285],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:48.879Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b51937bf7cd1cbc5fb",
+    "deviceId": "POSTURE_01",
+    "angle": 60.24,
+    "fatigueLevel": 70.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.347500948070327, 0.713117045137878, 1.00406735060141],
+      "r_shoulder": [0.0524990519296729, 1.28688295486212, 1.00406735060141],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:49.936Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b61937bf7cd1cbc5fd",
+    "deviceId": "POSTURE_01",
+    "angle": 58.13,
+    "fatigueLevel": 70.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.227360751002213, 0.603747621065433, 0.968843986879861],
+      "r_shoulder": [0.172639248997787, 1.39625237893457, 0.968843986879861],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:50.993Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b81937bf7cd1cbc5ff",
+    "deviceId": "POSTURE_01",
+    "angle": 60.4,
+    "fatigueLevel": 71,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.102353136575322, 0.648449355635602, 1.00659267048234],
+      "r_shoulder": [0.297646863424678, 1.3515506443644, 1.00659267048234],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:52.050Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2b91937bf7cd1cbc601",
+    "deviceId": "POSTURE_01",
+    "angle": 60.56,
+    "fatigueLevel": 71.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.00631002306236875, 0.832044822933472, 1.00938830968855],
+      "r_shoulder": [0.406310023062369, 1.16795517706653, 1.00938830968855],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:53.117Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2ba1937bf7cd1cbc604",
+    "deviceId": "POSTURE_01",
+    "angle": 60.86,
+    "fatigueLevel": 71.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0774176579251394, 1.07934001938521, 1.01439460381199],
+      "r_shoulder": [0.477417657925139, 0.920659980614794, 1.01439460381199],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:54.172Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2bb1937bf7cd1cbc606",
+    "deviceId": "POSTURE_01",
+    "angle": 58.83,
+    "fatigueLevel": 71.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0998438021619933, 1.2961974287341, 0.980439887315953],
+      "r_shoulder": [0.499843802161993, 0.703802571265898, 0.980439887315953],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:55.229Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2bc1937bf7cd1cbc608",
+    "deviceId": "POSTURE_01",
+    "angle": 61.06,
+    "fatigueLevel": 71.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0693669392939106, 1.39793595642777, 1.01772529821242],
+      "r_shoulder": [0.469366939293911, 0.602064043572226, 1.01772529821242],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:56.288Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2bd1937bf7cd1cbc60b",
+    "deviceId": "POSTURE_01",
+    "angle": 60.1,
+    "fatigueLevel": 71.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.00856457935884628, 1.34457175002089, 1.00161139010964],
+      "r_shoulder": [0.391435420641154, 0.655428249979107, 1.00161139010964],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:57.345Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2be1937bf7cd1cbc60d",
+    "deviceId": "POSTURE_01",
+    "angle": 58.35,
+    "fatigueLevel": 71.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.120978150706837, 1.15570361536482, 0.972510628555383],
+      "r_shoulder": [0.279021849293163, 0.844296384635176, 0.972510628555383],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:58.409Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2bf1937bf7cd1cbc60f",
+    "deviceId": "POSTURE_01",
+    "angle": 59.39,
+    "fatigueLevel": 72.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.246516406617815, 0.907437018254626, 0.989862348030319],
+      "r_shoulder": [0.153483593382185, 1.09256298174537, 0.989862348030319],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:55:59.465Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c01937bf7cd1cbc611",
+    "deviceId": "POSTURE_01",
+    "angle": 59.97,
+    "fatigueLevel": 72.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.366977045977791, 0.690329290193413, 0.999565398106463],
+      "r_shoulder": [0.0330229540222092, 1.30967070980659, 0.999565398106463],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:00.551Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c11937bf7cd1cbc614",
+    "deviceId": "POSTURE_01",
+    "angle": 60.17,
+    "fatigueLevel": 72.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.454549857391518, 0.600521746417958, 1.00279411751759],
+      "r_shoulder": [-0.0545498573915177, 1.39947825358204, 1.00279411751759],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:01.608Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c21937bf7cd1cbc616",
+    "deviceId": "POSTURE_01",
+    "angle": 61.62,
+    "fatigueLevel": 72.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.49725298860304, 0.665909479376003, 1.02701141985227],
+      "r_shoulder": [-0.0972529886030402, 1.334090520624, 1.02701141985227],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:02.664Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c31937bf7cd1cbc618",
+    "deviceId": "POSTURE_01",
+    "angle": 60.04,
+    "fatigueLevel": 72.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.487684744199073, 0.86129647340697, 1.00063216912737],
+      "r_shoulder": [-0.0876847441990734, 1.13870352659303, 1.00063216912737],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:03.721Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c41937bf7cd1cbc61a",
+    "deviceId": "POSTURE_01",
+    "angle": 58.31,
+    "fatigueLevel": 72.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.427517519650113, 1.11036274918463, 0.971825483419091],
+      "r_shoulder": [-0.0275175196501133, 0.889637250815373, 0.971825483419091],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:04.777Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c51937bf7cd1cbc61d",
+    "deviceId": "POSTURE_01",
+    "angle": 61.79,
+    "fatigueLevel": 72.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.327306543709735, 1.31663966031457, 1.02984248470146],
+      "r_shoulder": [0.0726934562902648, 0.683360339685428, 1.02984248470146],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:05.834Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c61937bf7cd1cbc61f",
+    "deviceId": "POSTURE_01",
+    "angle": 60.57,
+    "fatigueLevel": 73.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.204576142809734, 1.39989529048616, 1.00946507653593],
+      "r_shoulder": [0.195423857190266, 0.600104709513844, 1.00946507653593],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:06.891Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c71937bf7cd1cbc622",
+    "deviceId": "POSTURE_01",
+    "angle": 59.37,
+    "fatigueLevel": 73.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0811285950189213, 1.3276015472349, 0.989507506682686],
+      "r_shoulder": [0.318871404981079, 0.672398452765101, 0.989507506682686],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:07.948Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2c91937bf7cd1cbc624",
+    "deviceId": "POSTURE_01",
+    "angle": 59.6,
+    "fatigueLevel": 73.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0214944815560149, 1.12770215483218, 0.993255635663659],
+      "r_shoulder": [0.421494481556015, 0.872297845167816, 0.993255635663659],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:09.006Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2ca1937bf7cd1cbc627",
+    "deviceId": "POSTURE_01",
+    "angle": 58.33,
+    "fatigueLevel": 73.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.085110166411132, 0.877662498497149, 0.972229082380549],
+      "r_shoulder": [0.485110166411132, 1.12233750150285, 0.972229082380549],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:10.065Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2cb1937bf7cd1cbc629",
+    "deviceId": "POSTURE_01",
+    "angle": 60.64,
+    "fatigueLevel": 73.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.098322502828214, 0.676012497325548, 1.01070376509528],
+      "r_shoulder": [0.498322502828214, 1.32398750267445, 1.01070376509528],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:11.121Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2cc1937bf7cd1cbc62b",
+    "deviceId": "POSTURE_01",
+    "angle": 58.11,
+    "fatigueLevel": 73.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0590741372771856, 0.600010669306833, 0.968435225654502],
+      "r_shoulder": [0.459074137277186, 1.39998933069317, 0.968435225654502],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:12.178Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2cd1937bf7cd1cbc62d",
+    "deviceId": "POSTURE_01",
+    "angle": 61.35,
+    "fatigueLevel": 74,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0269094190127157, 0.681150055348124, 1.02252468416336],
+      "r_shoulder": [0.373090580987284, 1.31884994465188, 1.02252468416336],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:13.246Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2ce1937bf7cd1cbc630",
+    "deviceId": "POSTURE_01",
+    "angle": 58.39,
+    "fatigueLevel": 74.15,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.142756341780024, 0.886391964636808, 0.973220291563371],
+      "r_shoulder": [0.257243658219976, 1.11360803536319, 0.973220291563371],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:14.303Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2cf1937bf7cd1cbc632",
+    "deviceId": "POSTURE_01",
+    "angle": 61.49,
+    "fatigueLevel": 74.3,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.269116965035499, 1.13667704062616, 1.02490174072373],
+      "r_shoulder": [0.130883034964501, 0.863322959373838, 1.02490174072373],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:15.365Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d01937bf7cd1cbc634",
+    "deviceId": "POSTURE_01",
+    "angle": 58.65,
+    "fatigueLevel": 74.45,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.382755949636833, 1.33276637514721, 0.977466404483421],
+      "r_shoulder": [0.0172440503631674, 0.667233624852786, 0.977466404483421],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:16.421Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d11937bf7cd1cbc637",
+    "deviceId": "POSTURE_01",
+    "angle": 59.54,
+    "fatigueLevel": 74.6,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.464251263112793, 1.39958335483442, 0.992258567562338],
+      "r_shoulder": [-0.0642512631127933, 0.600416645165585, 0.992258567562338],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:17.477Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d21937bf7cd1cbc639",
+    "deviceId": "POSTURE_01",
+    "angle": 59.18,
+    "fatigueLevel": 74.75,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.499257141861506, 1.31107523413387, 0.986361088988617],
+      "r_shoulder": [-0.0992571418615055, 0.688924765866133, 0.986361088988617],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:18.534Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d31937bf7cd1cbc63b",
+    "deviceId": "POSTURE_01",
+    "angle": 61.4,
+    "fatigueLevel": 74.9,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.481599372081267, 1.10179167896156, 1.02325412608159],
+      "r_shoulder": [-0.0815993720812667, 0.89820832103844, 1.02325412608159],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:19.590Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d41937bf7cd1cbc63d",
+    "deviceId": "POSTURE_01",
+    "angle": 58.38,
+    "fatigueLevel": 75.05,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.41454323426403, 0.853285996586246, 0.973066626414299],
+      "r_shoulder": [-0.0145432342640301, 1.14671400341375, 0.973066626414299],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:20.645Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d51937bf7cd1cbc640",
+    "deviceId": "POSTURE_01",
+    "angle": 61.6,
+    "fatigueLevel": 75.2,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.30953228258889, 0.661230329624278, 1.02661066597422],
+      "r_shoulder": [0.0904677174111102, 1.33876967037572, 1.02661066597422],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:21.703Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d61937bf7cd1cbc642",
+    "deviceId": "POSTURE_01",
+    "angle": 58.02,
+    "fatigueLevel": 75.35,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.185358551453147, 0.601072229319274, 0.966988948865614],
+      "r_shoulder": [0.214641448546853, 1.39892777068073, 0.966988948865614],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:22.759Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d71937bf7cd1cbc644",
+    "deviceId": "POSTURE_01",
+    "angle": 59.22,
+    "fatigueLevel": 75.5,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0636037360293301, 0.696128077769137, 0.986968417906027],
+      "r_shoulder": [0.33639626397067, 1.30387192223086, 0.986968417906027],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:23.817Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d81937bf7cd1cbc646",
+    "deviceId": "POSTURE_01",
+    "angle": 60.52,
+    "fatigueLevel": 75.65,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0339845896116786, 0.909229315794006, 1.00869047420067],
+      "r_shoulder": [0.433984589611679, 1.09077068420599, 1.00869047420067],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:24.874Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2d91937bf7cd1cbc649",
+    "deviceId": "POSTURE_01",
+    "angle": 61.14,
+    "fatigueLevel": 75.8,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0905843093527592, 1.15892819567142, 1.01899497500773],
+      "r_shoulder": [0.490584309352759, 0.84107180432858, 1.01899497500773],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:25.936Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2da1937bf7cd1cbc64b",
+    "deviceId": "POSTURE_01",
+    "angle": 59.84,
+    "fatigueLevel": 75.95,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.0955822243381544, 1.34559543534694, 0.997397639684361],
+      "r_shoulder": [0.495582224338154, 0.654404564653059, 0.997397639684361],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:26.994Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2dc1937bf7cd1cbc64d",
+    "deviceId": "POSTURE_01",
+    "angle": 61.51,
+    "fatigueLevel": 76.1,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [0.048552605236758, 1.39774908672121, 1.02516218909818],
+      "r_shoulder": [0.448552605236758, 0.602250913278787, 1.02516218909818],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:28.050Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2dd1937bf7cd1cbc64f",
+    "deviceId": "POSTURE_01",
+    "angle": 59.16,
+    "fatigueLevel": 76.25,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.0420672621914545, 1.29560847816098, 0.986056914465244],
+      "r_shoulder": [0.357932737808546, 0.704391521839022, 0.986056914465244],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:29.105Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2de1937bf7cd1cbc652",
+    "deviceId": "POSTURE_01",
+    "angle": 61.34,
+    "fatigueLevel": 76.4,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.160679622211604, 1.07835770645403, 1.02226636600152],
+      "r_shoulder": [0.239320377788396, 0.921642293545969, 1.02226636600152],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:30.163Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2df1937bf7cd1cbc654",
+    "deviceId": "POSTURE_01",
+    "angle": 60.95,
+    "fatigueLevel": 76.55,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.286182689573649, 0.830684573278492, 1.01575550634023],
+      "r_shoulder": [0.113817310426351, 1.16931542672151, 1.01575550634023],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:31.220Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2e01937bf7cd1cbc656",
+    "deviceId": "POSTURE_01",
+    "angle": 58.95,
+    "fatigueLevel": 76.7,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.396616957198929, 0.648727248898118, 0.982506115083161],
+      "r_shoulder": [0.00338304280107149, 1.35127275110188, 0.982506115083161],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:32.278Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2e11937bf7cd1cbc659",
+    "deviceId": "POSTURE_01",
+    "angle": 61.49,
+    "fatigueLevel": 76.85,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.472241807198184, 0.603641972812848, 1.02491622107709],
+      "r_shoulder": [-0.0722418071981836, 1.39635802718715, 1.02491622107709],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:33.334Z",
+    "__v": 0
+  },
+  {
+    "_id": "69d4e2e21937bf7cd1cbc65b",
+    "deviceId": "POSTURE_01",
+    "angle": 60.84,
+    "fatigueLevel": 77,
+    "postureStatus": "bad",
+    "poseData": {
+      "l_shoulder": [-0.499988187859349, 0.713417497362606, 1.01392814293079],
+      "r_shoulder": [-0.0999881878593488, 1.28658250263739, 1.01392814293079],
+      "l_hip": [-0.2, 0, 0],
+      "r_hip": [0.2, 0, 0]
+    },
+    "timestamp": "2026-04-07T10:56:34.396Z",
+    "__v": 0
+  }
+]

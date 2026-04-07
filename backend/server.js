@@ -29,6 +29,12 @@ app.post("/api/posture", async (req, res) => {
   }
 });
 
+// ------>>>>> To create a export api for generating manual json file 
+// app.get("/api/export", async (req, res) => {
+//   const data = await Posture.find();
+//   res.json(data);
+// });
+
 app.get("/api/posture", async (req, res) => {
   try {
     const data = await Posture.find()

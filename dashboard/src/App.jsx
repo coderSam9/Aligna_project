@@ -207,6 +207,118 @@ export default function App() {
   const runningSince = React.useRef(Date.now());
   const elapsedMs = React.useRef(0);
 
+  const [isManualMode, setIsManualMode] = useState(false);
+  const [manualDataStack, setManualDataStack] = useState([]);
+  
+  const [showModal, setShowModal] = useState(false);
+  const playbackQueueRef = React.useRef([]);
+  const playbackIntervalRef = React.useRef(null);
+
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      try {
+        const parsedData = JSON.parse(evt.target.result);
+        if (Array.isArray(parsedData)) {
+          playbackQueueRef.current = parsedData;
+          alert(`Loaded ${parsedData.length} records. Ready to simulate.`);
+        } else {
+          alert('JSON must be an array of objects.');
+        }
+      } catch (err) {
+        alert('Invalid JSON file.');
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const startPlayback = () => {
+    if (playbackQueueRef.current.length === 0) {
+      alert("No data loaded. Please upload a JSON file first.");
+      return;
+    }
+    setIsManualMode(true);
+    setManualDataStack([]);
+    setShowModal(false);
+    if (playbackIntervalRef.current) clearInterval(playbackIntervalRef.current);
+    
+    playbackIntervalRef.current = setInterval(() => {
+      if (playbackQueueRef.current.length === 0) {
+        clearInterval(playbackIntervalRef.current);
+        setIsManualMode(false); // Auto-exit sandbox when complete
+        alert("Simulation Playback Complete!");
+        return;
+      }
+      const nextPoint = playbackQueueRef.current.shift();
+      setManualDataStack(prev => {
+        const nextStack = [...prev, nextPoint].slice(-50);
+        processData(nextStack);
+        return nextStack;
+      });
+    }, 1000);
+  };
+
+  const stopPlayback = () => {
+    if (playbackIntervalRef.current) clearInterval(playbackIntervalRef.current);
+    playbackQueueRef.current = [];
+    setIsManualMode(false);
+    setManualDataStack([]);
+    setShowModal(false);
+  };
+
+  const processData = (dataArray) => {
+    if (dataArray.length === 0) return;
+    const postureFormatted = dataArray.map((item) => ({
+      time: new Date(item.timestamp).toLocaleTimeString("en-US", { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+      neck: item.angle,
+      back: Math.round(item.angle * 0.8),
+    }));
+    const fatigueFormatted = dataArray.map((item) => ({
+      time: new Date(item.timestamp).toLocaleTimeString("en-US", { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+      fatigue: Math.min(100, Math.round(item.fatigueLevel || 0)),
+    }));
+    setPostureData(postureFormatted);
+    setFatigueData(fatigueFormatted);
+
+    const total = dataArray.length;
+    const angles = dataArray.map((d) => d.angle);
+    const avg = angles.reduce((a, b) => a + b, 0) / total;
+    const goodCount = angles.filter((a) => a < 30).length;
+    const goodPercent = Math.round((goodCount / total) * 100);
+    const badCount = total - goodCount;
+    const slouchTime = `${Math.floor(badCount / 60)}m ${badCount % 60}s`;
+
+    let duration = "0m 0s";
+    if (total > 0) {
+      const first = new Date(dataArray[0].timestamp);
+      const last = new Date(dataArray[total - 1].timestamp);
+      const durationSec = Math.floor((last - first) / 1000);
+      duration = `${Math.floor(durationSec / 60)}m ${durationSec % 60}s`;
+    }
+
+    let breaks = 0;
+    for (let i = 1; i < angles.length; i++) {
+      if (angles[i - 1] > 30 && angles[i] <= 30) breaks++;
+    }
+
+    setMetrics(prev => ({
+      ...prev,
+      duration,
+      goodPercent,
+      slouchTime,
+      breaks,
+      avgAngle: avg.toFixed(1),
+    }));
+
+    if (avg > 35 || goodPercent < 60) {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 4000);
+    }
+  };
+
   /* ── NEW: hovered bar index for Body Strain ── */
   const [hoveredBar, setHoveredBar] = useState(null);
 
@@ -224,54 +336,16 @@ export default function App() {
     };
   }, [isRunning]);
 
-  /* ── original data-fetching logic — untouched ── */
+  /* ── original data-fetching logic ── */
   useEffect(() => {
-    if (!isRunning) return;
+    if (!isRunning || isManualMode) return;
     const fetchData = async () => {
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_API_URL}/api/posture`
         );
         setIsLive(true);
-        const postureFormatted = res.data.map((item) => ({
-          time: new Date(item.timestamp).toLocaleTimeString("en-US", { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-          neck: item.angle,
-          back: Math.round(item.angle * 0.8),
-        }));
-        const fatigueFormatted = res.data.map((item) => ({
-          time: new Date(item.timestamp).toLocaleTimeString("en-US", { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-          fatigue: Math.min(100, Math.round(item.fatigueLevel || 0)),
-        }));
-        setPostureData(postureFormatted);
-        setFatigueData(fatigueFormatted);
-        const total = res.data.length;
-        if (total === 0) return;
-        const angles = res.data.map((d) => d.angle);
-        const avg = angles.reduce((a, b) => a + b, 0) / total;
-        const goodCount = angles.filter((a) => a < 30).length;
-        const goodPercent = Math.round((goodCount / total) * 100);
-        const badCount = total - goodCount;
-        const slouchTime = `${Math.floor(badCount / 60)}m ${badCount % 60}s`;
-        const first = new Date(res.data[0].timestamp);
-        const last = new Date(res.data[total - 1].timestamp);
-        const durationSec = Math.floor((last - first) / 1000);
-        const duration = `${Math.floor(durationSec / 60)}m ${
-          durationSec % 60
-        }s`;
-        let breaks = 0;
-        for (let i = 1; i < angles.length; i++)
-          if (angles[i - 1] > 30 && angles[i] <= 30) breaks++;
-        setMetrics({
-          duration,
-          goodPercent,
-          slouchTime,
-          breaks,
-          avgAngle: avg.toFixed(1),
-        });
-        if (avg > 35 || goodPercent < 60) {
-          setShowAlert(true);
-          setTimeout(() => setShowAlert(false), 4000);
-        }
+        processData(res.data);
       } catch (err) {
         console.log("Fetch error:", err);
         setIsLive(false);
@@ -280,7 +354,7 @@ export default function App() {
     fetchData();
     const interval = setInterval(fetchData, 4000);
     return () => clearInterval(interval);
-  }, [isRunning]);
+  }, [isRunning, isManualMode]);
 
   /* ── original derived data — untouched ── */
   const distributionData = [
@@ -401,13 +475,42 @@ export default function App() {
                     width: 8,
                     height: 8,
                     borderRadius: "50%",
-                    background: isLive ? "#22c55e" : "#ef4444",
-                    boxShadow: isLive ? "0 0 8px #22c55e" : "0 0 8px #ef4444",
+                    background: isLive && (!isManualMode) ? "#22c55e" : "#ef4444",
+                    boxShadow: isLive && (!isManualMode) ? "0 0 8px #22c55e" : "0 0 8px #ef4444",
                     flexShrink: 0,
                   }}
                 />
-                {isLive ? "Live data streaming" : "Disconnected"}
+                {isLive && (!isManualMode) ? "Live data streaming" : "Disconnected"}
               </span>
+
+              <button
+                style={{
+                  ...styles.pill,
+                  background: isManualMode ? "rgba(30,41,59,0.8)" : "linear-gradient(135deg,#10b981,#8b5cf6)",
+                  border: isManualMode ? "1px solid rgba(148,163,184,0.2)" : "none",
+                  color: isManualMode ? "#94a3b8" : "#fff",
+                }}
+                onClick={() => {
+                  setIsManualMode(false);
+                  setPostureData([]);
+                  setFatigueData([]);
+                }}
+              >
+                📡 Live Device
+              </button>
+              <button
+                style={{
+                  ...styles.pill,
+                  background: isManualMode || showModal ? "linear-gradient(135deg,#f59e0b,#ef4444)" : "rgba(30,41,59,0.8)",
+                  border: isManualMode || showModal ? "none" : "1px solid rgba(148,163,184,0.2)",
+                  color: isManualMode || showModal ? "#fff" : "#94a3b8",
+                }}
+                onClick={() => setShowModal(true)}
+              >
+                🛠 Sandbox
+              </button>
+              
+              <div style={{ width: 1, height: 24, background: "rgba(148,163,184,0.2)" }} />
 
               <button
                 style={{
@@ -463,6 +566,8 @@ export default function App() {
         </header>
 
         <main style={styles.main}>
+
+
           {/* ── KPI Cards ── */}
           <div style={styles.kpiGrid}>
             <KpiCard
@@ -844,6 +949,55 @@ export default function App() {
               <div style={{ fontWeight: 600, margin: 0 }}>Posture Warning</div>
               <div style={{ margin: 0, fontSize: 14, color: "#94a3b8" }}>
                 Poor posture detected. Please realign your neck and shoulders.
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── Modal Overlay ── */}
+        {showModal && (
+          <div style={{
+            position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)',
+            display: 'flex', justifyContent: 'center', alignItems: 'center'
+          }}>
+            <div style={{
+              ...styles.panel, width: 480, background: 'rgba(15,23,42,0.95)', border: '1px solid rgba(245,158,11,0.5)',
+              boxShadow: '0 0 50px rgba(245,158,11,0.15)'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
+                <div>
+                  <div style={{ fontWeight: 'bold', fontSize: 18, color: '#fcd34d' }}>Data Playback Simulator</div>
+                  <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 4 }}>Upload JSON history for interactive replay</div>
+                </div>
+                <button onClick={stopPlayback} style={{ background: 'transparent', border: 'none', color: '#94a3b8', cursor: 'pointer', fontSize: 20 }}>✕</button>
+              </div>
+
+              <div style={{ marginBottom: 24 }}>
+                <label style={{ display: 'block', marginBottom: 8, fontSize: 12, color: '#cbd5e1', fontWeight: 600 }}>Select Array JSON File:</label>
+                <input 
+                  type="file" 
+                  accept=".json"
+                  onChange={handleFileUpload}
+                  style={{
+                    width: '100%', padding: '12px', background: 'rgba(0,0,0,0.3)', border: '1px dashed rgba(148,163,184,0.3)',
+                    borderRadius: 8, color: '#94a3b8', cursor: 'pointer', fontFamily: 'monospace', fontSize: 12
+                  }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', gap: 12 }}>
+                <button 
+                  onClick={startPlayback}
+                  style={{ ...styles.pill, background: 'linear-gradient(135deg,#f59e0b,#ef4444)', color: '#fff', flex: 1, padding: '10px 0', fontSize: 14 }}
+                >
+                  ▶ Start Simulation
+                </button>
+                <button 
+                  onClick={stopPlayback}
+                  style={{ ...styles.pill, background: 'rgba(255,255,255,0.1)', color: '#e2e8f0', flex: 1, padding: '10px 0', fontSize: 14 }}
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>
