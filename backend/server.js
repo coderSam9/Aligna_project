@@ -26,18 +26,27 @@ app.use(express.json());
 // ── Posture Data Endpoints ──────────────────────────────────────────
 app.post("/api/posture", async (req, res) => {
   console.log("Received Data:", req.body);
-  try {
-    const newPosture = new Posture({
-      ...req.body,
-      timestamp: new Date()
-    });
-    await newPosture.save();
+  try{
+      await Posture.create(req.body);
     console.log("💾 Saved to MongoDB");
-    res.json({ message: "Data received successfully" });
-  } catch (err) {
-    console.log("Error:", err);
-    res.status(500).json({ error: "Server error" });
+    res.json({message:"Data received successfully"});
   }
+  catch(err){
+    console.log("DB error:", err);
+    res.status(500).json({ error: "Database error" });
+  }
+  // try {
+  //   const newPosture = new Posture({
+  //     ...req.body,
+  //     timestamp: new Date()
+  //   });
+  //   await newPosture.save();
+  //   console.log("💾 Saved to MongoDB");
+  //   res.json({ message: "Data received successfully" });
+  // } catch (err) {
+  //   console.log("Error:", err);
+  //   res.status(500).json({ error: "Server error" });
+  // }
 });
 
 // ------>>>>> To create a export api for generating manual json file 
@@ -48,7 +57,7 @@ app.post("/api/posture", async (req, res) => {
 
 app.get("/api/posture", async (req, res) => {
   try {
-    const data = await Posture.find().sort({ timestamp: -1 }).limit(100);
+    const data = await Posture.find().sort({ timestamp: -1 }).limit(50);
     res.json(data.reverse()); // Reverse to maintain chronological order
   } catch (err) {
     res.status(500).json({ error: err.message });
