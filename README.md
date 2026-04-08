@@ -223,10 +223,16 @@ Send posture data:
 ```json
 {
   "deviceId": "POSTURE_01",
-  "angle": 25,
-  "fatigueLevel": 40,
-  "postureStatus": "good",
-  "timestamp": "2026-04-02T10:00:00Z"
+  "angle": 58.91,
+  "fatigueLevel": 55.1,
+  "postureStatus": "bad",
+  "poseData": {
+     "l_shoulder": [-0.4308, 1.3871, 0.9818],
+     "r_shoulder": [-0.0308, 0.6128, 0.9818],
+     "l_hip": [-0.2, 0, 0],
+     "r_hip": [0.2, 0, 0]
+   },
+ "timestamp": "2026-04-08T12:29:30.777671"
 }
 ```
 
