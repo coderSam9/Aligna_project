@@ -1,9 +1,5 @@
 # 🚀 Aligna — Posture & Fatigue Monitoring System
 
-## 🌐 Live Website
-
-
-
 ## 📌 Overview
 
 **Aligna** is a full-stack posture monitoring system that simulates human posture data, processes it through a backend server, and visualizes it in a modern dashboard with a real-time 3D digital twin.
