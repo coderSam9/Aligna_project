@@ -56,13 +56,13 @@ def generate_angle():
         # 50% chance they actively correct their posture (sit up straight)
         # 50% chance they slump, which is worsened by fatigue
         if random.random() < 0.5:
-            current_target = random.uniform(10, 18) # Good posture
+            current_target = random.uniform(2, 12) # Excellent straight posture
         else:
             drift = random.uniform(5.0, 15.0)
             fatigue_effect = (fatigue / 100.0) * 35.0 
             current_target = 15 + drift + fatigue_effect # Slumped posture
             
-        current_target = max(10, min(60, current_target))
+        current_target = max(0, min(70, current_target)) # Lowered floor to 0
 
     # Countdown the hold time
     posture_hold_time -= 1
@@ -79,7 +79,7 @@ def generate_angle():
         # Also reset hold time so they settle into a new posture after a sudden shift
         posture_hold_time = 0
         
-    return max(5, min(60, noisy_angle))
+    return max(-5, min(70, noisy_angle))
 
 
 # ✅ MAIN SIMULATION LOOP
