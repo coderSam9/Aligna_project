@@ -146,12 +146,14 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
   const [input, setInput] = useState("");
   const [isChatLoading, setIsChatLoading] = useState(false);
 
-  const chatBottomRef = useRef(null);
+  const chatContainerRef = useRef(null);
   const inputRef = useRef(null);
 
   /* ── Auto-scroll chat ── */
   useEffect(() => {
-    chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   }, [messages, isChatLoading]);
 
   /* ── Fetch insights every 60s ── */
@@ -412,14 +414,15 @@ export default function AIRecommendationsChat({ metrics, postureData, fatigueDat
           </div>
 
           {/* Messages */}
-          <div style={{
+          <div 
+            ref={chatContainerRef}
+            style={{
             flex: 1, overflowY: "auto", padding: "16px 14px",
             display: "flex", flexDirection: "column",
             scrollbarWidth: "thin", scrollbarColor: "rgba(148,163,184,0.2) transparent",
           }}>
             {messages.map((msg, i) => <ChatBubble key={i} msg={msg} />)}
             {isChatLoading && <TypingIndicator />}
-            <div ref={chatBottomRef} />
           </div>
 
           {/* Suggested prompts */}
