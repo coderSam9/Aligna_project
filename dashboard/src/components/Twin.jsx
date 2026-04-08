@@ -9,7 +9,7 @@ import { easing } from "maath";
 import * as SkeletonUtils from "three/examples/jsm/utils/SkeletonUtils.js";
 
 export const socket = io(import.meta.env.VITE_SOCKET_URL || "http://localhost:5051", {
-  transports: ["websocket"],
+  transports: ["polling", "websocket"],
   reconnection: true,
   reconnectionAttempts: Infinity,
   reconnectionDelay: 1000,
