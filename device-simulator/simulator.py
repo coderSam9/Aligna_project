@@ -25,6 +25,8 @@ USER_TYPE = "lazy"
 
 bad_posture_counter = 0
 current_angle = 18
+posture_hold_time = 0
+current_target = 18
 
 
 def fatigue_growth():
@@ -44,18 +46,40 @@ def simulate_recovery():
 
 
 def generate_angle():
-    global current_angle, fatigue
+    global current_angle, fatigue, posture_hold_time, current_target
 
-    drift = random.uniform(-1.5, 1.5)
-    fatigue_effect = fatigue * 0.6
+    # Determine if we need to shift to a new posture
+    if posture_hold_time <= 0:
+        # Pick a new hold time between 4 and 15 seconds
+        posture_hold_time = random.randint(4, 15)
+        
+        # 50% chance they actively correct their posture (sit up straight)
+        # 50% chance they slump, which is worsened by fatigue
+        if random.random() < 0.5:
+            current_target = random.uniform(10, 18) # Good posture
+        else:
+            drift = random.uniform(5.0, 15.0)
+            fatigue_effect = (fatigue / 100.0) * 35.0 
+            current_target = 15 + drift + fatigue_effect # Slumped posture
+            
+        current_target = max(10, min(60, current_target))
 
-    target_angle = current_angle + drift + fatigue_effect
-    target_angle = max(10, min(60, target_angle))
+    # Countdown the hold time
+    posture_hold_time -= 1
 
-    current_angle = (current_angle * 0.7) + (target_angle * 0.3)
-
-    noisy_angle = current_angle + random.uniform(*noise_range)
-    return noisy_angle
+    # Smoothly transition current_angle toward the current_target over a few seconds
+    current_angle = (current_angle * 0.85) + (current_target * 0.15)
+    
+    # Add very small micro-movements (breathing, small shifts)
+    noisy_angle = current_angle + random.uniform(-0.5, 0.5)
+    
+    # Occasional sudden user movements (adjusting in seat)
+    if random.random() < 0.02:
+        noisy_angle += random.uniform(-8, 12)
+        # Also reset hold time so they settle into a new posture after a sudden shift
+        posture_hold_time = 0
+        
+    return max(5, min(60, noisy_angle))
 
 
 # ✅ MAIN SIMULATION LOOP
