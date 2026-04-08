@@ -1,3 +1,6 @@
+const dns=require("dns");
+dns.setServers(["8.8.8.8","8.8.4.4"]);
+
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -5,8 +8,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const app = express();
 
-// In-memory data store
-let postureData = [];
+// MongoDB data model
+const Posture = require("./db");
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -24,9 +27,12 @@ app.use(express.json());
 app.post("/api/posture", async (req, res) => {
   console.log("Received Data:", req.body);
   try {
-    postureData.push(req.body);
-    if (postureData.length > 100) postureData.shift();
-    console.log("💾 Saved to memory");
+    const newPosture = new Posture({
+      ...req.body,
+      timestamp: new Date()
+    });
+    await newPosture.save();
+    console.log("💾 Saved to MongoDB");
     res.json({ message: "Data received successfully" });
   } catch (err) {
     console.log("Error:", err);
@@ -42,7 +48,8 @@ app.post("/api/posture", async (req, res) => {
 
 app.get("/api/posture", async (req, res) => {
   try {
-    res.json(postureData);
+    const data = await Posture.find().sort({ timestamp: -1 }).limit(100);
+    res.json(data.reverse()); // Reverse to maintain chronological order
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -53,7 +60,8 @@ app.post("/api/chat", async (req, res) => {
   try {
     const { message, metrics, history } = req.body;
 
-    const latest = postureData.slice(-10);
+    let latest = await Posture.find().sort({ timestamp: -1 }).limit(10);
+    latest = latest.reverse(); // Maintain chronological order
     const avgAngle = latest.length
       ? (latest.reduce((sum, d) => sum + d.angle, 0) / latest.length).toFixed(1)
       : "N/A";
@@ -93,7 +101,8 @@ Respond in a friendly, encouraging, actionable coach tone. Keep responses concis
   } catch (err) {
     console.error("Gemini chat error:", err.message);
     // Fallback: smart rule-based reply
-    const latest = postureData.slice(-5);
+    let latest = await Posture.find().sort({ timestamp: -1 }).limit(5);
+    latest = latest.reverse();
     const avgAngle = latest.length ? (latest.reduce((s,d)=>s+d.angle,0)/latest.length).toFixed(1) : 0;
     const avgFatigue = latest.length ? (latest.reduce((s,d)=>s+(d.fatigueLevel||0),0)/latest.length).toFixed(1) : 0;
     
@@ -111,16 +120,21 @@ Respond in a friendly, encouraging, actionable coach tone. Keep responses concis
 // ── AI Insights Endpoint ────────────────────────────────────────────
 app.post("/api/insights", async (req, res) => {
   const { metrics } = req.body;
-  const latest = postureData.slice(-20);
-  const avgAngle = latest.length
-    ? (latest.reduce((sum, d) => sum + d.angle, 0) / latest.length).toFixed(1)
-    : 0;
-  const avgFatigue = latest.length
-    ? (latest.reduce((sum, d) => sum + (d.fatigueLevel || 0), 0) / latest.length).toFixed(1)
-    : 0;
-  const lastStatus = latest.length ? latest[latest.length - 1].postureStatus : "unknown";
+
+  let avgAngle = 0;
+  let avgFatigue = 0;
+  let lastStatus = "unknown";
 
   try {
+    let latest = await Posture.find().sort({ timestamp: -1 }).limit(20);
+    latest = latest.reverse();
+
+    if (latest.length) {
+      avgAngle = (latest.reduce((sum, d) => sum + d.angle, 0) / latest.length).toFixed(1);
+      avgFatigue = (latest.reduce((sum, d) => sum + (d.fatigueLevel || 0), 0) / latest.length).toFixed(1);
+      lastStatus = latest[latest.length - 1].postureStatus;
+    }
+
     const prompt = `You are Aligna AI, a posture & ergonomics expert. Analyze this user's posture data and return exactly 3 insights as a JSON array.
 
 Data:
